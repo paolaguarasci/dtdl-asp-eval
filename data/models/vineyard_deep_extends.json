@@ -1,0 +1,41 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Level0;1",
+    "@type": "Interface",
+    "displayName": "Level 0",
+    "contents": [{ "@type": "Property", "name": "id", "schema": "string" }]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Level1;1",
+    "@type": "Interface",
+    "displayName": "Level 1",
+    "extends": "dtmi:agriculture:vineyard:Level0;1",
+    "contents": [{ "@type": "Property", "name": "name", "schema": "string" }]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Level2;1",
+    "@type": "Interface",
+    "displayName": "Level 2",
+    "extends": "dtmi:agriculture:vineyard:Level1;1",
+    "contents": [{ "@type": "Property", "name": "description", "schema": "string" }]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Level3;1",
+    "@type": "Interface",
+    "displayName": "Level 3",
+    "extends": "dtmi:agriculture:vineyard:Level2;1",
+    "contents": [{ "@type": "Property", "name": "version", "schema": "string" }]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Level4;1",
+    "@type": "Interface",
+    "displayName": "Level 4",
+    "extends": "dtmi:agriculture:vineyard:Level3;1",
+    "contents": [{ "@type": "Property", "name": "status", "schema": "string" }]
+  }
+]

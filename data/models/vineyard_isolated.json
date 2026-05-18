@@ -1,0 +1,46 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:MainController;1",
+    "@type": "Interface",
+    "displayName": "Main Controller",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "controllerId",
+        "schema": "string"
+      },
+      {
+        "@type": "Relationship",
+        "name": "manages",
+        "target": "dtmi:agriculture:vineyard:FieldUnit;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:FieldUnit;1",
+    "@type": "Interface",
+    "displayName": "Field Unit",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "unitId",
+        "schema": "string"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:OrphanDevice;1",
+    "@type": "Interface",
+    "displayName": "Orphan Device",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "deviceId",
+        "schema": "string"
+      }
+    ]
+  }
+]

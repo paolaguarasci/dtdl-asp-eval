@@ -1,0 +1,1289 @@
+[
+  {
+    "id": 1,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:VineyardProperty;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL v4, all interfaces must be part of a connected graph, typically by being extended by or used as the schema of a component/relationship in another interface.\n\nTo fix, ensure this interface is integrated. For example, make it a component within a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"property\",\n      \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```\n\nAlternatively, have another interface extend it using `extends`. This connects it to the model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 2,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PestTrap;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates `dtmi:agriculture:vineyard:PestTrap;1` is defined as an **interface** but is declared as `@type: \"Interface\"` **outside** a component relationship. In DTDL, any interface that is **not** the root model interface must be referenced within a `component` relationship of another interface.\n\n**Fix:** Reference this interface as a **component** within the root model interface (or another parent interface). For example, within your root model (`dtmi:agriculture:vineyard;1`):\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"pestTrap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```\n\nThe `dtmi:agriculture:vineyard:PestTrap;1` interface must still be defined separately, but now it is correctly referenced as a component.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 3,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationController;1\",\"dtmi:agriculture:vineyard:IrrigationController;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationController;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause**: The interface `dtmi:agriculture:vineyard:IrrigationController;1` is isolated because it lacks a direct `extends` relationship to at least one other interface. DTDL v4 requires each interface to explicitly extend another (except root interfaces marked with `@extends` of `null` or an empty array).\n\n**Fix**: Add an `extends` property linking it to a valid parent interface, or explicitly declare it as a root interface.\n\n**Corrected DTDL snippet** (as root interface):\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationController;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [],\n  \"contents\": [ ... ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 4,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:GrapeMonitor;1\",\"dtmi:agriculture:vineyard:GrapeMonitor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:GrapeMonitor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:GrapeMonitor;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of a single, connected model graph.\n\nTo fix this, you must integrate this interface into the model. The most common method is to define it as the **contents** of a component within another interface.\n\nFor example, if you have a parent interface (e.g., a VineyardSystem), add a component that references the isolated interface:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"monitor\",\n  \"schema\": \"dtmi:agriculture:vineyard:GrapeMonitor;1\"\n}\n```\n\nPlace this component inside the parent interface's `contents`. Ensure the parent interface is the root or is itself connected to the model root.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 5,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasVineyardPlots\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `hasVineyardPlots`; Referenced target interface `dtmi:agriculture:vineyard:VineyardPlot;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the relationship `hasVineyardPlots` references a target interface (`dtmi:agriculture:vineyard:VineyardPlot;1`) that is not defined within the model or its dependencies. This is a common DTDL validation error when the referenced interface is missing.\n\n**Root Cause:** The target interface is either not included in the model's `@context` or not defined in any imported model.\n\n**Fix:** Ensure the target interface is available. If it's a separate model, import it using `extends` or include it in the same model. Example correction:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasVineyardPlots\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    }\n  ],\n  \"extends\": [\"dtmi:agriculture:vineyard:VineyardPlot;1\"]\n}\n```\n\nAlternatively, define the `VineyardPlot` interface in the same file or ensure it's in a properly referenced external model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 6,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasWeatherStation\"),\"dtmi:agriculture:vineyard:WeatherStation;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `hasWeatherStation`; Referenced target interface `dtmi:agriculture:vineyard:WeatherStation;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the relationship `hasWeatherStation` references a target interface (`dtmi:agriculture:vineyard:WeatherStation;1`) which is not defined within the same model or any co-modeled DTDL file. The target DTMI must be present for the relationship to be valid.\n\n**Fix:** Ensure the target interface is defined. For example, add the missing `WeatherStation` interface to your model. Your corrected DTDL snippet could look like this:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:WeatherStation;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"temperature\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```\n\nAdd this interface definition to your model file (or a separate co-modeled file) before referencing it in the relationship.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 7,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasWinery\"),\"dtmi:agriculture:vineyard:Winery;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `hasWinery`; Referenced target interface `dtmi:agriculture:vineyard:Winery;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `undefined_target` error indicates that the relationship `hasWinery` references a target interface (`dtmi:agriculture:vineyard:Winery;1`) that is not defined within the current model or its imported dependencies. The referenced DTMI (Digital Twin Model Identifier) must be present.\n\nTo fix this, ensure the `Winery` interface is defined and accessible. Either:\n\n1. **Define it locally** within the same model file (if appropriate), or\n2. **Import it** correctly using the `@context` property if it's in an external model.\n\nExample corrected snippet for a local definition:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Winery;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [...]\n}\n```\n\nFor an external import, add to `@context`:\n```json\n{\n  \"@context\": [\n    \"dtmi:dtdl:context;4\",\n    \"dtmi:agriculture:vineyard;1\"\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 8,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:PestTrap;1\",\"installedIn\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `installedIn`; Referenced target interface `dtmi:agriculture:vineyard:VineyardPlot;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The `installedIn` relationship references a target interface `dtmi:agriculture:vineyard:VineyardPlot;1` that is not defined in the current model context. The validator cannot resolve this DTMI, indicating it's either missing from the model or incorrectly specified.\n\n**Fix:** Ensure the referenced target interface is defined and included in the model. If it's an external interface, it must be imported via `extends` or `component` references. Here’s a corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:example:Device;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@id\": \"installedIn\",\n      \"@type\": \"Relationship\",\n      \"name\": \"installedIn\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    }\n  ]\n}\n```\nThe model must also include the `VineyardPlot` interface definition (or reference it via `extends` from another model) for the validator to resolve the DTMI.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 9,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"installedIn\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `installedIn`; Referenced target interface `dtmi:agriculture:vineyard:VineyardPlot;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The relationship `installedIn` references a target interface (`dtmi:agriculture:vineyard:VineyardPlot;1`) that is not defined within the model or any of its explicitly imported dependencies. The validator cannot resolve this DTMI.\n\n**Fix:** Ensure the target interface is defined and accessible. The most direct solution is to add an `@import` statement for the context containing `VineyardPlot`.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@context\": [\n    \"dtmi:dtdl:context;4\",\n    {\n      \"vineyard\": \"dtmi:agriculture:vineyard;1\"\n    }\n  ],\n  \"@id\": \"dtmi:example:MyComponent;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"installedIn\",\n      \"target\": \"vineyard:VineyardPlot;1\"\n    }\n  ]\n}\n```\n*This imports the required context, allowing the abbreviated DTMI in the `target` property to be resolved correctly.*",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 10,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:IrrigationController;1\",\"controlsPlot\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `controlsPlot`; Referenced target interface `dtmi:agriculture:vineyard:VineyardPlot;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the relationship `controlsPlot` references a target interface (`dtmi:agriculture:vineyard:VineyardPlot;1`) that is not defined within the model or its imported dependencies. In DTDL, a relationship's `target` must resolve to a valid interface ID present in the model context.\n\n**Fix:** Ensure the `VineyardPlot` interface is defined in this model or explicitly imported. If it's in another model, add an `extends` or `contents` section to include it.\n\n**Example correction in the relationship's parent interface:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardManager;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"controlsPlot\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    }\n  ],\n  \"extends\": [\"dtmi:agriculture:vineyard:VineyardPlot;1\"]\n}\n```\nAlternatively, import the external model containing `VineyardPlot` using `@import`.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 11,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:GrapeMonitor;1\",\"monitoringPlot\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `monitoringPlot`; Referenced target interface `dtmi:agriculture:vineyard:VineyardPlot;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `undefined_target` error indicates that the relationship’s `target` property (`dtmi:agriculture:vineyard:VineyardPlot;1`) does not match any `@id` within the model or its referenced models. This target interface is missing.\n\n**Fix:** Ensure the target interface is defined in this model or is explicitly referenced via an external `extends` or `component`. If the interface exists externally, add it to the model's `extends` array.\n\nExample corrected snippet for the relationship's parent interface:\n```json\n{\n  \"@id\": \"dtmi:example:Monitor;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:VineyardPlot;1\"],\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"monitoringPlot\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 12,
+    "source": "all_errors.json",
+    "type": "command_response_schema_undefined",
+    "atom": "__debug__(\"command_response_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"badRespSchema\")",
+    "fair_prompt": "The DTDL model has a `command_response_schema_undefined` error. The affected element is: Interface ID `dtmi:example:debug:SchemaErrors;1`; Command name `badRespSchema`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates the command `badRespSchema` lacks a defined response schema. DTDL commands require a `response` property with a schema defining the output.\n\n**Fix:** Add a `response` object containing a valid schema (e.g., `string`, `integer`, or an `object`). Here’s the corrected snippet for the command within the interface:\n\n```json\n{\n    \"@type\": \"Command\",\n    \"name\": \"badRespSchema\",\n    \"response\": {\n        \"@type\": \"Schema\",\n        \"schema\": \"string\"\n    }\n}\n```\n\nEnsure the `@type` is `Command` and the schema is a valid DTDL type.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 13,
+    "source": "all_errors.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"badReqSchema\")",
+    "fair_prompt": "The DTDL model has a `command_request_schema_undefined` error. The affected element is: Interface ID `dtmi:example:debug:SchemaErrors;1`; Command name `badReqSchema`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the command `badReqSchema` has an `@type` of \"Command\" but lacks the required `request` property with a `schema`. In DTDL v4, a Command must define a `request` schema if it expects input parameters.\n\nTo fix, add a `request` property containing a valid schema (e.g., a primitive type or object). Example corrected DTDL snippet for the command:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"badReqSchema\",\n      \"request\": {\n        \"schema\": \"string\"\n      }\n    }\n  ]\n}\n```\n\nEnsure the `schema` value conforms to DTDL schema types (string, integer, object, etc.).",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 14,
+    "source": "all_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:example:debug:Root;1\",\"dtmi:example:debug:Root;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:example:debug:Root;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:example:debug:Root;1` is not referenced by any other component, relationship, or property, making it isolated. In DTDL v4, all interfaces must be part of the model graph.\n\nTo fix, ensure this interface is referenced. For example, if it's a root interface, extend it from another interface using `extends`, or include it as a component within another interface.\n\n**Fix Example:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:Parent;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"rootComponent\",\n      \"schema\": \"dtmi:example:debug:Root;1\"\n    }\n  ]\n}\n```\nThis adds the isolated interface as a component, integrating it into the model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 15,
+    "source": "all_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:example:debug:IsolatedInterface;1\",\"dtmi:example:debug:IsolatedInterface;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:example:debug:IsolatedInterface;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:**  \nThe interface `dtmi:example:debug:IsolatedInterface;1` is not referenced by any other component, relationship, or property in the model. In DTDL v4, all interfaces must be reachable from the root interface(s) via `component`, `relationship`, or `property` references.\n\n**Fix:**  \nAdd a reference to the isolated interface from another interface. For example, include it as a component in your root interface:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:RootInterface;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"debugComponent\",\n      \"schema\": \"dtmi:example:debug:IsolatedInterface;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 16,
+    "source": "all_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:example:debug:SchemaErrors;1\",\"emptyObject\")",
+    "fair_prompt": "The DTDL model has a `object_no_fields` error. The affected element is: Interface ID `dtmi:example:debug:SchemaErrors;1`; Element name `emptyObject`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the `emptyObject` schema uses the `Object` type but lacks any defined fields. In DTDL v4, an `Object` schema must have at least one field defined in its `fields` property.\n\n**Fix:** Add at least one field to the `emptyObject` schema. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"exampleProperty\",\n      \"schema\": {\n        \"@type\": \"Object\",\n        \"fields\": [\n          {\n            \"name\": \"requiredField\",\n            \"schema\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```\n\nReplace `\"requiredField\"` and `\"string\"` with appropriate names and types for your use case.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 17,
+    "source": "all_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:example:debug:SchemaErrors;1\",\"badSchema\")",
+    "fair_prompt": "The DTDL model has a `enum_no_values` error. The affected element is: Interface ID `dtmi:example:debug:SchemaErrors;1`; Element name `badSchema`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error `enum_no_values` indicates that an `enum` schema within `badSchema` is defined but has no enumerated values. In DTDL v4, an `enum` must contain at least one `enumValue`.\n\n**Root Cause:** The `enum` schema is likely defined with an empty `enumValues` array or the property is missing entirely.\n\n**Fix:** Add at least one valid `enumValue` to the `enum` schema. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"badSchema\",\n      \"schema\": {\n        \"@type\": \"Enum\",\n        \"valueSchema\": \"string\",\n        \"enumValues\": [\n          { \"name\": \"ValidOption\", \"enumValue\": \"option1\" }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 18,
+    "source": "all_errors.json",
+    "type": "property_schema_undefined",
+    "atom": "__debug__(\"property_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"unknownSchema\")",
+    "fair_prompt": "The DTDL model has a `property_schema_undefined` error. The affected element is: Interface ID `dtmi:example:debug:SchemaErrors;1`; Property name `unknownSchema`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the property `unknownSchema` references a schema that is not defined in the model. In DTDL v4, a property's `schema` must be a defined DTDL type (e.g., `string`, `integer`, a defined `Object`, or an `Enum`).\n\n**Root Cause:** The `schema` value for property `unknownSchema` is likely an undefined or misspelled type identifier.\n\n**Fix:** Replace the undefined schema with a valid DTDL schema. For example, if the property should hold a string:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"unknownSchema\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\n\nAlternatively, define a complex schema like an `Object` within the interface contents before referencing it.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 19,
+    "source": "all_errors.json",
+    "type": "deep_extends_chain",
+    "atom": "__debug__(\"deep_extends_chain\",\"dtmi:example:debug:DeepE;1\",\"dtmi:example:debug:DeepE;1\")",
+    "fair_prompt": "The DTDL model has a `deep_extends_chain` error. The affected element is: Interface ID `dtmi:example:debug:DeepE;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates a circular inheritance chain in the DTDL model. Interface `dtmi:example:debug:DeepE;1` directly or indirectly extends itself, violating DTDL's rule against inheritance cycles.\n\nTo fix, you must break the cycle. Identify all interfaces in the chain (e.g., `DeepE` extends `DeepD`, which extends `DeepC`, which eventually extends `DeepE` again). Remove or change one `extends` relationship so no path leads back to the starting interface.\n\nFor example, if `dtmi:example:debug:DeepE;1` incorrectly extends `dtmi:example:debug:DeepD;1`, and that creates a loop, change `DeepE` to not extend any interface or to extend a different, non-cyclic interface.\n\n**Corrected snippet for `DeepE`:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:DeepE;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 20,
+    "source": "all_errors.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:example:debug:InheritedConflict;1\",\"sharedName\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:example:debug:InheritedConflict;1`; Conflicting name `sharedName`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:example:debug:InheritedConflict;1` inherits from one or more other interfaces, and multiple inherited interfaces define a property, command, or relationship with the same name `sharedName`. DTDL v4 prohibits this ambiguity.\n\n**Root Cause:** Multiple parent interfaces contain an element with the identifier `sharedName`.\n\n**Fix:** Rename the conflicting elements in the parent interfaces to be unique, or restructure the inheritance hierarchy. For example, if two parent interfaces define a property `sharedName`, change one:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:ParentA;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"sharedName\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\nChange `sharedName` in `ParentA` to a unique name like `sharedNameA`.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 21,
+    "source": "all_errors.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:example:debug:ComponentErrors;1\",\"selfComp\")",
+    "fair_prompt": "The DTDL model has a `component_self_reference` error. The affected element is: Interface ID `dtmi:example:debug:ComponentErrors;1`; Component name `selfComp`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that a component named `selfComp` references its own containing interface (`dtmi:example:debug:ComponentErrors;1`), creating a circular dependency. In DTDL, a component's `schema` must be a different interface, not the one it's defined in.\n\n**Fix:** Change the component's `schema` to reference a separate, valid interface. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:ComponentErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"selfComp\",\n      \"schema\": \"dtmi:example:debug:AnotherInterface;1\"\n    }\n  ]\n}\n```\n\nEnsure `dtmi:example:debug:AnotherInterface;1` is defined elsewhere in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 22,
+    "source": "all_errors.json",
+    "type": "ambiguous_name_cmd",
+    "atom": "__debug__(\"ambiguous_name_cmd\",\"dtmi:example:debug:DuplicateCmd;1\",\"ambigCmdProp\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name_cmd` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateCmd;1`; Ambiguous name `ambigCmdProp`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The DTDL model contains multiple command definitions (likely `command` or `commandType` elements) within the same interface that share the same name `ambigCmdProp`. DTDL v4 requires all command names within an interface to be unique.\n\n**Fix:** Rename the duplicate commands to ensure uniqueness within the interface. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateCmd;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"ambigCmdProp1\",\n      \"commandType\": { ... }\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"ambigCmdProp2\",\n      \"commandType\": { ... }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 23,
+    "source": "all_errors.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:example:debug:DuplicateCmd;1\",\"dupCmd\")",
+    "fair_prompt": "The DTDL model has a `duplicate_command_name` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateCmd;1`; Duplicate name `dupCmd`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** In DTDL, command names within an interface must be unique. The interface `dtmi:example:debug:DuplicateCmd;1` contains multiple commands with the same name `dupCmd`.\n\n**Fix:** Rename the duplicate commands to unique names. For example:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:DuplicateCmd;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"dupCmd1\"\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"dupCmd2\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 24,
+    "source": "all_errors.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:example:debug:DuplicateRel;1\",\"ambigRelProp\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name_rel` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateRel;1`; Ambiguous name `ambigRelProp`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The DTDL model contains a relationship named `ambigRelProp` that is declared in more than one property or relationship field within the same interface (`dtmi:example:debug:DuplicateRel;1`). In DTDL, relationship names must be unique within an interface to avoid ambiguity.\n\n**Fix:** Consolidate the relationship declarations. Ensure each relationship name appears only once, either as a property with `schema: Relationship` or directly within the `relationships` array. For example, if it's declared twice, remove one and ensure the remaining declaration is correct:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateRel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"ambigRelProp\",\n      \"target\": \"dtmi:example:debug:TargetInterface;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 25,
+    "source": "all_errors.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:example:debug:CircularB;1\",\"dtmi:example:debug:CircularB;1\")",
+    "fair_prompt": "The DTDL model has a `circular_extends` error. The affected element is: Interface ID `dtmi:example:debug:CircularB;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "This DTDL error indicates a circular inheritance chain where an interface extends another interface, forming a loop that cannot be resolved. For example, `CircularB` might extend `CircularC`, which in turn extends `CircularB`.\n\n**Fix:** Break the circular dependency. Remove one of the `extends` relationships, ensuring a linear hierarchy. For instance:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:CircularB;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:example:debug:CircularA;1\"], // Changed reference\n  \"contents\": []\n}\n```\nChange `CircularB` to extend a different, non-circular interface (like `CircularA`) or remove its `extends` property entirely. Ensure all referenced interfaces are defined in the model.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 26,
+    "source": "all_errors.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:example:debug:CircularA;1\",\"dtmi:example:debug:CircularA;1\")",
+    "fair_prompt": "The DTDL model has a `circular_extends` error. The affected element is: Interface ID `dtmi:example:debug:CircularA;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The interface `dtmi:example:debug:CircularA;1` directly or indirectly extends itself, creating an inheritance loop. For example, `CircularA` might extend `CircularB`, which in turn extends `CircularA`.\n\n**Fix:** Break the circular dependency by removing or redesigning one `extends` relationship. Ensure the inheritance chain is a directed acyclic graph (DAG).\n\n**Corrected DTDL Snippet:**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:CircularA;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:debug:BaseInterface;1\", // Changed to a non-circular parent\n  \"contents\": []\n}\n```\nReplace the `extends` value with a valid interface ID that does not lead back to `CircularA`.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 27,
+    "source": "all_errors.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:example:debug:DuplicateNames;1\",\"ambigPT\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateNames;1`; Ambiguous name `ambigPT`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `ambigPT` is used for multiple elements (likely properties or telemetries) within the same interface. DTDL requires all element names within a given context to be unique.\n\n**Root Cause:** The interface `dtmi:example:debug:DuplicateNames;1` contains at least two members (e.g., two `Telemetry` or `Property` components) that both declare `\"name\": \"ambigPT\"`.\n\n**Fix:** Rename the duplicate elements to be unique. For example:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"ambigPT_1\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ambigPT_2\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 28,
+    "source": "all_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:example:debug:DuplicateRel;1\",\"dupRel\")",
+    "fair_prompt": "The DTDL model has a `duplicate_relationship_name` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateRel;1`; Duplicate name `dupRel`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:**  \nIn DTDL v4, each relationship name within an interface must be unique. The interface `dtmi:example:debug:DuplicateRel;1` defines multiple relationships with the same name `dupRel`, which is invalid.\n\n**Fix:**  \nRename one of the duplicate relationships to a unique name. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateRel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"dupRel\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"dupRel2\"  // Changed to unique name\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 29,
+    "source": "all_errors.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:example:debug:ComponentErrors;1\",\"missingComp\")",
+    "fair_prompt": "The DTDL model has a `component_schema_undefined` error. The affected element is: Interface ID `dtmi:example:debug:ComponentErrors;1`; Component name `missingComp`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the component named `missingComp` references a schema that is not defined within the model. In DTDL, a component's `schema` property must be a valid reference to a defined Interface ID.\n\n**Root Cause:** The `schema` value for `missingComp` is likely an undefined DTMI, a malformed string, or points to an interface not present in the model.\n\n**Fix:** Define the referenced interface and ensure the component's `schema` property uses its correct DTMI. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:ComponentErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"missingComp\",\n      \"schema\": \"dtmi:example:debug:MissingInterface;1\"\n    }\n  ]\n}\n```\n\nYou must also include the definition for `dtmi:example:debug:MissingInterface;1` in your model submission.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 30,
+    "source": "all_errors.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:example:debug:SelfRef;1\",\"selfRel\")",
+    "fair_prompt": "The DTDL model has a `self_referencing_relationship` error. The affected element is: Interface ID `dtmi:example:debug:SelfRef;1`; Relationship name `selfRel`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates a relationship (`selfRel`) is referencing its own containing interface (`dtmi:example:debug:SelfRef;1`). In DTDL v4, a relationship's `target` property cannot be the interface that defines it, as this creates a circular self-reference.\n\n**Fix:** Change the relationship's `target` to a valid, different interface. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SelfRef;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"selfRel\",\n      \"target\": \"dtmi:example:debug:AnotherInterface;1\"\n    }\n  ]\n}\n```\n\nEnsure the target interface (`dtmi:example:debug:AnotherInterface;1`) exists in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 31,
+    "source": "all_errors.json",
+    "type": "duplicate_telemetry_name",
+    "atom": "__debug__(\"duplicate_telemetry_name\",\"dtmi:example:debug:DuplicateNames;1\",\"dupTelem\")",
+    "fair_prompt": "The DTDL model has a `duplicate_telemetry_name` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateNames;1`; Duplicate name `dupTelem`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The DTDL v4 specification prohibits two Telemetry elements with the same name within a single interface. The error indicates that `dtmi:example:debug:DuplicateNames;1` has at least two Telemetry properties both named `dupTelem`.\n\nTo fix, rename one Telemetry element to ensure uniqueness. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"dupTelem\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"dupTelemUnique\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 32,
+    "source": "all_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:example:debug:DuplicateNames;1\",\"dupProp\")",
+    "fair_prompt": "The DTDL model has a `duplicate_property_name` error. The affected element is: Interface ID `dtmi:example:debug:DuplicateNames;1`; Duplicate name `dupProp`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The DTDL model defines a property named `dupProp` more than once within the same interface (`dtmi:example:debug:DuplicateNames;1`). DTDL v4 requires all property names within a single interface to be unique.\n\n**Fix:** Remove the duplicate property definition. Keep only one `dupProp` in the interface's `contents` array.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"dupProp\",\n      \"schema\": \"double\"\n    }\n    // ... other contents, but no second 'dupProp'\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 33,
+    "source": "all_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:example:debug:ExtendsUndefined;1\",\"dtmi:example:debug:NoSuchBase;1\")",
+    "fair_prompt": "The DTDL model has a `extends_undefined` error. The affected element is: Interface ID `dtmi:example:debug:ExtendsUndefined;1`; Missing parent interface `dtmi:example:debug:NoSuchBase;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The interface `dtmi:example:debug:ExtendsUndefined;1` declares an `extends` relationship to a parent interface `dtmi:example:debug:NoSuchBase;1`, which is not defined in the model or any referenced context. DTDL requires all parent interfaces in an `extends` clause to be resolvable.\n\n**Fix:** Define the missing parent interface, or correct the `extends` value to reference a valid, existing interface ID.\n\n**Corrected DTDL Snippet:**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:NoSuchBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n},\n{\n  \"@id\": \"dtmi:example:debug:ExtendsUndefined;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:debug:NoSuchBase;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 34,
+    "source": "all_errors.json",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:example:debug:UndefinedRefs;1\",\"toMissing\",0),\"dtmi:example:debug:NoSuchTarget;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `toMissing`; Referenced target interface `dtmi:example:debug:NoSuchTarget;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause**: The relationship `toMissing` references target `dtmi:example:debug:NoSuchTarget;1`, but that DTMI is not defined in the model or any imported models. A relationship's `target` must refer to a valid interface DTMI.\n\n**Fix**: Add the missing interface definition or correct the `target` to point to a valid interface. Example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:MyTarget;1\",\n  \"@type\": \"Interface\",\n  ...\n}\n```\nThen update the relationship's `target` to `\"dtmi:example:debug:MyTarget;1\"`. Ensure the DTMI syntax is correct (ends with `;1`).",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 35,
+    "source": "industrialiot_errors.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:industrialiot:CNCMachine;1\",\"setProgram\")",
+    "fair_prompt": "The DTDL model has a `command_request_schema_undefined` error. The affected element is: Interface ID `dtmi:industrialiot:CNCMachine;1`; Command name `setProgram`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:**  \nThe command `setProgram` lacks a required `request` property with a `schema`. In DTDL v4, every command must define its expected input via a `request` schema.\n\n**Fix:**  \nAdd a `request` object containing a valid schema (e.g., a primitive type like `string` or an `object`). Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"setProgram\",\n      \"request\": {\n        \"schema\": \"string\"\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 36,
+    "source": "industrialiot_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:industrialiot:ProductionLine;1\",\"dtmi:industrialiot:ProductionLine;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:industrialiot:ProductionLine;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The validator indicates an \"isolated_interface\" error. This means the Interface `dtmi:industrialiot:ProductionLine;1` is not referenced by any other element (like another Interface, a Component, or a Model) in your model set. DTDL v4 requires interfaces to be part of a functional graph; an unreferenced interface is invalid.\n\n**Fix:** You must establish a relationship to this interface. If it's a main interface, declare it as the root of a DTDL Model. If it's a sub-interface, reference it from another interface using a `Component` or by extending it.\n\n**Example (as a root Model):**\n```json\n{\n  \"@type\": \"Interface\",\n  \"@id\": \"dtmi:industrialiot:ProductionLine;1\",\n  \"contents\": [...]\n}\n```\n**But also add a Model referencing it:**\n```json\n{\n  \"@type\": \"Model\",\n  \"@id\": \"dtmi:example:MySystem;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"line\",\n      \"schema\": \"dtmi:industrialiot:ProductionLine;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 37,
+    "source": "industrialiot_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:industrialiot:PressureSensor;1\",\"dtmi:industrialiot:PressureSensor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:industrialiot:PressureSensor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that `dtmi:industrialiot:PressureSensor;1` is an **isolated interface**, meaning it is not referenced by any other component, relationship, or command within the model. In DTDL v4, all interfaces must be integrated into the model graph.\n\n**Root cause:** This interface is defined but never used.\n\n**Fix:** Reference it from a parent interface using a `component`, `relationship`, or `command`. For example, add it as a component:\n\n```json\n{\n  \"@id\": \"dtmi:example:Device;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"sensor\",\n      \"schema\": \"dtmi:industrialiot:PressureSensor;1\"\n    }\n  ]\n}\n```\n\nEnsure the parent interface is the root or is itself properly integrated.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 38,
+    "source": "industrialiot_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:industrialiot:WeldingRobot;1\",\"jointType\")",
+    "fair_prompt": "The DTDL model has a `object_no_fields` error. The affected element is: Interface ID `dtmi:industrialiot:WeldingRobot;1`; Element name `jointType`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The DTDL validator detected an `object_no_fields` error in the `jointType` element within interface `dtmi:industrialiot:WeldingRobot;1`. This error occurs when a DTDL `Object` schema is declared but lacks the required `fields` property, which defines its structure.\n\nIn DTDL v4, an `Object` schema must explicitly list its constituent fields. The root cause is that `jointType` is likely defined as an `Object` without any `fields` array.\n\n**Concrete Fix:** Ensure the `jointType` schema includes a `fields` property. For example:\n\n```json\n{\n  \"@type\": \"Property\",\n  \"name\": \"jointType\",\n  \"schema\": {\n    \"@type\": \"Object\",\n    \"fields\": [\n      {\n        \"name\": \"angle\",\n        \"schema\": \"double\"\n      }\n    ]\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 39,
+    "source": "industrialiot_errors.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:industrialiot:WeldingRobot;1\",\"machineId\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:industrialiot:WeldingRobot;1`; Conflicting name `machineId`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface `dtmi:industrialiot:WeldingRobot;1` inherits from one or more other interfaces. At least two of these parent interfaces define a property, command, or relationship with the same name `machineId`. DTDL prohibits this naming conflict in inheritance.\n\n**Fix:** Rename the conflicting `machineId` member in one of the parent interfaces or in this interface itself. For example, if modifying this interface, you could rename the property locally:\n\n```json\n{\n  \"@id\": \"dtmi:industrialiot:WeldingRobot;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:example:BaseMachine;1\", \"dtmi:example:Asset;1\"],\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"welderMachineId\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\n\nRemove the original `machineId` from this interface's `contents` if it was defined here. Ensure all parent interfaces have uniquely named members.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 40,
+    "source": "industrialiot_errors.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:industrialiot:WeldingRobot;1\",\"self\")",
+    "fair_prompt": "The DTDL model has a `component_self_reference` error. The affected element is: Interface ID `dtmi:industrialiot:WeldingRobot;1`; Component name `self`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the component named `self` has a `schema` that references its own containing interface `dtmi:industrialiot:WeldingRobot;1`. This creates a recursive definition that cannot be instantiated. In DTDL, a component must have a schema that is a separate interface.\n\n**Fix:** Define a separate interface for the component's schema. For example:\n```json\n{\n  \"@id\": \"dtmi:industrialiot:WeldingRobotComponent;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\nThen, reference this new interface in the component:\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"self\",\n  \"schema\": \"dtmi:industrialiot:WeldingRobotComponent;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 41,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:industrialiot:CNCMachine;1\",\"setProgram\")",
+    "fair_prompt": "The DTDL model has a `duplicate_command_name` error. The affected element is: Interface ID `dtmi:industrialiot:CNCMachine;1`; Duplicate name `setProgram`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The DTDL model contains two `Command` elements within the same interface that share the same name `setProgram`. DTDL requires that all `Command` names within a single interface be unique.\n\n**Fix:** Ensure each `Command` within the interface `dtmi:industrialiot:CNCMachine;1` has a distinct name. For example, if you have two commands for setting different program types, rename one:\n\n```json\n{\n  \"@type\": \"Command\",\n  \"name\": \"setProductionProgram\"\n}\n```\n\nThe other command can remain `setProgram`. Ensure all other `Command` names in the interface are also unique.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 42,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:industrialiot:ProductionLine;1\",\"hasMachine\")",
+    "fair_prompt": "The DTDL model has a `duplicate_relationship_name` error. The affected element is: Interface ID `dtmi:industrialiot:ProductionLine;1`; Duplicate name `hasMachine`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface defines multiple `@type: \"Relationship\"` elements with the same `name: \"hasMachine\"`. Relationship names must be unique within an interface.\n\n**Fix:** Rename one of the relationships. For example, if one points to a specific machine type, rename it to `hasConveyorMachine`. The corrected DTDL snippet:\n\n```json\n{\n  \"@id\": \"dtmi:industrialiot:ProductionLine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasMachine\",\n      \"target\": \"dtmi:industrialiot:Machine;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasConveyorMachine\",\n      \"target\": \"dtmi:industrialiot:Conveyor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 43,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:industrialiot:CNCMachine;1\",\"machineId\")",
+    "fair_prompt": "The DTDL model has a `duplicate_property_name` error. The affected element is: Interface ID `dtmi:industrialiot:CNCMachine;1`; Duplicate name `machineId`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The DTDL interface `dtmi:industrialiot:CNCMachine;1` contains two distinct elements (likely a `Property` and a `Telemetry`, or two `Properties`) that both use the name `machineId`. In DTDL, the `name` field must be unique within the scope of an interface.\n\n**Fix:** Rename one of the elements. For example, if you have a writable `Property` and a read-only `Telemetry` for the same identifier, differentiate their names.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"machineId\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"machineIdSignal\", // Renamed\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 44,
+    "source": "industrialiot_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:industrialiot:CNCMachine;1\",\"dtmi:industrialiot:BaseAsset;1\")",
+    "fair_prompt": "The DTDL model has a `extends_undefined` error. The affected element is: Interface ID `dtmi:industrialiot:CNCMachine;1`; Missing parent interface `dtmi:industrialiot:BaseAsset;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The interface `dtmi:industrialiot:CNCMachine;1` declares an `extends` relationship to a parent interface `dtmi:industrialiot:BaseAsset;1`, but this parent interface is not defined within the model or any imported context. The validator cannot resolve this reference.\n\n**Fix:** You must either:\n1.  **Define the missing parent interface** within your model or a referenced model.\n2.  **Remove the `extends` clause** if the inheritance is not required.\n\n**Corrected DTDL Snippet (Option 1):**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:industrialiot:BaseAsset;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:industrialiot:BaseAsset;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 45,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:Floor;1\",\"dtmi:smartbuilding:Floor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:smartbuilding:Floor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** DTDL v4 prohibits interfaces with `@type` of `Interface` from being \"isolated.\" This means an Interface must be referenced by another element (e.g., a component or relationship) within the model.\n\n**Fix:** Ensure the interface is referenced elsewhere in the model. Example: add a component referencing it in another interface.\n\n**Example Snippet (in a parent interface):**\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"floorComponent\",\n  \"schema\": \"dtmi:smartbuilding:Floor;1\"\n}\n```\nInclude this component definition within another interface in the same model file. If no parent exists, you must create one or embed the `Floor` interface as a component schema within a root interface.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 46,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:HVACUnit;1\",\"dtmi:smartbuilding:HVACUnit;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:smartbuilding:HVACUnit;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `isolated_interface` error indicates the interface `dtmi:smartbuilding:HVACUnit;1` is defined but never referenced (extended or contained) by any other component or model. To resolve this, integrate the interface into your model hierarchy.\n\nFor example, if you have a parent HVAC model, extend it:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:HVACSystem;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:smartbuilding:HVACUnit;1\"],\n  \"contents\": []\n}\n```\n\nAlternatively, use it as a component within another interface:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Floor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"hvacUnit\",\n      \"schema\": \"dtmi:smartbuilding:HVACUnit;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 47,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:EnergyMeter;1\",\"dtmi:smartbuilding:EnergyMeter;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:smartbuilding:EnergyMeter;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `isolated_interface` error indicates that the interface `dtmi:smartbuilding:EnergyMeter;1` is not referenced by any other component in the model. In DTDL, all interfaces must be part of a composition hierarchy, either as a root-level interface or referenced via a `component` relationship.\n\nTo fix this, you must integrate the interface. If it's a top-level capability, ensure it's the root interface of your model file. If it's a sub-interface, add a `component` property in a parent interface that references it.\n\n**Example fix (as a component):**\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:BuildingEquipment;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"meter\",\n      \"schema\": \"dtmi:smartbuilding:EnergyMeter;1\"\n    }\n  ]\n}\n```\nEnsure the parent interface exists and the referenced ID matches exactly.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 48,
+    "source": "smartbuilding_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:smartbuilding:HVACUnit;1\",\"operatingMode\")",
+    "fair_prompt": "The DTDL model has a `enum_no_values` error. The affected element is: Interface ID `dtmi:smartbuilding:HVACUnit;1`; Element name `operatingMode`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the `operatingMode` property, defined as an `enum` schema, has no enumerated values. In DTDL v4, an `enum` must contain at least one valid `enumValue`.\n\n**Fix:** Add one or more `enumValue` entries within the `operatingMode` schema. Each value must have a unique `name` and a numeric `enumValue`.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:HVACUnit;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"operatingMode\",\n      \"schema\": {\n        \"@type\": \"Enum\",\n        \"valueSchema\": \"string\",\n        \"enumValues\": [\n          { \"name\": \"Off\", \"enumValue\": 0 },\n          { \"name\": \"Cooling\", \"enumValue\": 1 }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 49,
+    "source": "smartbuilding_errors.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:smartbuilding:Floor;1\",\"area\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name` error. The affected element is: Interface ID `dtmi:smartbuilding:Floor;1`; Ambiguous name `area`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the element name `area` is ambiguous within the Interface `dtmi:smartbuilding:Floor;1`. In DTDL, an \"element name\" refers to a property, command, or component within an interface. This means `area` is declared more than once—for example, as both a `Property` and a `Component`—or it's duplicated in the same category.\n\nFix: Ensure each element name is unique within the interface. For instance, rename one of the elements or remove a duplicate. Corrected DTDL snippet:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Floor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"floorArea\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Component\",\n      \"name\": \"area\",\n      \"schema\": \"dtmi:example:Space;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 50,
+    "source": "smartbuilding_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:smartbuilding:Floor;1\",\"hasRoom\")",
+    "fair_prompt": "The DTDL model has a `duplicate_relationship_name` error. The affected element is: Interface ID `dtmi:smartbuilding:Floor;1`; Duplicate name `hasRoom`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface `dtmi:smartbuilding:Floor;1` contains two or more `relationship` elements with the same value for the required `name` property. Relationship names must be unique within an interface.\n\n**Fix:** Rename one of the duplicate `hasRoom` relationships. For example:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Floor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasRoom\",\n      \"target\": \"dtmi:smartbuilding:Room;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasAdjacentRoom\", // Changed name\n      \"target\": \"dtmi:smartbuilding:Room;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 51,
+    "source": "smartbuilding_errors.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:smartbuilding:Room;1\",\"connectedTo\")",
+    "fair_prompt": "The DTDL model has a `self_referencing_relationship` error. The affected element is: Interface ID `dtmi:smartbuilding:Room;1`; Relationship name `connectedTo`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the relationship `connectedTo` within `dtmi:smartbuilding:Room;1` has a `target` property that references its own containing interface. This creates a circular self-reference, which is invalid in DTDL v4.\n\nTo fix, ensure the relationship's `target` points to a different, valid interface. For example, if rooms connect to corridors, define a `Corridor` interface and target that.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Room;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"connectedTo\",\n      \"target\": \"dtmi:smartbuilding:Corridor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 52,
+    "source": "smartbuilding_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:smartbuilding:HVACUnit;1\",\"unitId\")",
+    "fair_prompt": "The DTDL model has a `duplicate_property_name` error. The affected element is: Interface ID `dtmi:smartbuilding:HVACUnit;1`; Duplicate name `unitId`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** In DTDL v4, properties in an interface must have unique names. The interface `dtmi:smartbuilding:HVACUnit;1` contains two properties (or fields) both named `unitId`, which violates this rule.\n\n**Fix:** Rename one of the duplicate properties to a distinct name. For example, change one `unitId` to `serialNumber` or `identifier`. Ensure the new name is also unique within that interface.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:HVACUnit;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"unitId\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"serialNumber\",  // Renamed duplicate\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 53,
+    "source": "smartbuilding_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:smartbuilding:HVACUnit;1\",\"dtmi:smartbuilding:BaseEquipment;1\")",
+    "fair_prompt": "The DTDL model has a `extends_undefined` error. The affected element is: Interface ID `dtmi:smartbuilding:HVACUnit;1`; Missing parent interface `dtmi:smartbuilding:BaseEquipment;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** Interface `dtmi:smartbuilding:HVACUnit;1` declares an `extends` property referencing `dtmi:smartbuilding:BaseEquipment;1`, but the parent interface is not present in the model (or the file being validated). In DTDL, all referenced interfaces must be defined.\n\n**Fix:** Define the missing parent interface in the same model file or ensure it's included in the parsing context. Example corrected DTDL snippet (JSON-LD):\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:BaseEquipment;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    // Add properties, components, etc., as needed\n  ]\n}\n{\n  \"@id\": \"dtmi:smartbuilding:HVACUnit;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:smartbuilding:BaseEquipment;1\"],\n  \"contents\": [\n    // HVAC-specific contents\n  ]\n}\n```\n\nIf `BaseEquipment` is defined elsewhere, ensure its file is included in your validation scope.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 54,
+    "source": "smartbuilding_errors.json",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:smartbuilding:Floor;1\",\"hasRoom\",2),\"dtmi:smartbuilding:ConferenceRoom;1\")",
+    "fair_prompt": "The DTDL model has a `undefined_target` error. The affected element is: Relationship ID `hasRoom`; Referenced target interface `dtmi:smartbuilding:ConferenceRoom;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `undefined_target` error indicates that the relationship `hasRoom` specifies a target `dtmi:smartbuilding:ConferenceRoom;1`, but that interface is not defined within the model. To resolve this, you must ensure the referenced interface exists in the model or is imported.\n\nIf `ConferenceRoom;1` is defined elsewhere, add an `extends` clause with its DTMI to your model’s root. If it's within the same model, define it explicitly. Example fix for inclusion:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:ConferenceRoom;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 55,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"dtmi:agriculture:vineyard:ClimateSensor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:ClimateSensor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error \"isolated_interface\" indicates that an interface (with the ID `dtmi:agriculture:vineyard:ClimateSensor;1`) is defined in the model but is never referenced or used within it. According to DTDL v4, interfaces must be **instantiated** to be valid—they must be referenced by a component, relationship, or command.\n\n**Fix:** Add a component (or other referencing element) that uses this interface.\n\n**Example correction (within the same model):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:MyDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"sensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:ClimateSensor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 56,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"temperature\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:ClimateSensor;1`; Ambiguous name `temperature`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `temperature` is used for multiple elements (likely a property and a telemetry) within the same interface, causing ambiguity. In DTDL v4, all names within an interface must be unique.\n\n**Fix:** Rename one of the elements. For example, if you have both a `temperature` property and a `temperature` telemetry, change one to a distinct name like `targetTemperature` or `temperatureReading`.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:ClimateSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"targetTemperature\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"temperature\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 57,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"humidity\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:ClimateSensor;1`; Ambiguous name `humidity`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `humidity` is used for multiple different elements (e.g., a property and a telemetry) within the same interface `dtmi:agriculture:vineyard:ClimateSensor;1`. DTDL requires all names within an interface to be unique.\n\nTo fix this, rename one of the elements to make each name distinct. For example, if you have both a `humidity` property and a `humidity` telemetry, rename one:\n\n```json\n{\n  \"@type\": \"Property\",\n  \"name\": \"humiditySetting\",\n  \"schema\": \"double\"\n},\n{\n  \"@type\": \"Telemetry\",\n  \"name\": \"humidity\",\n  \"schema\": \"double\"\n}\n```\n\nEnsure all names in the interface are unique.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 58,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"dtmi:agriculture:vineyard:FermentationTank;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:FermentationTank;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `isolated_interface` error indicates that the interface `dtmi:agriculture:vineyard:FermentationTank;1` is defined but is not referenced by any other component, relationship, or property within the model. In DTDL v4, all interfaces must be part of the model's compositional hierarchy.\n\nTo fix this, you must integrate the interface. The most common method is to add it as a **component** within a parent interface. For example, if this is a tank within a `Vineyard` interface, update the parent interface's DTDL:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"primaryTank\",\n      \"schema\": \"dtmi:agriculture:vineyard:FermentationTank;1\"\n    }\n  ]\n}\n```\n\nAlternatively, ensure the interface is extended by another using `extends`, or referenced in a relationship's `target`.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 59,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"volume\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name_rel` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:FermentationTank;1`; Ambiguous name `volume`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `volume` is used ambiguously within the interface `dtmi:agriculture:vineyard:FermentationTank;1`. In DTDL v4, a name must be unique across all properties, telemetries, commands, components, and relationships within the same interface. For example, you cannot have both a property and a telemetry named `volume`.\n\n**Fix:** Rename or remove the duplicate `volume` element. For instance, if you have a property and a telemetry both named `volume`, rename one (e.g., change the telemetry to `currentVolume`).\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:FermentationTank;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"volume\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"currentVolume\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 60,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"status\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name_rel` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:FermentationTank;1`; Ambiguous name `status`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `status` is used for multiple elements (likely a property and a telemetry) within the same interface, causing ambiguity. DTDL requires all element names within an interface to be unique.\n\n**Fix:** Rename one of the elements. For example, if you have both a `status` property and a `status` telemetry, change the telemetry to `statusTelemetry` or the property to `statusProperty`.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:FermentationTank;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"status\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"statusTelemetry\", // Renamed\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 61,
+    "source": "vineyard_circular_extends.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:BaseDevice;1\",\"deviceId\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:BaseDevice;1`; Conflicting name `deviceId`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface inherits from another interface that also defines a property named `deviceId`. DTDL prohibits inheriting the same property name from multiple parent interfaces (a \"inheritance name conflict\").\n\n**Fix:** Rename one of the `deviceId` properties to avoid the conflict. Choose the interface you want to modify.\n\n**Example correction (modifying the child interface):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:BaseDevice;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:example:ParentInterface;1\"],\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"baseDeviceId\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\nReplace the original `deviceId` property with `baseDeviceId` (or another unique name). Ensure the parent interface's `deviceId` property remains if needed.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 62,
+    "source": "vineyard_circular_extends.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartDevice;1\",\"firmwareVersion\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SmartDevice;1`; Conflicting name `firmwareVersion`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:**  \nThe interface `dtmi:agriculture:vineyard:SmartDevice;1` inherits from one or more other interfaces, and the property or telemetry named `firmwareVersion` is defined in multiple parent interfaces, causing a naming conflict. DTDL v4 forbids duplicate names across inherited contents.\n\n**Fix:**  \nRename or remove the duplicate `firmwareVersion` in one of the parent interfaces, or restructure inheritance. Example correction in a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:example:DeviceCore;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"deviceFirmwareVersion\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\n\nThen update any references to use the new name. Ensure all inherited names in `SmartDevice;1` are unique.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 63,
+    "source": "vineyard_circular_extends.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:agriculture:vineyard:SmartDevice;1\",\"dtmi:agriculture:vineyard:SmartDevice;1\")",
+    "fair_prompt": "The DTDL model has a `circular_extends` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SmartDevice;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates a circular inheritance chain: `SmartDevice` directly or indirectly extends itself. In DTDL, an interface cannot extend an interface that ultimately extends back to it.\n\n**Fix:** Break the cycle by removing or altering the `extends` relationship. For example, if `SmartDevice` extends `DeviceBase`, and `DeviceBase` extends `SmartDevice`, remove one of the `extends` links.\n\n**Corrected snippet for `SmartDevice` (assuming it should not extend anything):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\nEnsure no other interface in the model extends `SmartDevice;1` in a way that creates a loop back to it.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 64,
+    "source": "vineyard_circular_extends.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:agriculture:vineyard:BaseDevice;1\",\"dtmi:agriculture:vineyard:BaseDevice;1\")",
+    "fair_prompt": "The DTDL model has a `circular_extends` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:BaseDevice;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The issue is a circular extends chain: one interface ultimately extends itself via intermediate interfaces. This creates a contradictory inheritance hierarchy.\n\nIn DTDL v4, an `extends` property cannot cause cycles. To fix, examine each interface extending `BaseDevice` and ensure no intermediate interface also eventually extends `BaseDevice`. You must break the cycle by removing the `extends` link that closes the loop.\n\nFor example, if `dtmi:agriculture:vineyard:DeviceA;1` extends `BaseDevice` and `BaseDevice` extends `DeviceA`, remove one `extends` property. A corrected snippet for `BaseDevice`:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:BaseDevice;1\",\n  \"@type\": \"Interface\",\n  \"extends\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 65,
+    "source": "vineyard_command_schema.json",
+    "type": "command_response_schema_undefined",
+    "atom": "__debug__(\"command_response_schema_undefined\",\"dtmi:agriculture:vineyard:PumpController;1\",\"startPump\")",
+    "fair_prompt": "The DTDL model has a `command_response_schema_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PumpController;1`; Command name `startPump`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the `startPump` command is missing a required `response` schema. In DTDL v4, a command must define the structure of its response using a `schema`. This schema is mandatory for the command's `response` property.\n\n**Fix:** Add a `response` object with a `schema`. The schema can be a simple type like `string` or `integer`, or a complex object.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:PumpController;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"startPump\",\n      \"response\": {\n        \"schema\": \"string\"\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 66,
+    "source": "vineyard_command_schema.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:agriculture:vineyard:PumpController;1\",\"startPump\")",
+    "fair_prompt": "The DTDL model has a `command_request_schema_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PumpController;1`; Command name `startPump`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates the `startPump` command lacks a required `request` property. DTDL v4 requires that a command defines the schema for its input argument, even if none is required. The `request` field must be present and can be set to a null schema.\n\n**Fix:** Add a `request` property referencing an empty object schema (an object with no properties). Use `@id: dtmi:dtdl:instance:Schema:Object;4` for a null schema.\n\n**Corrected snippet:**\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:PumpController;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"startPump\",\n      \"request\": { \"@id\": \"dtmi:dtdl:instance:Schema:Object;4\" }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 67,
+    "source": "vineyard_command_schema.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PumpController;1\",\"dtmi:agriculture:vineyard:PumpController;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PumpController;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The interface is declared as `isolated_interface` but lacks necessary details for proper isolation semantics.\n\n**Actionable Fix:** Define the interface with explicit `extends` relationships and a `schematics` section to specify its operational scope and interactions.\n\n**Corrected DTDL snippet:**\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:PumpController;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:BaseController;1\"],\n  \"contents\": [],\n  \"schematics\": {\n    \"@type\": \"Operation\",\n    \"name\": \"pumpControl\"\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 68,
+    "source": "vineyard_component_self_ref.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:agriculture:vineyard:SensorHub;1\",\"primaryUnit\")",
+    "fair_prompt": "The DTDL model has a `component_self_reference` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SensorHub;1`; Component name `primaryUnit`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the component `primaryUnit` within the interface `dtmi:agriculture:vineyard:SensorHub;1` has a `schema` that references the containing interface itself, creating a circular self-reference. This is invalid in DTDL v4.\n\n**Root Cause:** The `@id` of the component's `schema` is the same as the parent interface's `@id`.\n\n**Fix:** Change the component's `schema` to reference a different, valid interface. For example:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SensorHub;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"primaryUnit\",\n      \"schema\": \"dtmi:agriculture:vineyard:SensorUnit;1\" // Correct: Reference a distinct interface\n    }\n  ]\n}\n```\n\nEnsure `dtmi:agriculture:vineyard:SensorUnit;1` is defined elsewhere in your model.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 69,
+    "source": "vineyard_component_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that interface `dtmi:agriculture:vineyard:VineyardProperty;1` is isolated—meaning it is referenced in the model but not defined within it. To resolve this, you must include the interface definition locally or ensure it is available via an external reference.\n\n**Fix 1 (Recommended):** Define the interface directly within your model file. Example:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\n\n**Fix 2:** If the interface exists in another model, use `extends` to import it:\n```json\n{\n  \"@id\": \"dtmi:example:MyInterface;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:VineyardProperty;1\"]\n}\n```\n\nEnsure the referenced model is accessible to your validator.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 70,
+    "source": "vineyard_component_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PestTrap;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the referenced interface `dtmi:agriculture:vineyard:PestTrap;1` is declared within the model but is not \"extended\" or \"contained\" by any other component, making it semantically unreachable (isolated).\n\nTo resolve this, you must make the interface a part of your twin structure. You can either:\n1. **Define a component that implements or extends it** (e.g., in another interface).\n2. **Use it as a top-level interface for a twin** (if it's intended as a standalone twin definition).\n\nFor example, add it as a component in a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Monitor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"trap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```\n\nEnsure the referenced interface is defined in the same model or is an external reference.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 71,
+    "source": "vineyard_component_undefined.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"gpsUnit\")",
+    "fair_prompt": "The DTDL model has a `component_schema_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`; Component name `gpsUnit`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the component named `gpsUnit` references a schema that is not defined within the model. In DTDL, a component's `schema` must be a defined Interface ID, a primitive DTDL type, or a complex schema defined inline.\n\n**Fix:** Define the schema for `gpsUnit`. If `gpsUnit` should be a simple telemetry property, use a primitive schema inline. For example:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"gpsUnit\",\n      \"schema\": {\n        \"@type\": \"Object\",\n        \"fields\": [\n          { \"name\": \"latitude\", \"schema\": \"double\" },\n          { \"name\": \"longitude\", \"schema\": \"double\" }\n        ]\n      }\n    }\n  ]\n}\n```\n\nAlternatively, if `gpsUnit` is a complex subsystem, define a separate Interface (e.g., `dtmi:agriculture:device:GPSUnit;1`) and reference it by ID in the `schema` field.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 72,
+    "source": "vineyard_component_undefined.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"camera\")",
+    "fair_prompt": "The DTDL model has a `component_schema_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PestTrap;1`; Component name `camera`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates a component `camera` references a schema that cannot be resolved. Likely its `@type: Component` property lacks a required `schema` field linking to a defined Interface.\n\nFix: Add a `schema` property pointing to an existing Interface ID. For example:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"camera\",\n  \"schema\": \"dtmi:agriculture:device:Camera;1\"\n}\n```\n\nEnsure the target Interface (`dtmi:agriculture:device:Camera;1`) is defined elsewhere in the model or referenced as an external DTDL Interface.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 73,
+    "source": "vineyard_deep_extends.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:Level4;1\",\"dtmi:agriculture:vineyard:Level4;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:Level4;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:Level4;1` is defined as \"isolated,\" meaning it cannot be referenced by any other interface via `extends` or `component` relationships. In DTDL v4, an interface is isolated if it is not explicitly declared as extensible or a component schema.\n\nTo fix this, you must ensure the interface is referenced correctly. If it is intended to be extended or used as a component, you must remove the `@type: Interface` isolation by explicitly defining it as a component schema within a parent interface.\n\n**Example Fix:**\nIn the parent interface, add a component that references this interface:\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"level4Component\",\n  \"schema\": \"dtmi:agriculture:vineyard:Level4;1\"\n}\n```\nEnsure the isolated interface itself is valid and not marked with any restrictive context that prevents referencing.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 74,
+    "source": "vineyard_deep_extends.json",
+    "type": "deep_extends_chain",
+    "atom": "__debug__(\"deep_extends_chain\",\"dtmi:agriculture:vineyard:Level4;1\",\"dtmi:agriculture:vineyard:Level4;1\")",
+    "fair_prompt": "The DTDL model has a `deep_extends_chain` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:Level4;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates a circular inheritance chain in your DTDL model. Interface `dtmi:agriculture:vineyard:Level4;1` likely `extends` another interface, which itself (directly or indirectly) extends back to Level4, creating an infinite loop.\n\n**Root Cause:** DTDL prohibits interfaces from extending themselves, either directly or through a chain of other interfaces.\n\n**Fix:** Review the `extends` relationships for `Level4` and all interfaces in its inheritance chain. Break the cycle by removing or modifying one of the `extends` links.\n\n**Example Correction:**\nIf `Level4` incorrectly extends `Level3`, and `Level3` extends `Level4`, remove one link:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Level4;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:agriculture:vineyard:Level3;1\",\n  ...\n}\n```\nEnsure `dtmi:agriculture:vineyard:Level3;1` does **not** extend `Level4`.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 75,
+    "source": "vineyard_duplicate_command.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"dtmi:agriculture:vineyard:IrrigationValve;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationValve;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:IrrigationValve;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of a single, connected model graph.\n\nTo fix this, you must integrate this interface. The most common method is to add it as a **component** within a parent interface (e.g., a `Vineyard` or `IrrigationSystem` interface).\n\n**Example fix for a parent interface:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSection;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"valve\",\n      \"schema\": \"dtmi:agriculture:vineyard:IrrigationValve;1\"\n    }\n  ]\n}\n```\n\nAlternatively, ensure it is the **target** of a relationship from another interface.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 76,
+    "source": "vineyard_duplicate_command.json",
+    "type": "ambiguous_name_cmd",
+    "atom": "__debug__(\"ambiguous_name_cmd\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"status\")",
+    "fair_prompt": "The DTDL model has a `ambiguous_name_cmd` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationValve;1`; Ambiguous name `status`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the name `status` is used for multiple elements within the same interface, causing ambiguity. In DTDL v4, property, command, and telemetry names must be unique within an interface.\n\nTo fix, rename the conflicting elements. For example, if you have both a property and a command named `status`, rename one. A typical pattern is to use a verb for commands.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationValve;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"status\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"requestStatusUpdate\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 77,
+    "source": "vineyard_duplicate_command.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"activate\")",
+    "fair_prompt": "The DTDL model has a `duplicate_command_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationValve;1`; Duplicate name `activate`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error occurs because a command named \"activate\" is defined twice within the same interface. In DTDL v4, command names must be unique per interface.\n\n**Fix:** Rename one of the duplicate commands within the `dtmi:agriculture:vineyard:IrrigationValve;1` interface.\n\nExample corrected snippet:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationValve;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"activateStandard\"\n      // ... other command properties\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"activateOverride\"\n      // ... other command properties\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 78,
+    "source": "vineyard_duplicate_property.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `isolated_interface` error occurs because the referenced interface (`VineyardProperty`) is not included in the same DTDL model or any referenced models. In DTDL, all interfaces must be present within the model's dependency chain (i.e., defined locally or referenced via `extends`).\n\nTo fix this, ensure the `VineyardProperty` interface is defined within the same model file or imported correctly. For example, if the interface is external, reference it using `extends`:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:MyComponent;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:VineyardProperty;1\"],\n  ...\n}\n```\n\nAlternatively, define the missing interface directly within your model:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  ...\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 79,
+    "source": "vineyard_duplicate_property.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilMoistureSensor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:SoilMoistureSensor;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of a connected model hierarchy, typically referenced via `contents` or `schemas`.\n\nTo fix, you must integrate this interface. For example, if it's a sensor in a vineyard, reference it as a component within a parent interface (like a `Vineyard` interface).\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"soilSensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:SoilMoistureSensor;1\"\n    }\n  ]\n}\n```\nEnsure the referenced interface is also defined in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 80,
+    "source": "vineyard_duplicate_property.json",
+    "type": "duplicate_telemetry_name",
+    "atom": "__debug__(\"duplicate_telemetry_name\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"soilMoisture\")",
+    "fair_prompt": "The DTDL model has a `duplicate_telemetry_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilMoistureSensor;1`; Duplicate name `soilMoisture`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that within the interface `dtmi:agriculture:vineyard:SoilMoistureSensor;1`, there are two or more `Telemetry` elements sharing the same `name` property value: `soilMoisture`. DTDL v4 requires all elements within a single interface to have unique names.\n\n**Fix:** Rename the duplicate telemetry entries to be unique. For example, if they represent different sensor readings, use distinct names like `soilMoistureA` and `soilMoistureB`.\n\n**Corrected snippet (example):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"soilMoistureA\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"soilMoistureB\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 81,
+    "source": "vineyard_duplicate_property.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"owner\")",
+    "fair_prompt": "The DTDL model has a `duplicate_property_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`; Duplicate name `owner`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The DTDL interface `dtmi:agriculture:vineyard:VineyardProperty;1` contains two distinct elements (likely properties or relationships) that both use the name `\"owner\"`. DTDL requires all element names within a single interface to be unique.\n\n**Fix:** Rename one of the duplicate `owner` elements. For example, if one represents a person and another a company, rename them to `ownerPerson` and `ownerCompany`.\n\n**Corrected DTDL Snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ownerPerson\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"ownerCompany\",\n      \"target\": \"dtmi:org:Company;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 82,
+    "source": "vineyard_duplicate_relationship.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationZone;1\",\"dtmi:agriculture:vineyard:IrrigationZone;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationZone;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:IrrigationZone;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL v4, all interfaces must be part of a connected model hierarchy.\n\nTo fix, ensure this interface is referenced. For example, if it's a component of another interface, add it there:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"zone1\",\n      \"schema\": \"dtmi:agriculture:vineyard:IrrigationZone;1\"\n    }\n  ]\n}\n```\n\nAlternatively, if it's a target for a relationship, define that relationship in another interface. This integrates the isolated interface into the model graph.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 83,
+    "source": "vineyard_duplicate_relationship.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:agriculture:vineyard:IrrigationZone;1\",\"suppliedBy\")",
+    "fair_prompt": "The DTDL model has a `duplicate_relationship_name` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationZone;1`; Duplicate name `suppliedBy`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:**  \nThe interface `dtmi:agriculture:vineyard:IrrigationZone;1` defines two or more relationships with the same name `suppliedBy`. DTDL requires all relationship names within an interface to be unique.\n\n**Fix:**  \nRename one of the relationships to a distinct name, e.g., `suppliedByPump` or `waterSource`. Ensure the `name` property is unique.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationZone;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"suppliedBy\",\n      \"target\": \"dtmi:agriculture:vineyard:WaterPump;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"suppliedByReservoir\", // Changed from duplicate \"suppliedBy\"\n      \"target\": \"dtmi:agriculture:vineyard:WaterReservoir;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 84,
+    "source": "vineyard_extends_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:VineyardProperty;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of the model's composition hierarchy.\n\nTo fix this, you must integrate this interface. The most common method is to add a `component` property within a parent interface that references it.\n\nFor example, in a parent interface (e.g., `dtmi:agriculture:vineyard:Vineyard;1`), add:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"property\",\n  \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n}\n```\n\nEnsure the parent interface is the root or is itself properly integrated. This connects the isolated interface to the model graph.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 85,
+    "source": "vineyard_extends_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PestTrap;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:PestTrap;1` is not referenced by any other component, relationship, or property within the model, making it isolated. In DTDL v4, all interfaces must be part of a connected model hierarchy.\n\nTo fix this, ensure the interface is referenced. For example, if it's a sub-interface, extend it from a parent interface using `extends`. Alternatively, include it as a component within another interface.\n\n**Fix Example (as a component):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardManager;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"trap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 86,
+    "source": "vineyard_extends_undefined.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:AgricultureBase;1\")",
+    "fair_prompt": "The DTDL model has a `extends_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`; Missing parent interface `dtmi:agriculture:vineyard:AgricultureBase;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:VineyardProperty;1` declares an `extends` relationship to a parent interface `dtmi:agriculture:vineyard:AgricultureBase;1`, but this parent interface is not defined within the model or any referenced context. The validator cannot find its definition.\n\n**Root Cause:** A missing or undefined interface that is being extended.\n\n**Fix:** You must ensure the parent interface is defined. There are two concrete solutions:\n\n1.  **Define the missing interface** in your model set.\n2.  **Correct the `extends` value** if the parent ID was mistyped.\n\n**Corrected DTDL snippet (for solution 1):**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:AgricultureBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:agriculture:vineyard:AgricultureBase;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 87,
+    "source": "vineyard_extends_undefined.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:SensorBase;1\")",
+    "fair_prompt": "The DTDL model has a `extends_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:PestTrap;1`; Missing parent interface `dtmi:agriculture:vineyard:SensorBase;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:PestTrap;1` declares an `extends` relationship to a parent interface `dtmi:agriculture:vineyard:SensorBase;1`, but that parent interface is not defined within the model or its dependencies.\n\n**Fix:** You must ensure the parent interface is defined and reachable. The most direct solution is to define the missing parent interface in your model.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:SensorBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    // Add base properties/telemetry/commands here\n  ]\n},\n{\n  \"@id\": \"dtmi:agriculture:vineyard:PestTrap;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:agriculture:vineyard:SensorBase;1\",\n  \"contents\": [ ]\n}\n```\nAlternatively, if the parent exists in another model, ensure it is included via a `dtmi:dtdl:context;4` import.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 88,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"dtmi:agriculture:vineyard:SmartSensor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SmartSensor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:SmartSensor;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of the model's composition hierarchy.\n\nTo fix this, you must integrate the interface. The most common method is to add it as a **component** within a parent interface. For example, if you have a parent interface `dtmi:agriculture:vineyard:VineyardSystem;1`, modify it to include:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"sensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:SmartSensor;1\"\n    }\n  ]\n}\n```\n\nAlternatively, ensure the interface is extended by another using `extends`, or referenced in a relationship's `target`.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 89,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"signalStrength\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SmartSensor;1`; Conflicting name `signalStrength`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:SmartSensor;1` inherits from one or more other interfaces. At least two of these parent interfaces define a property, telemetry, command, or relationship with the same name `signalStrength`. DTDL prohibits this naming conflict in inherited members.\n\n**Fix:** Rename the conflicting member in one of the parent interfaces or in this interface if it overrides one. For example, if you control the parent, change one to a distinct name like `rssi` or `networkStrength`.\n\n**Corrected DTDL snippet (example renaming in a parent):**\n```json\n{\n  \"@id\": \"dtmi:example:BaseSensor;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"networkSignalStrength\", // Renamed\n      \"schema\": \"double\"\n    }\n  ]\n}\n```\nThe inheriting interface will now resolve the single, unambiguous member.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 90,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"batteryLevel\")",
+    "fair_prompt": "The DTDL model has a `inherited_name_conflict` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SmartSensor;1`; Conflicting name `batteryLevel`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:**  \nThe interface `dtmi:agriculture:vineyard:SmartSensor;1` inherits from one or more other interfaces, and the name `batteryLevel` is defined in multiple inherited interfaces, causing a naming conflict. DTDL v4 prohibits duplicate property names across an inheritance chain.\n\n**Fix:**  \nRename the conflicting property in one of the interfaces, or restructure inheritance. For example, if `batteryLevel` is defined in a parent interface, rename it in the child interface (or vice versa) and update any references.\n\n**Corrected Snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartSensor;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:example:BaseSensor;1\"],\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"sensorBatteryLevel\",  // Renamed\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 91,
+    "source": "vineyard_isolated.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:MainController;1\",\"dtmi:agriculture:vineyard:MainController;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:MainController;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:MainController;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL, all interfaces must be part of the model's composition hierarchy.\n\nTo fix, you must integrate this interface. The most common method is to add it as a **component** within a parent interface. For example, if `dtmi:agriculture:vineyard:VineyardSystem;1` is the root interface, modify it to include:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"mainController\",\n      \"schema\": \"dtmi:agriculture:vineyard:MainController;1\"\n    }\n  ]\n}\n```\n\nEnsure the parent interface exists and is correctly defined. This links the isolated interface into the model graph.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 92,
+    "source": "vineyard_isolated.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:OrphanDevice;1\",\"dtmi:agriculture:vineyard:OrphanDevice;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:OrphanDevice;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The `isolated_interface` error indicates that an interface is defined but is never referenced by other elements (e.g., components) within the model file, creating an orphan. DTDL models should be connected.\n\nTo resolve this, you must incorporate the interface into your model's structure. If `dtmi:agriculture:vineyard:OrphanDevice;1` is intended to be a component of another interface, add a component relationship:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"deviceComponent\",\n  \"schema\": \"dtmi:agriculture:vineyard:OrphanDevice;1\"\n}\n```\n\nPlace this component block within the parent interface that should contain it. If the orphan interface is instead meant to be extended, use an `extends` relationship in another interface definition. Ensure all referenced IDs are correctly defined within the same model file or imported.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 93,
+    "source": "vineyard_schema_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilAnalyzer;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:SoilAnalyzer;1` is declared but never used (i.e., \"isolated\"). DTDL requires interfaces to be referenced within the model, typically by components or as a top-level interface with relationships/properties.\n\n**Fix:** Reference this interface within another interface. Add a component that uses it:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:MyDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"soilSensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:SoilAnalyzer;1\"\n    }\n  ]\n}\n```\n\nAlternatively, if `SoilAnalyzer` should be the main interface, ensure it has at least one content element (e.g., a property or telemetry).",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 94,
+    "source": "vineyard_schema_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"emptyObject\")",
+    "fair_prompt": "The DTDL model has a `object_no_fields` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilAnalyzer;1`; Element name `emptyObject`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The `emptyObject` property is declared as type `Object` but has no defined fields. In DTDL v4, an `Object` schema must include at least one field in its `fields` array.\n\n**Fix:** Add at least one field to the `emptyObject` schema. For example:\n\n```json\n\"emptyObject\": {\n  \"@type\": \"Property\",\n  \"name\": \"emptyObject\",\n  \"schema\": {\n    \"@type\": \"Object\",\n    \"fields\": [\n      {\n        \"name\": \"placeholder\",\n        \"schema\": \"string\"\n      }\n    ]\n  }\n}\n```\n\nIf the property isn't needed, remove it entirely. If you need a placeholder object, define at least one field with a meaningful name and schema.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 95,
+    "source": "vineyard_schema_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"emptyEnum\")",
+    "fair_prompt": "The DTDL model has a `enum_no_values` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilAnalyzer;1`; Element name `emptyEnum`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the `emptyEnum` property within the interface is defined as an `Enum` schema but lacks any enumerated values. In DTDL v4, an `Enum` must contain at least one `enumValue` to be valid.\n\n**Root Cause:** The `emptyEnum` property's schema is an `Enum` with an empty `enumValues` array.\n\n**Fix:** Add at least one valid `enumValue` to the `emptyEnum` property. For example:\n\n```json\n\"emptyEnum\": {\n  \"@type\": \"Enum\",\n  \"valueSchema\": \"string\",\n  \"enumValues\": [\n    { \"name\": \"DefaultValue\", \"enumValue\": \"value1\" }\n  ]\n}\n```\n\nEnsure the `valueSchema` (e.g., `string`, `integer`) matches the type of the `enumValue` entries.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 96,
+    "source": "vineyard_schema_errors.json",
+    "type": "property_schema_undefined",
+    "atom": "__debug__(\"property_schema_undefined\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"undefinedSchemaField\")",
+    "fair_prompt": "The DTDL model has a `property_schema_undefined` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:SoilAnalyzer;1`; Property name `undefinedSchemaField`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root cause:** The property `undefinedSchemaField` lacks a valid `schema` definition. In DTDL v4, every property must have a `schema` specifying its data type (e.g., `string`, `integer`, `double`, or a defined complex schema).\n\n**Fix:** Replace `undefinedSchemaField` with a valid property definition. For example, if it should be a numeric measurement:\n\n```json\n{\n  \"@type\": \"Property\",\n  \"name\": \"soilMoisture\",\n  \"schema\": \"double\"\n}\n```\n\nOr if it requires a complex object, define a nested schema:\n\n```json\n{\n  \"@type\": \"Property\",\n  \"name\": \"analysisResult\",\n  \"schema\": {\n    \"@type\": \"Object\",\n    \"fields\": [\n      { \"name\": \"pH\", \"schema\": \"double\" },\n      { \"name\": \"nitrogenLevel\", \"schema\": \"double\" }\n    ]\n  }\n}\n```\n\nAlways ensure the `schema` field is present and contains a DTDL v4-compliant type.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 97,
+    "source": "vineyard_self_reference.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasSisterVineyard\")",
+    "fair_prompt": "The DTDL model has a `self_referencing_relationship` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:VineyardProperty;1`; Relationship name `hasSisterVineyard`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "**Root Cause:** The relationship `hasSisterVineyard` has a `target` property that references its own containing interface (`dtmi:agriculture:vineyard:VineyardProperty;1`). This creates a direct, immediate self-reference, which is prohibited in DTDL v4.\n\n**Fix:** Change the relationship's `target` to point to a *different* interface. If the intent is to link to another instance of the same type, the target must be the interface's identifier, not the relationship's own parent.\n\n**Corrected DTDL Snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasSisterVineyard\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 98,
+    "source": "vineyard_self_reference.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:agriculture:vineyard:IrrigationController;1\",\"backupController\")",
+    "fair_prompt": "The DTDL model has a `self_referencing_relationship` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:IrrigationController;1`; Relationship name `backupController`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that a relationship named `backupController` within interface `dtmi:agriculture:vineyard:IrrigationController;1` is referencing its own parent interface as its target, creating a circular self-reference. In DTDL, relationships must point to a different component or external interface.\n\nTo fix this, change the relationship's `target` property to reference a valid, distinct interface. For example:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationController;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"backupController\",\n      \"target\": \"dtmi:agriculture:vineyard:SecondaryIrrigationController;1\"\n    }\n  ]\n}\n```\n\nEnsure the target interface (`dtmi:agriculture:vineyard:SecondaryIrrigationController;1`) exists in your model or is a valid external reference.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 99,
+    "source": "vineyard_unit_semantic.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:WeatherMonitor;1\",\"dtmi:agriculture:vineyard:WeatherMonitor;1\")",
+    "fair_prompt": "The DTDL model has a `isolated_interface` error. The affected element is: Interface ID `dtmi:agriculture:vineyard:WeatherMonitor;1`. Explain the issue and suggest one or more concrete DTDL fixes. Max 200 words.",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:WeatherMonitor;1` is not referenced by any other component or relationship in the model, making it isolated. In DTDL v4, all interfaces must be part of a connected graph, typically by being extended by another interface or referenced as a component.\n\nTo fix, ensure this interface is integrated. For example, if it's a reusable sensor interface, reference it as a component within a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"weather\",\n      \"schema\": \"dtmi:agriculture:vineyard:WeatherMonitor;1\"\n    }\n  ]\n}\n```\n\nAlternatively, have another interface extend it using `extends`. This connects it to the model graph.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  }
+]

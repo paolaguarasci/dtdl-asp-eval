@@ -1,0 +1,2091 @@
+[
+  {
+    "condition": "grounded",
+    "id": 1,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 2,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 3,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 4,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 5,
+    "type": "missing_required_property",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 6,
+    "type": "missing_required_property",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 7,
+    "type": "missing_required_property",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 8,
+    "type": "missing_required_property",
+    "fragments_found": 5,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 9,
+    "type": "missing_required_property",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 10,
+    "type": "missing_required_property",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 11,
+    "type": "missing_required_property",
+    "fragments_found": 5,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 12,
+    "type": "undefined_target",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 13,
+    "type": "undefined_target",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 14,
+    "type": "undefined_target",
+    "fragments_found": 4,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 15,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 16,
+    "type": "undefined_target",
+    "fragments_found": 5,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 17,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 18,
+    "type": "undefined_target",
+    "fragments_found": 5,
+    "result": "valid",
+    "error_class": null,
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 19,
+    "type": "command_request_schema_undefined",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 20,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 21,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 22,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 23,
+    "type": "isolated_interface",
+    "fragments_found": 6,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 24,
+    "type": "object_no_fields",
+    "fragments_found": 5,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 25,
+    "type": "inherited_name_conflict",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 26,
+    "type": "component_self_reference",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 27,
+    "type": "duplicate_command_name",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 28,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 29,
+    "type": "duplicate_property_name",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 30,
+    "type": "extends_undefined",
+    "fragments_found": 16,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 31,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 32,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 33,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 34,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 35,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 36,
+    "type": "enum_no_values",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0/schema must be string",
+      "/contents/0/schema must be equal to one of the allowed values",
+      "/contents/0/schema must have required property 'elementSchema'",
+      "/contents/0/schema/@type must be equal to constant",
+      "/contents/0/schema must have required property 'valueSchema'",
+      "/contents/0/schema/enumValues/0 must have required property 'enumValue'",
+      "/contents/0/schema/enumValues/1 must have required property 'enumValue'",
+      "/contents/0/schema must have required property 'mapKey'",
+      "/contents/0/schema must have required property 'mapValue'",
+      "/contents/0/schema must match exactly one schema in oneOf",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 37,
+    "type": "ambiguous_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 38,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 39,
+    "type": "self_referencing_relationship",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 40,
+    "type": "duplicate_property_name",
+    "fragments_found": 12,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 41,
+    "type": "extends_undefined",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 42,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 43,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 44,
+    "type": "ambiguous_name",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 45,
+    "type": "ambiguous_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 46,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 47,
+    "type": "ambiguous_name_rel",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 48,
+    "type": "ambiguous_name_rel",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 49,
+    "type": "inherited_name_conflict",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 50,
+    "type": "inherited_name_conflict",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 51,
+    "type": "circular_extends",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 52,
+    "type": "circular_extends",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 53,
+    "type": "command_response_schema_undefined",
+    "fragments_found": 4,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error",
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/request must have required property 'name'",
+      "/contents/0/request/@type must be equal to constant",
+      "/contents/0/response must have required property 'name'",
+      "/contents/0/response/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 54,
+    "type": "command_request_schema_undefined",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 55,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 56,
+    "type": "component_self_reference",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 57,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 58,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 59,
+    "type": "component_schema_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 60,
+    "type": "component_schema_undefined",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 61,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 62,
+    "type": "deep_extends_chain",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 63,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error",
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 64,
+    "type": "ambiguous_name_cmd",
+    "fragments_found": 5,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error",
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 65,
+    "type": "duplicate_command_name",
+    "fragments_found": 17,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 66,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 67,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 68,
+    "type": "duplicate_telemetry_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 69,
+    "type": "duplicate_property_name",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 70,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 71,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 6,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 72,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 73,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 74,
+    "type": "extends_undefined",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "grounded",
+    "id": 75,
+    "type": "extends_undefined",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 76,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 77,
+    "type": "inherited_name_conflict",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 78,
+    "type": "inherited_name_conflict",
+    "fragments_found": 4,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 79,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 80,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 81,
+    "type": "isolated_interface",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 82,
+    "type": "object_no_fields",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 83,
+    "type": "enum_no_values",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0/schema must be string",
+      "/contents/0/schema must be equal to one of the allowed values",
+      "/contents/0/schema must have required property 'elementSchema'",
+      "/contents/0/schema/@type must be equal to constant",
+      "/contents/0/schema must have required property 'valueSchema'",
+      "/contents/0/schema/enumValues/0 must have required property 'enumValue'",
+      "/contents/0/schema must have required property 'mapKey'",
+      "/contents/0/schema must have required property 'mapValue'",
+      "/contents/0/schema must match exactly one schema in oneOf",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 84,
+    "type": "property_schema_undefined",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 85,
+    "type": "self_referencing_relationship",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 86,
+    "type": "self_referencing_relationship",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 87,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 88,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "grounded",
+    "id": 89,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 1,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 2,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 3,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 4,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 5,
+    "type": "missing_required_property",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 6,
+    "type": "missing_required_property",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 7,
+    "type": "missing_required_property",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'name'",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 8,
+    "type": "missing_required_property",
+    "fragments_found": 12,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 9,
+    "type": "missing_required_property",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 10,
+    "type": "missing_required_property",
+    "fragments_found": 9,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 11,
+    "type": "missing_required_property",
+    "fragments_found": 2,
+    "result": "valid",
+    "error_class": null,
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 12,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'name'",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 13,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 14,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'name'",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 15,
+    "type": "undefined_target",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 16,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/1/schema must be equal to one of the allowed values",
+      "/contents/1/schema must match pattern \"^dtmi:[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?(?::[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?)*(?:;[1-9][0-9]{0,8}(?:\\.[1-9][0-9]{0,5})?)?$\"",
+      "/contents/1/schema must be object",
+      "/contents/1/schema must match exactly one schema in oneOf",
+      "/contents/1/@type must be equal to constant",
+      "/contents/1 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 17,
+    "type": "undefined_target",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 18,
+    "type": "undefined_target",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 19,
+    "type": "command_request_schema_undefined",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/request must have required property 'name'",
+      "/contents/0/response must have required property 'name'",
+      "/contents/0 must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 20,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 21,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 22,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 23,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 24,
+    "type": "object_no_fields",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/schema must match pattern \"^dtmi:[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?(?::[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?)*(?:;[1-9][0-9]{0,8}(?:\\.[1-9][0-9]{0,5})?)?$\"",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 25,
+    "type": "inherited_name_conflict",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 26,
+    "type": "component_self_reference",
+    "fragments_found": 14,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 27,
+    "type": "duplicate_command_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 28,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 29,
+    "type": "duplicate_property_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 30,
+    "type": "extends_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 31,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 32,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 33,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 34,
+    "type": "isolated_interface",
+    "fragments_found": 12,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 35,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 36,
+    "type": "enum_no_values",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0/schema must be string",
+      "/contents/0/schema must be equal to one of the allowed values",
+      "/contents/0/schema must have required property 'elementSchema'",
+      "/contents/0/schema/@type must be equal to constant",
+      "/contents/0/schema must have required property 'valueSchema'",
+      "/contents/0/schema/enumValues/0 must have required property 'enumValue'",
+      "/contents/0/schema/enumValues/1 must have required property 'enumValue'",
+      "/contents/0/schema must have required property 'mapKey'",
+      "/contents/0/schema must have required property 'mapValue'",
+      "/contents/0/schema must match exactly one schema in oneOf",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 37,
+    "type": "ambiguous_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 38,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 39,
+    "type": "self_referencing_relationship",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 40,
+    "type": "duplicate_property_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 41,
+    "type": "extends_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'name'",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 42,
+    "type": "undefined_target",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 43,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 44,
+    "type": "ambiguous_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 45,
+    "type": "ambiguous_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 46,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 47,
+    "type": "ambiguous_name_rel",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 48,
+    "type": "ambiguous_name_rel",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 49,
+    "type": "inherited_name_conflict",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 50,
+    "type": "inherited_name_conflict",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 51,
+    "type": "circular_extends",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 52,
+    "type": "circular_extends",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 53,
+    "type": "command_response_schema_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/request must have required property 'name'",
+      "/contents/0/request must have required property 'schema'",
+      "/contents/0/response must have required property 'name'",
+      "/contents/0/response must have required property 'schema'",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 54,
+    "type": "command_request_schema_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/request must have required property 'name'",
+      "/contents/0/request must have required property 'schema'",
+      "/contents/0/response must have required property 'name'",
+      "/contents/0/response must have required property 'schema'",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 55,
+    "type": "isolated_interface",
+    "fragments_found": 10,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/1 must have required property 'schema'",
+      "/contents/1/@type must be equal to constant",
+      "/contents/1/request must have required property 'name'",
+      "/contents/1/request must have required property 'schema'",
+      "/contents/1/request/@type must be equal to constant",
+      "/contents/1/response must have required property 'name'",
+      "/contents/1/response must have required property 'schema'",
+      "/contents/1/response/@type must be equal to constant",
+      "/contents/1 must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 56,
+    "type": "component_self_reference",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 57,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 58,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 59,
+    "type": "component_schema_undefined",
+    "fragments_found": 1,
+    "result": "valid",
+    "error_class": null,
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 60,
+    "type": "component_schema_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 61,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 62,
+    "type": "deep_extends_chain",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 63,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 64,
+    "type": "ambiguous_name_cmd",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 65,
+    "type": "duplicate_command_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 66,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 67,
+    "type": "isolated_interface",
+    "fragments_found": 4,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 68,
+    "type": "duplicate_telemetry_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 69,
+    "type": "duplicate_property_name",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 70,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 71,
+    "type": "duplicate_relationship_name",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 72,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 73,
+    "type": "isolated_interface",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 74,
+    "type": "extends_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 75,
+    "type": "extends_undefined",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 76,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 77,
+    "type": "inherited_name_conflict",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 78,
+    "type": "inherited_name_conflict",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 79,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "valid",
+    "error_class": null,
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 80,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 81,
+    "type": "isolated_interface",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 82,
+    "type": "object_no_fields",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 83,
+    "type": "enum_no_values",
+    "fragments_found": 3,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "/contents/0 must have required property 'name'",
+      "/contents/0 must have required property 'schema'",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0 must match exactly one schema in oneOf",
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 84,
+    "type": "property_schema_undefined",
+    "fragments_found": 0,
+    "result": "no_fragment",
+    "error_class": "no_fragment",
+    "errors": []
+  },
+  {
+    "condition": "ablation",
+    "id": 85,
+    "type": "self_referencing_relationship",
+    "fragments_found": 4,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 86,
+    "type": "self_referencing_relationship",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "wrong_context",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 87,
+    "type": "semantic_type_without_unit",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 88,
+    "type": "unit_without_semantic_type",
+    "fragments_found": 1,
+    "result": "invalid",
+    "error_class": "schema_error",
+    "errors": [
+      "/@context must be equal to constant",
+      "/@context must be array",
+      "/@context must match exactly one schema in oneOf",
+      "/contents/0/@type must be equal to constant",
+      "/contents/0/schema must be equal to one of the allowed values",
+      "/contents/0/schema must match pattern \"^dtmi:[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?(?::[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?)*(?:;[1-9][0-9]{0,8}(?:\\.[1-9][0-9]{0,5})?)?$\"",
+      "/contents/0/schema must be object",
+      "/contents/0/schema must match exactly one schema in oneOf",
+      "/contents/0 must match exactly one schema in oneOf"
+    ]
+  },
+  {
+    "condition": "ablation",
+    "id": 89,
+    "type": "isolated_interface",
+    "fragments_found": 2,
+    "result": "invalid",
+    "error_class": "parse_error",
+    "errors": [
+      "JSON parse error"
+    ]
+  }
+]

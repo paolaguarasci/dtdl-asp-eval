@@ -1,0 +1,228 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:Root;1",
+    "@type": "Interface",
+    "displayName": "Root",
+    "contents": [
+      { "@type": "Relationship", "name": "hasDuplicateNames",    "target": "dtmi:example:debug:DuplicateNames;1" },
+      { "@type": "Relationship", "name": "hasDuplicateRel",      "target": "dtmi:example:debug:DuplicateRel;1" },
+      { "@type": "Relationship", "name": "hasDuplicateCmd",      "target": "dtmi:example:debug:DuplicateCmd;1" },
+      { "@type": "Relationship", "name": "hasUndefinedRefs",     "target": "dtmi:example:debug:UndefinedRefs;1" },
+      { "@type": "Relationship", "name": "hasExtendsUndefined",  "target": "dtmi:example:debug:ExtendsUndefined;1" },
+      { "@type": "Relationship", "name": "hasSelfRef",           "target": "dtmi:example:debug:SelfRef;1" },
+      { "@type": "Relationship", "name": "hasComponentErrors",   "target": "dtmi:example:debug:ComponentErrors;1" },
+      { "@type": "Relationship", "name": "hasCircularA",         "target": "dtmi:example:debug:CircularA;1" },
+      { "@type": "Relationship", "name": "hasDeepE",             "target": "dtmi:example:debug:DeepE;1" },
+      { "@type": "Relationship", "name": "hasInheritedConflict", "target": "dtmi:example:debug:InheritedConflict;1" },
+      { "@type": "Relationship", "name": "hasSchemaErrors",      "target": "dtmi:example:debug:SchemaErrors;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:Base;1",
+    "@type": "Interface",
+    "displayName": "Base",
+    "contents": [
+      { "@type": "Property", "name": "baseId", "schema": "string" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:Parent;1",
+    "@type": "Interface",
+    "displayName": "Parent",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Property", "name": "sharedName", "schema": "string" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DuplicateNames;1",
+    "@type": "Interface",
+    "displayName": "DuplicateNames",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Property",  "name": "dupProp",  "schema": "string" },
+      { "@type": "Property",  "name": "dupProp",  "schema": "integer" },
+      { "@type": "Telemetry", "name": "dupTelem", "schema": "double" },
+      { "@type": "Telemetry", "name": "dupTelem", "schema": "float" },
+      { "@type": "Property",  "name": "ambigPT",  "schema": "string" },
+      { "@type": "Telemetry", "name": "ambigPT",  "schema": "double" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DuplicateRel;1",
+    "@type": "Interface",
+    "displayName": "DuplicateRel",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Relationship", "name": "dupRel",       "target": "dtmi:example:debug:Base;1" },
+      { "@type": "Relationship", "name": "dupRel",       "target": "dtmi:example:debug:Parent;1" },
+      { "@type": "Property",     "name": "ambigRelProp", "schema": "string" },
+      { "@type": "Relationship", "name": "ambigRelProp", "target": "dtmi:example:debug:Base;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DuplicateCmd;1",
+    "@type": "Interface",
+    "displayName": "DuplicateCmd",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Command",  "name": "dupCmd",       "request": { "name": "a", "schema": "string" } },
+      { "@type": "Command",  "name": "dupCmd",       "request": { "name": "b", "schema": "integer" } },
+      { "@type": "Property", "name": "ambigCmdProp", "schema": "string" },
+      { "@type": "Command",  "name": "ambigCmdProp", "request": { "name": "x", "schema": "string" } }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:UndefinedRefs;1",
+    "@type": "Interface",
+    "displayName": "UndefinedRefs",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Relationship", "name": "toMissing", "target": "dtmi:example:debug:NoSuchTarget;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:ExtendsUndefined;1",
+    "@type": "Interface",
+    "displayName": "ExtendsUndefined",
+    "extends": "dtmi:example:debug:NoSuchBase;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:SelfRef;1",
+    "@type": "Interface",
+    "displayName": "SelfRef",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Relationship", "name": "selfRel", "target": "dtmi:example:debug:SelfRef;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:ComponentErrors;1",
+    "@type": "Interface",
+    "displayName": "ComponentErrors",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      { "@type": "Component", "name": "missingComp", "schema": "dtmi:example:debug:NoSuchInterface;1" },
+      { "@type": "Component", "name": "selfComp",    "schema": "dtmi:example:debug:ComponentErrors;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:CircularA;1",
+    "@type": "Interface",
+    "displayName": "CircularA",
+    "extends": "dtmi:example:debug:CircularB;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:CircularB;1",
+    "@type": "Interface",
+    "displayName": "CircularB",
+    "extends": "dtmi:example:debug:CircularA;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DeepA;1",
+    "@type": "Interface",
+    "displayName": "DeepA",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DeepB;1",
+    "@type": "Interface",
+    "displayName": "DeepB",
+    "extends": "dtmi:example:debug:DeepA;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DeepC;1",
+    "@type": "Interface",
+    "displayName": "DeepC",
+    "extends": "dtmi:example:debug:DeepB;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DeepD;1",
+    "@type": "Interface",
+    "displayName": "DeepD",
+    "extends": "dtmi:example:debug:DeepC;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:DeepE;1",
+    "@type": "Interface",
+    "displayName": "DeepE",
+    "extends": "dtmi:example:debug:DeepD;1",
+    "contents": []
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:InheritedConflict;1",
+    "@type": "Interface",
+    "displayName": "InheritedConflict",
+    "extends": "dtmi:example:debug:Parent;1",
+    "contents": [
+      { "@type": "Property", "name": "sharedName", "schema": "integer" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:SchemaErrors;1",
+    "@type": "Interface",
+    "displayName": "SchemaErrors",
+    "extends": "dtmi:example:debug:Base;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "badSchema",
+        "schema": { "@type": "Enum", "valueSchema": "integer", "enumValues": [] }
+      },
+      {
+        "@type": "Property",
+        "name": "emptyObject",
+        "schema": { "@type": "Object", "fields": [] }
+      },
+      {
+        "@type": "Property",
+        "name": "unknownSchema",
+        "schema": "dtmi:example:debug:UnknownSchema;1"
+      },
+      {
+        "@type": "Command",
+        "name": "badReqSchema",
+        "request": { "name": "payload", "schema": "dtmi:example:debug:NoSuchSchema;1" }
+      },
+      {
+        "@type": "Command",
+        "name": "badRespSchema",
+        "response": { "name": "result", "schema": "dtmi:example:debug:NoSuchSchema;1" }
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:example:debug:IsolatedInterface;1",
+    "@type": "Interface",
+    "displayName": "IsolatedInterface",
+    "contents": [
+      { "@type": "Property", "name": "value", "schema": "string" }
+    ]
+  }
+]

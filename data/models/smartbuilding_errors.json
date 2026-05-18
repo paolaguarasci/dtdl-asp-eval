@@ -1,0 +1,66 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smartbuilding:Floor;1",
+    "@type": "Interface",
+    "displayName": "Floor",
+    "contents": [
+      { "@type": "Property", "name": "floorNumber", "schema": "integer" },
+      { "@type": "Relationship", "name": "hasRoom", "target": "dtmi:smartbuilding:Room;1" },
+      { "@type": "Relationship", "name": "hasRoom", "target": "dtmi:smartbuilding:ConferenceRoom;1" },
+      { "@type": "Property", "name": "area", "schema": "double" },
+      { "@type": "Telemetry", "name": "area", "schema": "double" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smartbuilding:Room;1",
+    "@type": "Interface",
+    "displayName": "Room",
+    "contents": [
+      { "@type": "Property", "name": "roomId", "schema": "string" },
+      { "@type": "Property", "name": "capacity", "schema": "integer" },
+      { "@type": "Relationship", "name": "connectedTo", "target": "dtmi:smartbuilding:Room;1" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smartbuilding:HVACUnit;1",
+    "@type": "Interface",
+    "displayName": "HVAC Unit",
+    "extends": "dtmi:smartbuilding:BaseEquipment;1",
+    "contents": [
+      { "@type": "Property", "name": "unitId", "schema": "string" },
+      { "@type": "Property", "name": "unitId", "schema": "string" },
+      {
+        "@type": "Property",
+        "name": "operatingMode",
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "string",
+          "enumValues": []
+        }
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smartbuilding:EnergyMeter;1",
+    "@type": "Interface",
+    "displayName": "Energy Meter",
+    "contents": [
+      {
+        "@type": ["Telemetry", "Power"],
+        "name": "activePower",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "voltage",
+        "schema": "double",
+        "unit": "volt"
+      },
+      { "@type": "Property", "name": "meterId", "schema": "string" }
+    ]
+  }
+]

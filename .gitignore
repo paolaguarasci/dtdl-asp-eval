@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Secrets
+.env
+.env.*
+
+# Backups and local artifacts
+*.bak
+node_modules/
+texput.log

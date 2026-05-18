@@ -1,0 +1,1724 @@
+[
+  {
+    "condition": "grounded",
+    "id": 1,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 2,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 3,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 4,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 5,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 6,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 7,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 8,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 9,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 10,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 11,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 12,
+    "type": "command_response_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 13,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 14,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 15,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 16,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 17,
+    "type": "enum_no_values",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 18,
+    "type": "property_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 19,
+    "type": "deep_extends_chain",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 20,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 21,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 22,
+    "type": "ambiguous_name_cmd",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 23,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 24,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 25,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 26,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 27,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 28,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 29,
+    "type": "component_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 30,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 31,
+    "type": "duplicate_telemetry_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 32,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 33,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 34,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 35,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 36,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 37,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 38,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 39,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 40,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 41,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 42,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 43,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 44,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 45,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 46,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 47,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 48,
+    "type": "enum_no_values",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 49,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 50,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 51,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 52,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 53,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 54,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 55,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 56,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 57,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 58,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 59,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 60,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 61,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 62,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 63,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 64,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 65,
+    "type": "command_response_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 66,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 67,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 68,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 69,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 70,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 71,
+    "type": "component_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 72,
+    "type": "component_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 73,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 74,
+    "type": "deep_extends_chain",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 75,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 76,
+    "type": "ambiguous_name_cmd",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 77,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 78,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 79,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 80,
+    "type": "duplicate_telemetry_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 81,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 82,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 83,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 84,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 85,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 86,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 87,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 88,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 89,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 90,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 91,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 92,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 93,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 94,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 95,
+    "type": "enum_no_values",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 96,
+    "type": "property_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "grounded",
+    "id": 97,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 98,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "grounded",
+    "id": 99,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 1,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 2,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 3,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 4,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 5,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 6,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 7,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 8,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 9,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 10,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 11,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 12,
+    "type": "command_response_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 13,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 14,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 15,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 16,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 17,
+    "type": "enum_no_values",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 18,
+    "type": "property_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 19,
+    "type": "deep_extends_chain",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 20,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 21,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 22,
+    "type": "ambiguous_name_cmd",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 23,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 24,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 25,
+    "type": "circular_extends",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 26,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 27,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 28,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 29,
+    "type": "component_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 30,
+    "type": "self_referencing_relationship",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 31,
+    "type": "duplicate_telemetry_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 32,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 33,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 34,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 35,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 36,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 37,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 38,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 39,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 40,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 41,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 42,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 43,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 44,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 45,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 46,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 47,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 48,
+    "type": "enum_no_values",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 49,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 50,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 51,
+    "type": "self_referencing_relationship",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 52,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 53,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 54,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 55,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 56,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 57,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 58,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 59,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 60,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 61,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 62,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 63,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 64,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 65,
+    "type": "command_response_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 66,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 67,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 68,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 69,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 70,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 71,
+    "type": "component_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 72,
+    "type": "component_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 73,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 74,
+    "type": "deep_extends_chain",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 75,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 76,
+    "type": "ambiguous_name_cmd",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 77,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 78,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 79,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 80,
+    "type": "duplicate_telemetry_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 81,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 82,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 83,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 84,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 85,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 86,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 87,
+    "type": "extends_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 88,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 89,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 90,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 91,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 92,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 93,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 94,
+    "type": "object_no_fields",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 95,
+    "type": "enum_no_values",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 96,
+    "type": "property_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 97,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 98,
+    "type": "self_referencing_relationship",
+    "judge_correct": 1
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 99,
+    "type": "isolated_interface",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 1,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 2,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 3,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 4,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 5,
+    "type": "missing_required_property",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 6,
+    "type": "missing_required_property",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 7,
+    "type": "missing_required_property",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 8,
+    "type": "missing_required_property",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 9,
+    "type": "missing_required_property",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 10,
+    "type": "missing_required_property",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 11,
+    "type": "missing_required_property",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 12,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 13,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 14,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 15,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 16,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 17,
+    "type": "undefined_target",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 18,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 19,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 20,
+    "type": "semantic_type_without_unit",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 21,
+    "type": "unit_without_semantic_type",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 22,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 23,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 24,
+    "type": "object_no_fields",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 25,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 26,
+    "type": "component_self_reference",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 27,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 28,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 29,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 30,
+    "type": "extends_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 31,
+    "type": "semantic_type_without_unit",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 32,
+    "type": "unit_without_semantic_type",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 33,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 34,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 35,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 36,
+    "type": "enum_no_values",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 37,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 38,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 39,
+    "type": "self_referencing_relationship",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 40,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 41,
+    "type": "extends_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 42,
+    "type": "undefined_target",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 43,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 44,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 45,
+    "type": "ambiguous_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 46,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 47,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 48,
+    "type": "ambiguous_name_rel",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 49,
+    "type": "inherited_name_conflict",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 50,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 51,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 52,
+    "type": "circular_extends",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 53,
+    "type": "command_response_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 54,
+    "type": "command_request_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 55,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 56,
+    "type": "component_self_reference",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 57,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 58,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 59,
+    "type": "component_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 60,
+    "type": "component_schema_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 61,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 62,
+    "type": "deep_extends_chain",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 63,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 64,
+    "type": "ambiguous_name_cmd",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 65,
+    "type": "duplicate_command_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 66,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 67,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 68,
+    "type": "duplicate_telemetry_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 69,
+    "type": "duplicate_property_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 70,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 71,
+    "type": "duplicate_relationship_name",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 72,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 73,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 74,
+    "type": "extends_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 75,
+    "type": "extends_undefined",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 76,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 77,
+    "type": "inherited_name_conflict",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 78,
+    "type": "inherited_name_conflict",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 79,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 80,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 81,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 82,
+    "type": "object_no_fields",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 83,
+    "type": "enum_no_values",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 84,
+    "type": "property_schema_undefined",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 85,
+    "type": "self_referencing_relationship",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 86,
+    "type": "self_referencing_relationship",
+    "judge_correct": 1
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 87,
+    "type": "semantic_type_without_unit",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 88,
+    "type": "unit_without_semantic_type",
+    "judge_correct": 0
+  },
+  {
+    "condition": "bare_ablation",
+    "id": 89,
+    "type": "isolated_interface",
+    "judge_correct": 0
+  }
+]

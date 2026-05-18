@@ -1,0 +1,24 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:VineyardProperty;1",
+    "@type": "Interface",
+    "displayName": "VineyardProperty",
+    "extends": "dtmi:agriculture:vineyard:AgricultureBase;1",
+    "contents": [
+      { "@type": "Property", "name": "owner", "schema": "string" },
+      { "@type": "Property", "name": "totalArea", "schema": "double" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:PestTrap;1",
+    "@type": "Interface",
+    "displayName": "PestTrap",
+    "extends": "dtmi:agriculture:vineyard:SensorBase;1",
+    "contents": [
+      { "@type": "Property", "name": "trapId", "schema": "string" },
+      { "@type": "Property", "name": "targetPest", "schema": "string" }
+    ]
+  }
+]

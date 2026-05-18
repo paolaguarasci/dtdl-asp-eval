@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbolic Analysis and LLM-Guided Debugging of Digital Twin Models with ASP Chef and DTDL</title>
+<meta name="description" content="Companion page for the MDPI Information paper on symbolic analysis and LLM-guided debugging of DTDL digital twin models with ASP Chef.">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2;
+    --accent:#0b6e4f; --bg:#fbfbf9; --code:#f4f4f0;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:64px 24px 96px}
+  header{border-bottom:1px solid var(--line); padding-bottom:32px; margin-bottom:40px}
+  .kicker{
+    font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin:0 0 14px
+  }
+  h1{font-size:30px; line-height:1.25; margin:0 0 20px; font-weight:700}
+  .authors{font-size:16px; color:var(--ink); margin:0 0 6px}
+  .venue{font-size:15px; color:var(--muted); margin:0}
+  h2{
+    font-size:14px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); margin:44px 0 14px; font-weight:600
+  }
+  p{margin:0 0 16px}
+  .abstract{
+    background:#fff; border:1px solid var(--line); border-left:3px solid var(--accent);
+    padding:22px 24px; border-radius:4px; font-size:16px; color:#2a2a2a
+  }
+  ul{margin:0 0 16px; padding-left:22px}
+  li{margin:0 0 8px}
+  code{background:var(--code); padding:2px 6px; border-radius:3px; font-size:14px}
+  pre{
+    background:var(--code); padding:16px 18px; border-radius:5px;
+    overflow:auto; font-size:14px; line-height:1.55; border:1px solid var(--line)
+  }
+  pre code{background:none; padding:0}
+  .links{display:flex; flex-wrap:wrap; gap:12px; margin:8px 0 0}
+  .links a{
+    display:inline-block; padding:10px 18px; border:1px solid var(--accent);
+    color:var(--accent); text-decoration:none; border-radius:4px;
+    font-size:15px; font-weight:600; transition:.15s
+  }
+  .links a:hover{background:var(--accent); color:#fff}
+  table{border-collapse:collapse; width:100%; font-size:15px; margin:0 0 16px}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line)}
+  th{color:var(--muted); font-weight:600; font-size:13px;
+     text-transform:uppercase; letter-spacing:.04em}
+  .num{font-variant-numeric:tabular-nums; text-align:right}
+  footer{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
+    font-size:14px; color:var(--muted)
+  }
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">MDPI Information · 2026</p>
+    <h1>Symbolic Analysis and LLM-Guided Debugging of Digital Twin Models with ASP Chef and DTDL</h1>
+    <p class="authors">Mario Alviano · Paola Guarasci</p>
+    <p class="venue">Department of Mathematics and Computer Science (DeMaCS), University of Calabria, Italy</p>
+  </header>
+
+  <h2>Abstract</h2>
+  <p class="abstract">
+    DTDL (Digital Twins Definition Language) provides no mechanism for logical
+    reasoning or constraint checking over digital twin models. We integrate DTDL
+    with ASP Chef, a web-based Answer Set Programming (ASP) platform, via a
+    structured DTDL-to-ASP mapping and three dedicated operations:
+    <code>@DTDL/Parse</code> for fact generation, <code>@DTDL/Analysis</code>
+    for structural metrics, and <code>@DTDL/Debug</code> for symbolic validation
+    with LLM-guided repair. The key design decision is that error detection is
+    symbolic and deterministic within the implemented set of constraint classes;
+    a language model is invoked only after the ASP layer has produced a concrete,
+    grounded diagnostic, keeping the correctness boundary within the symbolic
+    layer. We illustrate the framework on two agricultural use cases and report a
+    proof-of-concept assessment on 99 diagnostics spanning 21 error classes
+    across four domains.
+  </p>
+
+  <h2>Contributions</h2>
+  <ul>
+    <li>A structured, deterministic mapping from DTDL constructs to ASP facts,
+        making digital twin models amenable to declarative reasoning.</li>
+    <li>Three ASP Chef operations — <code>@DTDL/Parse</code>,
+        <code>@DTDL/Analysis</code>, <code>@DTDL/Debug</code> — covering fact
+        generation, structural metrics, and symbolic validation.</li>
+    <li>An architecture where the LLM is invoked <em>only after</em> a sound
+        symbolic diagnostic, keeping detection deterministic and the correctness
+        boundary in the symbolic layer.</li>
+    <li>A reproducible proof-of-concept evaluation (99 diagnostics, 21 error
+        classes, 4 domains) with a grounded vs. fair-ablation comparison and
+        independent multi-judge reliability analysis.</li>
+  </ul>
+
+  <h2>Headline result</h2>
+  <table>
+    <thead>
+      <tr><th>Condition</th><th class="num">json_valid</th><th class="num">judge_correct</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Grounded (full symbolic context)</td><td class="num">86%</td><td class="num">90%</td></tr>
+      <tr><td>Fair ablation (error type + entity only)</td><td class="num">75%</td><td class="num">77%</td></tr>
+    </tbody>
+  </table>
+  <p>
+    The complete grounded workflow produces materially better repair
+    suggestions than the ablation baseline; the directional effect is consistent
+    across three independent LLM judges from different model families.
+  </p>
+
+  <h2>Reproduce</h2>
+  <p>The mechanical metrics need no API key and reproduce Table 6 directly:</p>
+<pre><code>git clone https://github.com/paolaguarasci/dtdl-asp-eval
+cd dtdl-asp-eval
+uv run scripts/evaluate.py   # 86% grounded vs. 75% fair ablation
+uv run scripts/score.py      # per-type / per-domain breakdown</code></pre>
+
+  <h2>Resources</h2>
+  <div class="links">
+    <a href="https://github.com/paolaguarasci/dtdl-asp-eval">Code &amp; dataset</a>
+    <a href="https://asp-chef.alviano.net/s/WMNC2025/smart-agriculture">ASP Chef recipe — smart agriculture</a>
+    <a href="https://asp-chef.alviano.net/s/CILC2025/vineyard">ASP Chef recipe — vineyard</a>
+  </div>
+
+  <footer>
+    Companion page for the paper published in <em>Information</em> (MDPI), 2026.
+    Replication material released for academic use.
+  </footer>
+
+</div>
+</body>
+</html>

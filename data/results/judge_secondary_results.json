@@ -1,0 +1,272 @@
+[
+  {
+    "condition": "grounded",
+    "id": 99,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 21,
+    "type": "component_self_reference",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 2,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 51,
+    "type": "self_referencing_relationship",
+    "macro": "structural_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "grounded",
+    "id": 46,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 45,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 9,
+    "type": "undefined_target",
+    "macro": "reference_errors",
+    "judge1": 0,
+    "judge2": 0,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 8,
+    "type": "undefined_target",
+    "macro": "reference_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 44,
+    "type": "extends_undefined",
+    "macro": "reference_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "grounded",
+    "id": 95,
+    "type": "enum_no_values",
+    "macro": "schema_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 65,
+    "type": "command_response_schema_undefined",
+    "macro": "schema_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 23,
+    "type": "duplicate_command_name",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 60,
+    "type": "ambiguous_name_rel",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 50,
+    "type": "duplicate_relationship_name",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "grounded",
+    "id": 22,
+    "type": "ambiguous_name_cmd",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 99,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 21,
+    "type": "component_self_reference",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 2,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 51,
+    "type": "self_referencing_relationship",
+    "macro": "structural_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 46,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 45,
+    "type": "isolated_interface",
+    "macro": "structural_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 9,
+    "type": "undefined_target",
+    "macro": "reference_errors",
+    "judge1": 0,
+    "judge2": 0,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 8,
+    "type": "undefined_target",
+    "macro": "reference_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 44,
+    "type": "extends_undefined",
+    "macro": "reference_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 95,
+    "type": "enum_no_values",
+    "macro": "schema_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 65,
+    "type": "command_response_schema_undefined",
+    "macro": "schema_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 23,
+    "type": "duplicate_command_name",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 60,
+    "type": "ambiguous_name_rel",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 50,
+    "type": "duplicate_relationship_name",
+    "macro": "naming_errors",
+    "judge1": 1,
+    "judge2": 1,
+    "agree": true
+  },
+  {
+    "condition": "fair_ablation",
+    "id": 22,
+    "type": "ambiguous_name_cmd",
+    "macro": "naming_errors",
+    "judge1": 0,
+    "judge2": 1,
+    "agree": false
+  }
+]

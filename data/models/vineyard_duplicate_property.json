@@ -1,0 +1,24 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:VineyardProperty;1",
+    "@type": "Interface",
+    "displayName": "VineyardProperty",
+    "contents": [
+      { "@type": "Property", "name": "owner", "schema": "string" },
+      { "@type": "Property", "name": "totalArea", "schema": "double" },
+      { "@type": "Property", "name": "owner", "schema": "integer" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:SoilMoistureSensor;1",
+    "@type": "Interface",
+    "displayName": "SoilMoistureSensor",
+    "contents": [
+      { "@type": "Telemetry", "name": "soilMoisture", "schema": "double" },
+      { "@type": "Telemetry", "name": "soilMoisture", "schema": "integer" },
+      { "@type": "Property", "name": "sensorId", "schema": "string" }
+    ]
+  }
+]

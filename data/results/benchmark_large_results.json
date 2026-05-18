@@ -1,0 +1,32 @@
+[
+  {
+    "n_interfaces": 100,
+    "n_facts": 1406,
+    "parse_ms": 0.239,
+    "parse_stdev": 0.016,
+    "debug_ms": 7.084,
+    "debug_stdev": 1.987,
+    "analysis_ms": 8.219,
+    "analysis_stdev": 0.199
+  },
+  {
+    "n_interfaces": 150,
+    "n_facts": 2111,
+    "parse_ms": 0.2,
+    "parse_stdev": 0.093,
+    "debug_ms": 9.086,
+    "debug_stdev": 0.694,
+    "analysis_ms": 13.733,
+    "analysis_stdev": 0.304
+  },
+  {
+    "n_interfaces": 200,
+    "n_facts": 2816,
+    "parse_ms": 0.23,
+    "parse_stdev": 0.007,
+    "debug_ms": 12.442,
+    "debug_stdev": 0.876,
+    "analysis_ms": 21.315,
+    "analysis_stdev": 0.965
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:ClimateSensor;1",
+    "@type": "Interface",
+    "displayName": "Climate Sensor",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "sensorId",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "temperature",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "temperature",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "humidity",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "humidity",
+        "schema": "double"
+      }
+    ]
+  }
+]

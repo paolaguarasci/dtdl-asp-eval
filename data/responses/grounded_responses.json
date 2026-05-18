@@ -1,0 +1,1487 @@
+[
+  {
+    "id": 1,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:VineyardProperty;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship.\n\nTo fix this, either:\n1. **Reference it as a component** in another interface's `contents`.\n2. **Extend it** from another interface using `extends`.\n3. **Use it as a relationship target** in another interface.\n\nExample fix by adding it as a component:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"property\",\n      \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 2,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PestTrap;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:PestTrap;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:PestTrap;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship. To fix, either reference it from another interface or remove it if unintended.\n\n**Fix example (adding as a component):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardManager;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"trap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 3,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationController;1\",\"dtmi:agriculture:vineyard:IrrigationController;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationController;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:IrrigationController;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:IrrigationController;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship. This interface is isolated.\n\nTo fix, either:\n1. **Reference it** from another interface (e.g., as a component).\n2. **Remove it** if unintended.\n\nExample fix by adding it as a component in a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"irrigationCtrl\",\n      \"schema\": \"dtmi:agriculture:vineyard:IrrigationController;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 4,
+    "source": "vineyard_original",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:GrapeMonitor;1\",\"dtmi:agriculture:vineyard:GrapeMonitor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:GrapeMonitor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:GrapeMonitor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:GrapeMonitor;1` is defined but never used, meaning no other DTDL entity references it via `extends`, `component` schema, or relationship `target`. Interfaces must be integrated into a model hierarchy.\n\n**Fix:** Reference this interface from another interface or model. For example, add it as a component:\n\n```json\n{\n  \"@type\": \"Interface\",\n  \"@id\": \"dtmi:example:MainSystem;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"grapeMonitor\",\n      \"schema\": \"dtmi:agriculture:vineyard:GrapeMonitor;1\"\n    }\n  ]\n}\n```\n\nEnsure the referencing interface (`MainSystem`) is part of your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 5,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasVineyardPlots\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "error_string": "ERROR: Relationship 'hasVineyardPlots' references undefined interface 'dtmi:agriculture:vineyard:VineyardPlot;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: hasVineyardPlots\nReferenced target interface: dtmi:agriculture:vineyard:VineyardPlot;1\nProblem: the target interface is not defined in the model.",
+    "response": "The relationship `hasVineyardPlots` references `dtmi:agriculture:vineyard:VineyardPlot;1`, but this interface is not defined in your model. To resolve this, you must either define the target interface within the same model or ensure it is available in a referenced model.\n\n**Fix:** Add the missing interface definition. Here is a corrected DTDL snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasVineyardPlots\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    }\n  ]\n},\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardPlot;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\n\nEnsure both interfaces are included in your model array or that the target interface is imported via `extends`.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 6,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasWeatherStation\"),\"dtmi:agriculture:vineyard:WeatherStation;1\")",
+    "error_string": "ERROR: Relationship 'hasWeatherStation' references undefined interface 'dtmi:agriculture:vineyard:WeatherStation;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: hasWeatherStation\nReferenced target interface: dtmi:agriculture:vineyard:WeatherStation;1\nProblem: the target interface is not defined in the model.",
+    "response": "The error indicates that the relationship `hasWeatherStation` references a target interface (`dtmi:agriculture:vineyard:WeatherStation;1`) which is not defined in your model. To resolve this, you must ensure the target interface is explicitly included.\n\n**Fix:** Add the missing interface definition to your model's `contents` array. Here is the corrected DTDL snippet:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:WeatherStation;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    // Add properties, telemetry, etc., for the WeatherStation here\n  ]\n}\n```\n\nInclude this interface in the same model file or a referenced model that is in scope. The relationship's `target` property must exactly match this `@id`.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 7,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasWinery\"),\"dtmi:agriculture:vineyard:Winery;1\")",
+    "error_string": "ERROR: Relationship 'hasWinery' references undefined interface 'dtmi:agriculture:vineyard:Winery;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: hasWinery\nReferenced target interface: dtmi:agriculture:vineyard:Winery;1\nProblem: the target interface is not defined in the model.",
+    "response": "The error indicates that the relationship `hasWinery` references a target interface (`dtmi:agriculture:vineyard:Winery;1`) which is not defined in your model. To resolve this, you must ensure the target interface is included in your DTDL model.\n\n**Fix:** Add the missing interface definition to your model. Here’s a corrected DTDL snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Winery;1\",\n  \"@type\": \"Interface\",\n  \"displayName\": \"Winery\",\n  \"contents\": []\n}\n```\n\nIf the interface is defined elsewhere, include it via `@import` in your model’s context.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 8,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:PestTrap;1\",\"installedIn\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "error_string": "ERROR: Relationship 'installedIn' references undefined interface 'dtmi:agriculture:vineyard:VineyardPlot;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: installedIn\nReferenced target interface: dtmi:agriculture:vineyard:VineyardPlot;1\nProblem: the target interface is not defined in the model.",
+    "response": "The relationship `installedIn` references `dtmi:agriculture:vineyard:VineyardPlot;1` as its target, but this interface is not present in your model. You must define the referenced interface within the same model or ensure it is included via an extends clause or separate, imported model. To fix, add the VineyardPlot interface definition.\n\n**Example fix:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardPlot;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 9,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"installedIn\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "error_string": "ERROR: Relationship 'installedIn' references undefined interface 'dtmi:agriculture:vineyard:VineyardPlot;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: installedIn\nReferenced target interface: dtmi:agriculture:vineyard:VineyardPlot;1\nProblem: the target interface is not defined in the model.",
+    "response": "The error indicates that the relationship `installedIn` references a target interface (`dtmi:agriculture:vineyard:VineyardPlot;1`) which is not defined in your model. To resolve this, you must ensure the target interface is included in your DTDL model.\n\n**Fix:** Add the missing interface to your model's `contents` array. Here's a corrected DTDL snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:myModel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"installedIn\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    },\n    {\n      \"@id\": \"dtmi:agriculture:vineyard:VineyardPlot;1\",\n      \"@type\": \"Interface\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 10,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:IrrigationController;1\",\"controlsPlot\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "error_string": "ERROR: Relationship 'controlsPlot' references undefined interface 'dtmi:agriculture:vineyard:VineyardPlot;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: controlsPlot\nReferenced target interface: dtmi:agriculture:vineyard:VineyardPlot;1\nProblem: the target interface is not defined in the model.",
+    "response": "The error indicates that the relationship `controlsPlot` references a target interface (`dtmi:agriculture:vineyard:VineyardPlot;1`) which is not defined in your model. To resolve this, you must ensure the target interface is included in your model's `contents` or is externally resolvable.\n\n**Fix:** Add the missing interface definition to your model. Here's a corrected DTDL snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:myModel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"controlsPlot\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    },\n    {\n      \"@id\": \"dtmi:agriculture:vineyard:VineyardPlot;1\",\n      \"@type\": \"Interface\",\n      \"contents\": []\n    }\n  ]\n}\n```\n\nIf the interface is defined elsewhere, ensure it's properly imported or referenced in your model's dependencies.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 11,
+    "source": "vineyard_original",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:agriculture:vineyard:GrapeMonitor;1\",\"monitoringPlot\"),\"dtmi:agriculture:vineyard:VineyardPlot;1\")",
+    "error_string": "ERROR: Relationship 'monitoringPlot' references undefined interface 'dtmi:agriculture:vineyard:VineyardPlot;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: monitoringPlot\nReferenced target interface: dtmi:agriculture:vineyard:VineyardPlot;1\nProblem: the target interface is not defined in the model.",
+    "response": "The error indicates that the relationship `monitoringPlot` references a target interface `dtmi:agriculture:vineyard:VineyardPlot;1`, but this interface is not defined in your model. To resolve this, you must either define the `VineyardPlot` interface within your model or ensure it is available in a referenced context.\n\nIf `VineyardPlot` is defined externally, add its DTMI to the `@context` array. If you need to define it locally, include it as a component. Here’s a corrected DTDL snippet assuming local definition:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:MyModel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"monitoringPlot\",\n      \"target\": \"dtmi:agriculture:vineyard:VineyardPlot;1\"\n    },\n    {\n      \"@id\": \"dtmi:agriculture:vineyard:VineyardPlot;1\",\n      \"@type\": \"Interface\",\n      \"contents\": []\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 12,
+    "source": "all_errors.json",
+    "type": "command_response_schema_undefined",
+    "atom": "__debug__(\"command_response_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"badRespSchema\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SchemaErrors;1' command 'badRespSchema' response payload references an undefined schema\nReplace the schema with a primitive type or add the missing schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: command_response_schema_undefined\nInterface ID: dtmi:example:debug:SchemaErrors;1\nCommand name: badRespSchema\nProblem: the command response schema is not a known type.",
+    "response": "The error indicates that the command `badRespSchema` references a response schema that is not defined within the model or is not a valid DTDL schema type. In DTDL v4, a command's `response` property must specify a `schema` that is either a primitive DTDL type (like `string`, `integer`) or a defined complex type (like an `Object`).\n\nTo fix this, ensure the `response.schema` is a valid DTDL type. For example, if the response should be a string, correct the command definition as follows:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"badRespSchema\",\n      \"response\": {\n        \"schema\": \"string\"\n      }\n    }\n  ]\n}\n```\n\nReplace `\"string\"` with the appropriate schema type for your use case.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 13,
+    "source": "all_errors.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"badReqSchema\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SchemaErrors;1' command 'badReqSchema' request payload references an undefined schema\nReplace the schema with a primitive type or add the missing schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: command_request_schema_undefined\nInterface ID: dtmi:example:debug:SchemaErrors;1\nCommand name: badReqSchema\nProblem: the command request schema is not a known type.",
+    "response": "**Root cause:** The DTDL validator reports that the `request` schema of command `badReqSchema` is undefined or not a valid DTDL type reference.\n\n**Fix:** In DTDL v4, a command's `request` must reference a defined `Schema` (like `Object`, `Array`, `Map`, `Enum`, or a primitive). Ensure the `request` property points to a valid schema ID or DTDL primitive type. For example, referencing an `Object` schema defined in the same model:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"badReqSchema\",\n      \"request\": { \"@type\": \"Object\" }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 14,
+    "source": "all_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:example:debug:Root;1\",\"dtmi:example:debug:Root;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:Root;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:example:debug:Root;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:example:debug:Root;1` is defined but never used. In DTDL v4, all interfaces must be part of a connected model hierarchy, typically by being referenced via `extends`, `contents` (as a component), or as a target in a relationship.\n\nTo fix, either:\n1. **Delete it** if it's unnecessary.\n2. **Reference it** from another interface.\n\nExample fix (adding as a component):\n```json\n{\n  \"@id\": \"dtmi:example:debug:Parent;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"rootComponent\",\n      \"schema\": \"dtmi:example:debug:Root;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 15,
+    "source": "all_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:example:debug:IsolatedInterface;1\",\"dtmi:example:debug:IsolatedInterface;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:IsolatedInterface;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:example:debug:IsolatedInterface;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:example:debug:IsolatedInterface;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship. To fix, either reference it from another interface or remove it if unintended.\n\n**Fix example (adding as a component):**\n```json\n{\n  \"@id\": \"dtmi:example:debug:ParentInterface;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"myComponent\",\n      \"schema\": \"dtmi:example:debug:IsolatedInterface;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 16,
+    "source": "all_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:example:debug:SchemaErrors;1\",\"emptyObject\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SchemaErrors;1' member 'emptyObject' declares an Object schema with no fields\nAdd at least one field to the Object definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: object_no_fields\nInterface ID: dtmi:example:debug:SchemaErrors;1\nElement name: emptyObject\nProblem: the Object schema has no fields defined.",
+    "response": "The DTDL validator reports that an `Object` schema has no fields, which violates DTDL v4 because `Object` schemas require at least one field. Define one or more fields within the `Object` schema.\n\n```json\n{\n  \"@type\": \"Interface\",\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"emptyObject\",\n      \"schema\": {\n        \"@type\": \"Object\",\n        \"fields\": [\n          {\n            \"name\": \"exampleField\",\n            \"schema\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 17,
+    "source": "all_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:example:debug:SchemaErrors;1\",\"badSchema\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SchemaErrors;1' member 'badSchema' declares an Enum schema with no enumValues\nAdd at least one enumValue entry to the Enum definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: enum_no_values\nInterface ID: dtmi:example:debug:SchemaErrors;1\nElement name: badSchema\nProblem: the Enum schema has no enumValues defined.",
+    "response": "The DTDL v4 specification requires an `Enum` schema to define the `enumValues` property, which is a list of allowed values. Since `badSchema` is missing this property, it is invalid.\n\nTo fix, add the `enumValues` array within `badSchema`. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"exampleProperty\",\n      \"schema\": {\n        \"@type\": \"Enum\",\n        \"enumValues\": [\n          { \"name\": \"Value1\", \"enumValue\": 0 },\n          { \"name\": \"Value2\", \"enumValue\": 1 }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 18,
+    "source": "all_errors.json",
+    "type": "property_schema_undefined",
+    "atom": "__debug__(\"property_schema_undefined\",\"dtmi:example:debug:SchemaErrors;1\",\"unknownSchema\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SchemaErrors;1' property 'unknownSchema' references an undefined schema\nReplace the schema with a primitive type or add the missing interface/schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: property_schema_undefined\nInterface ID: dtmi:example:debug:SchemaErrors;1\nProperty name: unknownSchema\nProblem: the property schema is not a primitive type, enum, object, array, map, or known interface.",
+    "response": "The error indicates that the property `unknownSchema` references a schema type that is not recognized. DTDL v4 only allows primitive types (string, integer, etc.), `Enum`, `Object`, `Array`, `Map`, or an Interface ID. You must change the schema to a valid DTDL type.\n\n**Fix:** Replace the invalid schema with a proper DTDL type. Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SchemaErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"unknownSchema\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 19,
+    "source": "all_errors.json",
+    "type": "deep_extends_chain",
+    "atom": "__debug__(\"deep_extends_chain\",\"dtmi:example:debug:DeepE;1\",\"dtmi:example:debug:DeepE;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DeepE;1' is part of an extends chain deeper than 3 levels\nFlatten the hierarchy or extract shared members into a common base interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: deep_extends_chain\nInterface ID: dtmi:example:debug:DeepE;1\nProblem: the extends chain exceeds 3 levels of inheritance. Consider flattening the hierarchy.",
+    "response": "The DTDL v4 specification limits inheritance chains to a maximum depth of 3. Your interface `dtmi:example:debug:DeepE;1` extends a chain that exceeds this limit.\n\n**Root cause:** The interface inherits from a parent, which itself inherits from another, and so on, creating a chain longer than 3 interfaces.\n\n**Fix:** Flatten the hierarchy by moving necessary properties, components, or relationships directly into the child interfaces to reduce the inheritance depth. For example, if you have interfaces A → B → C → D, you could restructure so D inherits directly from A or B, incorporating elements from the skipped levels.\n\n**Corrected Snippet (Conceptual):**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:DeepE;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:debug:ShallowC;1\", // Now within 3-level limit\n  \"contents\": [\n    // Include properties/relationships from removed intermediate interfaces here\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 20,
+    "source": "all_errors.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:example:debug:InheritedConflict;1\",\"sharedName\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:InheritedConflict;1' redefines inherited member 'sharedName' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:example:debug:InheritedConflict;1\nConflicting name: sharedName\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "The error occurs because the interface defines an element (likely a property, command, or relationship) named `sharedName` that already exists in a parent interface. DTDL v4 prohibits overriding inherited elements.\n\nTo fix, rename the conflicting element in the child interface or remove it if redundant. For example, if `sharedName` is a property in the parent, change it in the child:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:InheritedConflict;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:debug:ParentInterface;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"uniqueSharedName\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 21,
+    "source": "all_errors.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:example:debug:ComponentErrors;1\",\"selfComp\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:ComponentErrors;1' component 'selfComp' references its own containing interface as schema\nUpdate the component schema to point to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_self_reference\nInterface ID: dtmi:example:debug:ComponentErrors;1\nComponent name: selfComp\nProblem: the component schema references the containing interface itself.",
+    "response": "The error occurs because `selfComp` references the containing interface `dtmi:example:debug:ComponentErrors;1` as its schema, which creates a circular reference. A component's schema must be a separate, independent interface.\n\n**Fix:** Define a separate interface for `selfComp` and reference it instead. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:SelfCompInterface;1\",\n  \"@type\": \"Interface\"\n}\n```\n\nThen update the component:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:ComponentErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"selfComp\",\n      \"schema\": \"dtmi:example:debug:SelfCompInterface;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 22,
+    "source": "all_errors.json",
+    "type": "ambiguous_name_cmd",
+    "atom": "__debug__(\"ambiguous_name_cmd\",\"dtmi:example:debug:DuplicateCmd;1\",\"ambigCmdProp\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateCmd;1' uses 'ambigCmdProp' as both a command and a property or telemetry\nRename the command or the property/telemetry to remove the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name_cmd\nInterface ID: dtmi:example:debug:DuplicateCmd;1\nAmbiguous name: ambigCmdProp\nProblem: the same name is used by a command and another contents element.",
+    "response": "The error arises because a command and another contents element share the same identifier `ambigCmdProp` within the same interface, causing ambiguity. DTDL v4 requires all `contents` names to be unique. To fix, rename either the command or the conflicting element. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateCmd;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"ambigCmdCommand\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ambigCmdProp\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 23,
+    "source": "all_errors.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:example:debug:DuplicateCmd;1\",\"dupCmd\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateCmd;1' has duplicate command name 'dupCmd'\nRemove or rename one of the duplicate command definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_command_name\nInterface ID: dtmi:example:debug:DuplicateCmd;1\nDuplicate name: dupCmd\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "**Root cause:** The interface `dtmi:example:debug:DuplicateCmd;1` contains two or more command definitions using the same name `dupCmd`. DTDL requires all command, property, component, and relationship names within an interface to be unique.\n\n**Fix:** Rename one or both conflicting commands to ensure uniqueness.\n\n**Corrected snippet (example):**\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateCmd;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"dupCmd1\"\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"dupCmd2\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 24,
+    "source": "all_errors.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:example:debug:DuplicateRel;1\",\"ambigRelProp\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateRel;1' uses 'ambigRelProp' as both a relationship and a property or telemetry\nRename the relationship or the property/telemetry to avoid the clash",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name_rel\nInterface ID: dtmi:example:debug:DuplicateRel;1\nAmbiguous name: ambigRelProp\nProblem: the same name is used by a relationship and another contents element.",
+    "response": "The error occurs because the name `ambigRelProp` is used for both a relationship and another contents element (like a property, component, or telemetry) within the same interface. DTDL v4 requires all content names to be unique across all types (properties, components, relationships, etc.) in an interface.\n\n**Fix:** Rename either the relationship or the other element to a unique name. For example, rename the relationship to `ambigRelPropRel`:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateRel;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"ambigRelPropRel\",\n      \"target\": \"dtmi:example:target;1\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ambigRelProp\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 25,
+    "source": "all_errors.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:example:debug:CircularB;1\",\"dtmi:example:debug:CircularB;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:CircularB;1' is part of a circular extends chain\nRemove the extends declaration that creates the cycle",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: circular_extends\nInterface ID: dtmi:example:debug:CircularB;1\nProblem: the interface is part of a cyclic extends chain, which DTDL forbids.",
+    "response": "The error occurs because `dtmi:example:debug:CircularB;1` inherits from another interface that eventually extends back to itself, creating a forbidden inheritance loop. DTDL v4 prohibits any circular extension chains to ensure well-defined models.\n\nTo fix, you must break the cycle by removing or altering one of the `extends` relationships in the chain. For example, if `CircularB` extends `CircularA`, and `CircularA` extends `CircularB`, remove one `extends` link.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:CircularB;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\nRemove the `extends` property entirely if it's part of the cycle, or change it to reference a non-cyclic interface.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 26,
+    "source": "all_errors.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:example:debug:CircularA;1\",\"dtmi:example:debug:CircularA;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:CircularA;1' is part of a circular extends chain\nRemove the extends declaration that creates the cycle",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: circular_extends\nInterface ID: dtmi:example:debug:CircularA;1\nProblem: the interface is part of a cyclic extends chain, which DTDL forbids.",
+    "response": "The error occurs because `dtmi:example:debug:CircularA;1` directly or indirectly extends itself, creating a circular inheritance chain. DTDL v4 prohibits this to avoid infinite loops in interface resolution.\n\nTo fix, review the `extends` relationships in your model. Identify and break the cycle by removing or altering one of the `extends` links. For example, if `CircularA` extends `CircularB`, and `CircularB` extends `CircularA`, change one so it does not extend the other.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:CircularA;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [],  // Remove the problematic extends reference\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 27,
+    "source": "all_errors.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:example:debug:DuplicateNames;1\",\"ambigPT\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateNames;1' uses 'ambigPT' as both a property and a telemetry\nRename one of the two to avoid the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name\nInterface ID: dtmi:example:debug:DuplicateNames;1\nAmbiguous name: ambigPT\nProblem: the same name is used by both a property and a telemetry element.",
+    "response": "The DTDL v4 specification prohibits using the same name for different types of members within the same interface. Here, `ambigPT` is used as both a `Property` and a `Telemetry`, causing an `ambiguous_name` error.\n\n**Fix:** Rename one of the elements to ensure uniqueness. For example, rename the telemetry to `ambigPT_telemetry`.\n\n**Corrected Snippet:**\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ambigPT\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"ambigPT_telemetry\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 28,
+    "source": "all_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:example:debug:DuplicateRel;1\",\"dupRel\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateRel;1' has duplicate relationship name 'dupRel'\nRemove or rename one of the duplicate relationship definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_relationship_name\nInterface ID: dtmi:example:debug:DuplicateRel;1\nDuplicate name: dupRel\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface contains multiple relationships with the same name `dupRel`. In DTDL v4, all contents (properties, telemetry, commands, relationships, components) within an interface must have unique names.\n\n**Fix:** Rename one of the duplicate relationships to a unique name. For example:\n\n```json\n\"contents\": [\n  {\n    \"@type\": \"Relationship\",\n    \"name\": \"dupRel\",\n    \"target\": \"dtmi:example:target1;1\"\n  },\n  {\n    \"@type\": \"Relationship\",\n    \"name\": \"dupRel2\",\n    \"target\": \"dtmi:example:target2;1\"\n  }\n]\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 29,
+    "source": "all_errors.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:example:debug:ComponentErrors;1\",\"missingComp\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:ComponentErrors;1' component 'missingComp' references undefined schema\nAdd missing interface definition for the component schema",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_schema_undefined\nInterface ID: dtmi:example:debug:ComponentErrors;1\nComponent name: missingComp\nProblem: the component schema does not reference a defined Interface.",
+    "response": "The component `missingComp` references a schema that is not defined in this model. In DTDL v4, a component's `schema` must be an Interface ID defined within the model (or in a referenced model).\n\n**Fix:** Define the missing Interface and reference it by its full DTMI.\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:ComponentErrors;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"missingComp\",\n      \"schema\": \"dtmi:example:debug:MissingInterface;1\"\n    }\n  ]\n}\n```\nYou must also define the Interface `dtmi:example:debug:MissingInterface;1` in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 30,
+    "source": "all_errors.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:example:debug:SelfRef;1\",\"selfRel\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:SelfRef;1' has self-referencing relationship 'selfRel'\nUpdate the relationship target to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: self_referencing_relationship\nInterface ID: dtmi:example:debug:SelfRef;1\nRelationship name: selfRel\nProblem: the relationship target points to the same interface that declares it.",
+    "response": "**Root cause:** The relationship `selfRel` has a `target` property that references the same interface (`dtmi:example:debug:SelfRef;1`) in which it is defined. This creates a circular self-reference, which is invalid in DTDL v4 because a relationship must connect two distinct interfaces.\n\n**Fix:** Change the `target` to reference a different, valid interface. For example:\n\n```json\n\"selfRel\": {\n  \"@type\": \"Relationship\",\n  \"name\": \"selfRel\",\n  \"target\": \"dtmi:example:debug:OtherInterface;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 31,
+    "source": "all_errors.json",
+    "type": "duplicate_telemetry_name",
+    "atom": "__debug__(\"duplicate_telemetry_name\",\"dtmi:example:debug:DuplicateNames;1\",\"dupTelem\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateNames;1' has duplicate telemetry name 'dupTelem'\nRemove or rename one of the duplicate telemetry definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_telemetry_name\nInterface ID: dtmi:example:debug:DuplicateNames;1\nDuplicate name: dupTelem\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface contains multiple telemetry elements with the same name `dupTelem`. DTDL v4 requires all content names (properties, telemetry, commands, components, relationships) to be unique within an interface.\n\n**Fix:** Rename one of the telemetry elements to a unique name. For example:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"dupTelem\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"dupTelem2\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 32,
+    "source": "all_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:example:debug:DuplicateNames;1\",\"dupProp\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:DuplicateNames;1' has duplicate property name 'dupProp'\nRemove or rename one of the duplicate property definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_property_name\nInterface ID: dtmi:example:debug:DuplicateNames;1\nDuplicate name: dupProp\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the DTDL interface defines a content named `dupProp` twice. DTDL requires that all content names (e.g., components, properties, commands, relationships) within a single interface be unique.\n\n**Fix:** Remove or rename one of the duplicate `dupProp` definitions. For example, rename the second property to `dupProp2`:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:DuplicateNames;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"dupProp\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"dupProp2\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 33,
+    "source": "all_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:example:debug:ExtendsUndefined;1\",\"dtmi:example:debug:NoSuchBase;1\")",
+    "error_string": "ERROR: Interface 'dtmi:example:debug:ExtendsUndefined;1' extends undefined interface 'dtmi:example:debug:NoSuchBase;1'\nAdd missing interface definition or remove the extends declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: extends_undefined\nInterface ID: dtmi:example:debug:ExtendsUndefined;1\nMissing parent interface: dtmi:example:debug:NoSuchBase;1\nProblem: the interface extends an interface not defined in this model.",
+    "response": "The error occurs because the interface `dtmi:example:debug:ExtendsUndefined;1` extends a parent interface (`dtmi:example:debug:NoSuchBase;1`) that is not defined in the model. In DTDL v4, all referenced interfaces must be present.\n\nTo fix this, ensure the parent interface is defined in the same model file. Here is the corrected DTDL JSON-LD snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:example:debug:NoSuchBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n},\n{\n  \"@id\": \"dtmi:example:debug:ExtendsUndefined;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:debug:NoSuchBase;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 34,
+    "source": "all_errors.json",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:example:debug:UndefinedRefs;1\",\"toMissing\",0),\"dtmi:example:debug:NoSuchTarget;1\")",
+    "error_string": "ERROR: Relationship 'toMissing' references undefined interface 'dtmi:example:debug:NoSuchTarget;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: toMissing\nReferenced target interface: dtmi:example:debug:NoSuchTarget;1\nProblem: the target interface is not defined in the model.",
+    "response": "The relationship **toMissing** references a target interface **dtmi:example:debug:NoSuchTarget;1** that is not defined in your model. To resolve this, ensure the referenced interface is included in your model set.\n\n**Fix:** Add the missing interface definition to your DTDL model set. Example snippet:\n\n```json\n{\n  \"@id\": \"dtmi:example:debug:NoSuchTarget;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"status\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```\n\nOnce defined, the relationship's reference will be valid.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 35,
+    "source": "industrialiot_errors.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:industrialiot:CNCMachine;1\",\"setProgram\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:CNCMachine;1' command 'setProgram' request payload references an undefined schema\nReplace the schema with a primitive type or add the missing schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: command_request_schema_undefined\nInterface ID: dtmi:industrialiot:CNCMachine;1\nCommand name: setProgram\nProblem: the command request schema is not a known type.",
+    "response": "The error indicates that the `setProgram` command's request schema is undefined or not recognized. In DTDL v4, a command's request schema must be a valid DTDL type, such as an `Object` schema or a primitive type like `string`. The schema is likely missing or incorrectly specified.\n\nTo fix, define a proper schema for the request. For example, if the command expects a program name, use a string schema. Here's the corrected snippet:\n\n```json\n{\n  \"@type\": \"Command\",\n  \"name\": \"setProgram\",\n  \"request\": {\n    \"name\": \"programName\",\n    \"schema\": \"string\"\n  }\n}\n```\n\nEnsure the schema is explicitly defined within the command's request property.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 36,
+    "source": "industrialiot_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:industrialiot:ProductionLine;1\",\"dtmi:industrialiot:ProductionLine;1\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:ProductionLine;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:industrialiot:ProductionLine;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `dtmi:industrialiot:ProductionLine;1` is defined but never used. In DTDL, an interface must be referenced (via `extends`, `component`s, or relationships) to be part of a valid model. Isolated interfaces are considered modeling errors.\n\n**Fix:** Reference this interface from another interface. For example, extend it or include it as a component:\n\n```json\n{\n  \"@id\": \"dtmi:example:Factory;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"line\",\n      \"schema\": \"dtmi:industrialiot:ProductionLine;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 37,
+    "source": "industrialiot_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:industrialiot:PressureSensor;1\",\"dtmi:industrialiot:PressureSensor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:PressureSensor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:industrialiot:PressureSensor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is unused in your DTDL model. To correct this, add a reference to it elsewhere, such as within a component relationship. Below is a snippet showing a component referencing the interface:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"pressureSensorComponent\",\n  \"schema\": \"dtmi:industrialiot:PressureSensor;1\"\n}\n```\n\nEnsure the component is placed within another interface that serves as the root of your twin.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 38,
+    "source": "industrialiot_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:industrialiot:WeldingRobot;1\",\"jointType\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:WeldingRobot;1' member 'jointType' declares an Object schema with no fields\nAdd at least one field to the Object definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: object_no_fields\nInterface ID: dtmi:industrialiot:WeldingRobot;1\nElement name: jointType\nProblem: the Object schema has no fields defined.",
+    "response": "The error indicates that the `jointType` property uses an `@type: Object` schema but lacks required `fields`. In DTDL v4, an Object schema must define at least one field. To fix, add a `fields` array with at least one field definition.\n\nCorrected DTDL snippet:\n```json\n{\n  \"@id\": \"dtmi:industrialiot:WeldingRobot:jointType;1\",\n  \"@type\": \"Property\",\n  \"name\": \"jointType\",\n  \"schema\": {\n    \"@type\": \"Object\",\n    \"fields\": [\n      {\n        \"name\": \"angle\",\n        \"schema\": \"double\"\n      }\n    ]\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 39,
+    "source": "industrialiot_errors.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:industrialiot:WeldingRobot;1\",\"machineId\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:WeldingRobot;1' redefines inherited member 'machineId' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:industrialiot:WeldingRobot;1\nConflicting name: machineId\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "The DTDL validator indicates that your `WeldingRobot` interface inherits a `machineId` property from another interface (e.g., via `extends`). Then, you define a new property or component with the same name `machineId` directly within `WeldingRobot`. This creates a conflict in the inheritance hierarchy.\n\n**Fix:** Remove the duplicate `machineId` element from the `WeldingRobot` interface itself. If the inherited `machineId` does not meet your needs, consider modifying the parent interface or creating a different element name in `WeldingRobot`.\n\n**Corrected snippet (partial):**\n```json\n{\n  \"@id\": \"dtmi:industrialiot:WeldingRobot;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:example:BaseMachine;1\"],\n  \"contents\": [\n    // Remove any \"machineId\" entry here.\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 40,
+    "source": "industrialiot_errors.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:industrialiot:WeldingRobot;1\",\"self\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:WeldingRobot;1' component 'self' references its own containing interface as schema\nUpdate the component schema to point to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_self_reference\nInterface ID: dtmi:industrialiot:WeldingRobot;1\nComponent name: self\nProblem: the component schema references the containing interface itself.",
+    "response": "**Root Cause:** The DTDL v4 specification prohibits a component from referencing its containing interface as its schema. This creates a circular dependency where the component's definition depends on the interface that defines it, which is invalid.\n\n**Fix:** Change the component's `@type` to \"Component\" (instead of \"Interface\") and provide a valid, separate DTMI for its `schema`. Do not reference the parent interface's DTMI.\n\n**Corrected Snippet:**\n```json\n{\n  \"@id\": \"dtmi:industrialiot:WeldingRobot;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"self\",\n      \"schema\": \"dtmi:example:RobotComponentSchema;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 41,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:industrialiot:CNCMachine;1\",\"setProgram\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:CNCMachine;1' has duplicate command name 'setProgram'\nRemove or rename one of the duplicate command definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_command_name\nInterface ID: dtmi:industrialiot:CNCMachine;1\nDuplicate name: setProgram\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:industrialiot:CNCMachine;1` contains multiple contents (e.g., commands, properties, telemetries) with the same name `setProgram`. DTDL v4 mandates unique names for all contents within an interface.\n\nTo fix, rename or remove duplicate entries. For example, if there are two commands named `setProgram`, rename one to `setActiveProgram` or similar. Ensure all names are unique.\n\nCorrected DTDL snippet (example):\n```json\n{\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"setProgram\"\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"setActiveProgram\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 42,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:industrialiot:ProductionLine;1\",\"hasMachine\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:ProductionLine;1' has duplicate relationship name 'hasMachine'\nRemove or rename one of the duplicate relationship definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_relationship_name\nInterface ID: dtmi:industrialiot:ProductionLine;1\nDuplicate name: hasMachine\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:industrialiot:ProductionLine;1` contains multiple relationships with the same name `hasMachine`. In DTDL v4, all contents (properties, telemetry, commands, relationships, components) must have unique names within an interface.\n\nTo fix this, rename one of the duplicate relationships to a unique name, or if they represent the same semantic relationship, consolidate them into a single definition. For example:\n\n```json\n{\n  \"@id\": \"dtmi:industrialiot:ProductionLine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasMachine\",\n      \"target\": \"dtmi:industrialiot:Machine;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasMachine2\",\n      \"target\": \"dtmi:industrialiot:Machine;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 43,
+    "source": "industrialiot_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:industrialiot:CNCMachine;1\",\"machineId\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:CNCMachine;1' has duplicate property name 'machineId'\nRemove or rename one of the duplicate property definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_property_name\nInterface ID: dtmi:industrialiot:CNCMachine;1\nDuplicate name: machineId\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:industrialiot:CNCMachine;1` contains multiple contents (e.g., properties, telemetry, commands) with the same name `machineId`. DTDL v4 mandates unique names for all contents within a single interface.\n\nTo fix, rename or remove duplicate entries. For example, if there are two properties named `machineId`, keep only one or rename the second (e.g., `machineIdentifier`). Here’s a corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"machineId\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 44,
+    "source": "industrialiot_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:industrialiot:CNCMachine;1\",\"dtmi:industrialiot:BaseAsset;1\")",
+    "error_string": "ERROR: Interface 'dtmi:industrialiot:CNCMachine;1' extends undefined interface 'dtmi:industrialiot:BaseAsset;1'\nAdd missing interface definition or remove the extends declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: extends_undefined\nInterface ID: dtmi:industrialiot:CNCMachine;1\nMissing parent interface: dtmi:industrialiot:BaseAsset;1\nProblem: the interface extends an interface not defined in this model.",
+    "response": "The error occurs because the interface `dtmi:industrialiot:CNCMachine;1` extends `dtmi:industrialiot:BaseAsset;1`, which is not defined in your model. In DTDL v4, all parent interfaces must be explicitly defined within the same model or referenced via an external dependency.\n\n**Fix:** Define the missing parent interface in your model or add it as an external dependency. If `BaseAsset` is defined elsewhere, include it using `@context` or `dtmi:dependencies`. If you're defining it locally, add its definition.\n\n**Corrected DTDL snippet (if defining locally):**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:industrialiot:CNCMachine;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:industrialiot:BaseAsset;1\"],\n  \"contents\": []\n}\n```\nEnsure `dtmi:industrialiot:BaseAsset;1` is also defined as an interface in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 45,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:Floor;1\",\"dtmi:smartbuilding:Floor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:Floor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:smartbuilding:Floor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The validator indicates that the interface `dtmi:smartbuilding:Floor;1` is isolated because no other interface references it via `extends`, `component` schemas, or as a `target` in relationships. In DTDL, all interfaces must be part of a connected model graph.\n\n**Fix:** Integrate this interface into your model. For example, make it extend another interface or include it as a component in a parent interface. Here’s a snippet adding it as a component:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Building;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"floor\",\n      \"schema\": \"dtmi:smartbuilding:Floor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 46,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:HVACUnit;1\",\"dtmi:smartbuilding:HVACUnit;1\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:HVACUnit;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:smartbuilding:HVACUnit;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:smartbuilding:HVACUnit;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by at least one other interface via `extends`, `contents` (as a component), or as a target in a relationship.\n\nTo fix this, ensure the interface is referenced. For example, if it's a component, add it to another interface's `contents`:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:smartbuilding:Building;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"hvac\",\n      \"schema\": \"dtmi:smartbuilding:HVACUnit;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 47,
+    "source": "smartbuilding_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:smartbuilding:EnergyMeter;1\",\"dtmi:smartbuilding:EnergyMeter;1\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:EnergyMeter;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:smartbuilding:EnergyMeter;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:smartbuilding:EnergyMeter;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship.\n\nTo fix, either:\n1. **Reference it as a component** in another interface's `contents`.\n2. **Extend it** in another interface using `extends`.\n3. **Use it as a relationship target**.\n\nExample fix (adding as a component):\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Building;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"energyMeter\",\n      \"schema\": \"dtmi:smartbuilding:EnergyMeter;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 48,
+    "source": "smartbuilding_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:smartbuilding:HVACUnit;1\",\"operatingMode\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:HVACUnit;1' member 'operatingMode' declares an Enum schema with no enumValues\nAdd at least one enumValue entry to the Enum definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: enum_no_values\nInterface ID: dtmi:smartbuilding:HVACUnit;1\nElement name: operatingMode\nProblem: the Enum schema has no enumValues defined.",
+    "response": "The `operumMode` property is defined with an Enum schema, which must have at least one `enumValues` entry. In DTDL v4, an Enum is invalid without explicitly listed values.\n\n**Fix:** Add a non-empty `enumValues` array to the schema. For example:\n\n```json\n\"operatingMode\": {\n  \"@type\": \"Property\",\n  \"name\": \"operatingMode\",\n  \"schema\": {\n    \"@type\": \"Enum\",\n    \"valueSchema\": \"string\",\n    \"enumValues\": [\n      { \"name\": \"Off\", \"enumValue\": \"off\" },\n      { \"name\": \"Cooling\", \"enumValue\": \"cooling\" }\n    ]\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 49,
+    "source": "smartbuilding_errors.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:smartbuilding:Floor;1\",\"area\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:Floor;1' uses 'area' as both a property and a telemetry\nRename one of the two to avoid the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name\nInterface ID: dtmi:smartbuilding:Floor;1\nAmbiguous name: area\nProblem: the same name is used by both a property and a telemetry element.",
+    "response": "The error occurs because the name `area` is used for both a `Property` and a `Telemetry` element within the same interface. DTDL v4 requires all element names to be unique within an interface to avoid ambiguity.\n\nTo fix this, rename one of the elements. For example, change the telemetry to `areaMeasurement` or the property to `areaProperty`. Here’s a corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Floor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"area\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"areaMeasurement\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 50,
+    "source": "smartbuilding_errors.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:smartbuilding:Floor;1\",\"hasRoom\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:Floor;1' has duplicate relationship name 'hasRoom'\nRemove or rename one of the duplicate relationship definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_relationship_name\nInterface ID: dtmi:smartbuilding:Floor;1\nDuplicate name: hasRoom\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:smartbuilding:Floor;1` contains multiple contents (likely relationships) with the same name `hasRoom`. DTDL v4 requires all contents (properties, telemetries, commands, components, relationships) within a single interface to have unique names.\n\nTo fix this, rename the duplicate relationships to ensure uniqueness. For example, if there are two relationships to different types of rooms, use distinct names like `hasOfficeRoom` and `hasConferenceRoom`. Here’s a corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:Floor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasOfficeRoom\",\n      \"target\": \"dtmi:smartbuilding:OfficeRoom;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"hasConferenceRoom\",\n      \"target\": \"dtmi:smartbuilding:ConferenceRoom;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 51,
+    "source": "smartbuilding_errors.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:smartbuilding:Room;1\",\"connectedTo\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:Room;1' has self-referencing relationship 'connectedTo'\nUpdate the relationship target to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: self_referencing_relationship\nInterface ID: dtmi:smartbuilding:Room;1\nRelationship name: connectedTo\nProblem: the relationship target points to the same interface that declares it.",
+    "response": "**Root cause:** The `connectedTo` relationship's `target` property references the same interface (`dtmi:smartbuilding:Room;1`) that defines it, creating a self-referential loop that is invalid for a relationship's target.\n\n**Fix:** Change the `target` to point to a different, valid interface. For example, if rooms connect to corridors:\n\n```json\n\"connectedTo\": {\n  \"@type\": \"Relationship\",\n  \"name\": \"connectedTo\",\n  \"target\": \"dtmi:smartbuilding:Corridor;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 52,
+    "source": "smartbuilding_errors.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:smartbuilding:HVACUnit;1\",\"unitId\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:HVACUnit;1' has duplicate property name 'unitId'\nRemove or rename one of the duplicate property definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_property_name\nInterface ID: dtmi:smartbuilding:HVACUnit;1\nDuplicate name: unitId\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:smartbuilding:HVACUnit;1` contains multiple contents (e.g., properties, telemetries, commands) with the same name `unitId`. DTDL v4 mandates unique names for all contents within an interface.\n\nTo fix, rename or remove duplicate entries. For example, if there are two properties named `unitId`, keep only one or rename the second (e.g., `secondaryUnitId`). Ensure all content names are unique.\n\nCorrected DTDL snippet (example):\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:HVACUnit;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"unitId\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"locationId\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 53,
+    "source": "smartbuilding_errors.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:smartbuilding:HVACUnit;1\",\"dtmi:smartbuilding:BaseEquipment;1\")",
+    "error_string": "ERROR: Interface 'dtmi:smartbuilding:HVACUnit;1' extends undefined interface 'dtmi:smartbuilding:BaseEquipment;1'\nAdd missing interface definition or remove the extends declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: extends_undefined\nInterface ID: dtmi:smartbuilding:HVACUnit;1\nMissing parent interface: dtmi:smartbuilding:BaseEquipment;1\nProblem: the interface extends an interface not defined in this model.",
+    "response": "The interface `dtmi:smartbuilding:HVACUnit;1` attempts to extend `dtmi:smartbuilding:BaseEquipment;1`, which is not defined in your model. To fix this, you must define the parent interface before referencing it. Add the `BaseEquipment` interface to your model. Example corrected DTDL snippet:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:BaseEquipment;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n{\n  \"@id\": \"dtmi:smartbuilding:HVACUnit;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:smartbuilding:BaseEquipment;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 54,
+    "source": "smartbuilding_errors.json",
+    "type": "undefined_target",
+    "atom": "__debug__(\"undefined_target\",(\"dtmi:smartbuilding:Floor;1\",\"hasRoom\",2),\"dtmi:smartbuilding:ConferenceRoom;1\")",
+    "error_string": "ERROR: Relationship 'hasRoom' references undefined interface 'dtmi:smartbuilding:ConferenceRoom;1'\nCheck DTDL model or add missing interface definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: undefined_target\nRelationship ID: hasRoom\nReferenced target interface: dtmi:smartbuilding:ConferenceRoom;1\nProblem: the target interface is not defined in the model.",
+    "response": "**Root cause**: The relationship `hasRoom` references `dtmi:smartbuilding:ConferenceRoom;1`, but this interface is not present in the same model or any imported model.\n\n**Fix**: Define the referenced interface in the current model or import it from another model. For example, define it directly:\n\n```json\n{\n  \"@id\": \"dtmi:smartbuilding:ConferenceRoom;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\n\nAlternatively, if the interface exists elsewhere, add an `extends` property to import it:\n\n```json\n{\n  \"@id\": \"dtmi:example:MyInterface;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:smartbuilding:ConferenceRoom;1\"]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 55,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"dtmi:agriculture:vineyard:ClimateSensor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:ClimateSensor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:ClimateSensor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates the interface is defined but unused. DTDL v4 requires interfaces to be part of a twin definition (e.g., as a component). Include it as a component in another interface. For example:\n\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"climateSensor\",\n  \"schema\": \"dtmi:agriculture:vineyard:ClimateSensor;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 56,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"temperature\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:ClimateSensor;1' uses 'temperature' as both a property and a telemetry\nRename one of the two to avoid the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name\nInterface ID: dtmi:agriculture:vineyard:ClimateSensor;1\nAmbiguous name: temperature\nProblem: the same name is used by both a property and a telemetry element.",
+    "response": "**Root cause:** In DTDL v4, a name (like `temperature`) must be unique within an interface—it cannot be used for both a `Property` and a `Telemetry` element. This creates ambiguity.\n\n**Fix:** Rename one of the elements to make the name unique. For example, change the property to `temperatureSetting` or the telemetry to `temperatureReading`. Here’s the corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:ClimateSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"temperatureSetting\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"temperature\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 57,
+    "source": "vineyard_ambiguous_name.json",
+    "type": "ambiguous_name",
+    "atom": "__debug__(\"ambiguous_name\",\"dtmi:agriculture:vineyard:ClimateSensor;1\",\"humidity\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:ClimateSensor;1' uses 'humidity' as both a property and a telemetry\nRename one of the two to avoid the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name\nInterface ID: dtmi:agriculture:vineyard:ClimateSensor;1\nAmbiguous name: humidity\nProblem: the same name is used by both a property and a telemetry element.",
+    "response": "The DTDL v4 spec prohibits using the same name for different types of members within the same interface. Here, `humidity` is defined as both a `Property` and a `Telemetry`. You must rename one to be unique.\n\n**Fix:** Change one member's name, e.g., rename the property to `humiditySetting`. Update the DTDL accordingly.\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:ClimateSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"humiditySetting\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"humidity\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 58,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"dtmi:agriculture:vineyard:FermentationTank;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:FermentationTank;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:FermentationTank;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `FermentationTank` exists in the model but is unused because no other interface references it via `extends`, `component` schemas, or `contents` that target it. This makes it an orphaned element with no practical role in the twin hierarchy.\n\n**Fix:** Integrate this interface into your model. For example, define a top-level twin that includes it as a component. Here’s a corrected snippet:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Winery;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"tank\",\n      \"schema\": \"dtmi:agriculture:vineyard:FermentationTank;1\"\n    }\n  ]\n}\n```\n\nThis creates a `Winery` interface that references the `FermentationTank`, giving it a functional purpose.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 59,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"volume\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:FermentationTank;1' uses 'volume' as both a relationship and a property or telemetry\nRename the relationship or the property/telemetry to avoid the clash",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name_rel\nInterface ID: dtmi:agriculture:vineyard:FermentationTank;1\nAmbiguous name: volume\nProblem: the same name is used by a relationship and another contents element.",
+    "response": "The error occurs because `volume` is used both as a relationship name and another contents element (likely a property) within the same interface. DTDL v4 requires all contents element names to be unique within their parent interface.\n\n**Fix:** Rename one of the elements to avoid duplication. For example, change the relationship name to something more descriptive, like `tankVolume`, and update any references accordingly.\n\n**Corrected snippet (example):**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:FermentationTank;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"volume\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"tankVolume\",\n      \"target\": \"dtmi:agriculture:vineyard:TankData;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 60,
+    "source": "vineyard_ambiguous_rel.json",
+    "type": "ambiguous_name_rel",
+    "atom": "__debug__(\"ambiguous_name_rel\",\"dtmi:agriculture:vineyard:FermentationTank;1\",\"status\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:FermentationTank;1' uses 'status' as both a relationship and a property or telemetry\nRename the relationship or the property/telemetry to avoid the clash",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name_rel\nInterface ID: dtmi:agriculture:vineyard:FermentationTank;1\nAmbiguous name: status\nProblem: the same name is used by a relationship and another contents element.",
+    "response": "The error arises because the name **\"status\"** is used both for a **relationship** and another **contents** element (likely a property or component) within the same interface. DTDL v4 prohibits duplicate names for different elements under the same parent.\n\n**Fix:** Rename one of the \"status\" elements to a distinct name. For example, rename the relationship to \"tankStatusRel\" or rename the other element accordingly.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:FermentationTank;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"tankStatusRel\",\n      \"target\": \"dtmi:example:StatusInterface;1\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"status\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 61,
+    "source": "vineyard_circular_extends.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:BaseDevice;1\",\"deviceId\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:BaseDevice;1' redefines inherited member 'deviceId' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:agriculture:vineyard:BaseDevice;1\nConflicting name: deviceId\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:BaseDevice;1` defines an element (property, command, etc.) named `deviceId` that has the same name as an element inherited from a parent interface. DTDL v4 prohibits name conflicts in inheritance.\n\n**Fix:** Rename the element in the child interface to a unique name, or remove it if redundant. Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:BaseDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"baseDeviceId\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 62,
+    "source": "vineyard_circular_extends.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartDevice;1\",\"firmwareVersion\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SmartDevice;1' redefines inherited member 'firmwareVersion' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:agriculture:vineyard:SmartDevice;1\nConflicting name: firmwareVersion\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:SmartDevice;1` defines an element (likely a property or command) named `firmwareVersion` that already exists in a parent interface it extends. DTDL forbids redefining inherited names.\n\n**Fix:** Rename the element in this interface to avoid the conflict, or remove it if redundant. Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartDevice;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:example:BaseDevice;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"deviceFirmwareVersion\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 63,
+    "source": "vineyard_circular_extends.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:agriculture:vineyard:SmartDevice;1\",\"dtmi:agriculture:vineyard:SmartDevice;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SmartDevice;1' is part of a circular extends chain\nRemove the extends declaration that creates the cycle",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: circular_extends\nInterface ID: dtmi:agriculture:vineyard:SmartDevice;1\nProblem: the interface is part of a cyclic extends chain, which DTDL forbids.",
+    "response": "The error occurs because the interface `dtmi:agriculture:vineyard:SmartDevice;1` directly or indirectly extends itself, creating a circular inheritance chain. DTDL v4 prohibits this to avoid infinite loops and undefined behavior.\n\nTo fix, review the `extends` property of this interface and all interfaces it extends. Ensure no interface in the chain eventually references itself. For example, if `SmartDevice` extends `A`, and `A` extends `SmartDevice`, break the cycle by removing or redefining one `extends` relationship.\n\nCorrected DTDL snippet (assuming `SmartDevice` should not extend anything):\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 64,
+    "source": "vineyard_circular_extends.json",
+    "type": "circular_extends",
+    "atom": "__debug__(\"circular_extends\",\"dtmi:agriculture:vineyard:BaseDevice;1\",\"dtmi:agriculture:vineyard:BaseDevice;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:BaseDevice;1' is part of a circular extends chain\nRemove the extends declaration that creates the cycle",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: circular_extends\nInterface ID: dtmi:agriculture:vineyard:BaseDevice;1\nProblem: the interface is part of a cyclic extends chain, which DTDL forbids.",
+    "response": "The error indicates that `dtmi:agriculture:vineyard:BaseDevice;1` directly or indirectly extends itself, creating a forbidden inheritance cycle. For example, if `BaseDevice` extends `DeviceA`, and `DeviceA` extends `BaseDevice`, that's a circular chain.\n\nTo fix, review the `extends` properties in all related interfaces and remove the circular dependency. Ensure no interface extends another that eventually leads back to itself. For instance, if `BaseDevice` should not extend anything, correct its definition:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:BaseDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n```\n\nIf inheritance is needed, restructure it into a linear hierarchy (e.g., `BaseDevice` → `DeviceA` → `DeviceB`), ensuring no back-reference.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 65,
+    "source": "vineyard_command_schema.json",
+    "type": "command_response_schema_undefined",
+    "atom": "__debug__(\"command_response_schema_undefined\",\"dtmi:agriculture:vineyard:PumpController;1\",\"startPump\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PumpController;1' command 'startPump' response payload references an undefined schema\nReplace the schema with a primitive type or add the missing schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: command_response_schema_undefined\nInterface ID: dtmi:agriculture:vineyard:PumpController;1\nCommand name: startPump\nProblem: the command response schema is not a known type.",
+    "response": "The command `startPump` must define its response's schema. DTDL v4 allows only predefined DTDL schemas (e.g., `string`, `integer`) or user-defined complex schemas via `@id`. Currently, this schema is missing or incorrectly referenced. In DTDL, a command's response requires a `schema` property.\n\n**Fix:** Define a `schema` for the command's `response`. For a simple string acknowledgment, use:\n```json\n{\n  \"@type\": \"Command\",\n  \"name\": \"startPump\",\n  \"response\": {\n    \"schema\": \"string\"\n  }\n}\n```\nIf referencing a user-defined schema, ensure its `@id` is correctly used as the `schema` value.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 66,
+    "source": "vineyard_command_schema.json",
+    "type": "command_request_schema_undefined",
+    "atom": "__debug__(\"command_request_schema_undefined\",\"dtmi:agriculture:vineyard:PumpController;1\",\"startPump\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PumpController;1' command 'startPump' request payload references an undefined schema\nReplace the schema with a primitive type or add the missing schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: command_request_schema_undefined\nInterface ID: dtmi:agriculture:vineyard:PumpController;1\nCommand name: startPump\nProblem: the command request schema is not a known type.",
+    "response": "The error indicates that the `startPump` command's request schema is undefined or invalid. In DTDL v4, a command's request schema must be a valid DTDL type, such as an `Object` schema or a primitive type (e.g., `string`, `integer`). Ensure the schema is properly defined and referenced.\n\n**Fix:** Define an explicit schema for the request. For example, if the command expects no parameters, use an `Object` with no fields:\n\n```json\n{\n  \"@type\": \"Command\",\n  \"name\": \"startPump\",\n  \"request\": {\n    \"@type\": \"CommandRequest\",\n    \"name\": \"startPumpRequest\",\n    \"schema\": {\n      \"@type\": \"Object\",\n      \"fields\": []\n    }\n  }\n}\n```\n\nIf parameters are needed, define them within the `fields` array.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 67,
+    "source": "vineyard_command_schema.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PumpController;1\",\"dtmi:agriculture:vineyard:PumpController;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PumpController;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:PumpController;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is defined but never used. In DTDL v4, an interface must be referenced by another interface to be part of a valid model. This is typically done by being the target of a **relationship**, a **component**, or an **extends** clause.\n\nTo fix this, ensure another interface references it. For example, if this is a component of a larger system like a `Vineyard`:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"pumpController\",\n      \"schema\": \"dtmi:agriculture:vineyard:PumpController;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 68,
+    "source": "vineyard_component_self_ref.json",
+    "type": "component_self_reference",
+    "atom": "__debug__(\"component_self_reference\",\"dtmi:agriculture:vineyard:SensorHub;1\",\"primaryUnit\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SensorHub;1' component 'primaryUnit' references its own containing interface as schema\nUpdate the component schema to point to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_self_reference\nInterface ID: dtmi:agriculture:vineyard:SensorHub;1\nComponent name: primaryUnit\nProblem: the component schema references the containing interface itself.",
+    "response": "**Root Cause:** The component's schema (`primaryUnit`) references the interface that contains it (`dtmi:agriculture:vineyard:SensorHub;1`). This creates a circular definition, which is invalid in DTDL.\n\n**Fix:** Change the component's schema to reference a different, independent interface. Ensure this new interface is defined elsewhere in your model.\n\n**Corrected JSON-LD snippet:**\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SensorHub;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"primaryUnit\",\n      \"schema\": \"dtmi:agriculture:common:SensorUnit;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 69,
+    "source": "vineyard_component_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:VineyardProperty;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or `schemas` (as a target for a relationship). This isolated interface is invalid.\n\nTo fix, either:\n1. **Delete it** if it's unnecessary.\n2. **Reference it** from another interface. For example, add it as a component:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"property\",\n      \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 70,
+    "source": "vineyard_component_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PestTrap;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:PestTrap;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface is isolated—no other model references it via `extends`, `component`, or `relationship`. DTDL interfaces must be part of a model hierarchy or graph.\n\n**Fix:** Connect this interface to another model using `extends`, `component`, or `relationship`.\n\n**Example:** If `PestTrap` should be a component of a `Vineyard` model:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"trap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 71,
+    "source": "vineyard_component_undefined.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"gpsUnit\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' component 'gpsUnit' references undefined schema\nAdd missing interface definition for the component schema",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_schema_undefined\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nComponent name: gpsUnit\nProblem: the component schema does not reference a defined Interface.",
+    "response": "The error occurs because the component `gpsUnit` references a schema that is not a defined interface in the model. In DTDL v4, a component's `schema` must be a reference (`@id`) to an existing interface, not an inline object.\n\n**Fix:** Define the interface for `gpsUnit` separately, then reference it by its `@id` in the component's `schema`.\n\n**Corrected snippet:**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"gpsUnit\",\n      \"schema\": \"dtmi:agriculture:device:GPSUnit;1\"\n    }\n  ]\n}\n```\nEnsure `dtmi:agriculture:device:GPSUnit;1` is defined elsewhere in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 72,
+    "source": "vineyard_component_undefined.json",
+    "type": "component_schema_undefined",
+    "atom": "__debug__(\"component_schema_undefined\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"camera\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PestTrap;1' component 'camera' references undefined schema\nAdd missing interface definition for the component schema",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: component_schema_undefined\nInterface ID: dtmi:agriculture:vineyard:PestTrap;1\nComponent name: camera\nProblem: the component schema does not reference a defined Interface.",
+    "response": "The error occurs because the `camera` component's `schema` property references an interface that is not defined in the model. In DTDL v4, a component's `schema` must be a reference (`@id`) to a valid interface, either inline or elsewhere.\n\n**Fix:** Ensure the referenced interface exists. If it's defined inline, verify it's correctly nested. If external, include it in the model. Example correction:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:PestTrap;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"camera\",\n      \"schema\": \"dtmi:agriculture:device:Camera;1\"\n    }\n  ]\n}\n```\n\nMake sure `dtmi:agriculture:device:Camera;1` is defined in your model.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 73,
+    "source": "vineyard_deep_extends.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:Level4;1\",\"dtmi:agriculture:vineyard:Level4;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:Level4;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:Level4;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:Level4;1` is defined but not used anywhere in your model. In DTDL, an interface must be referenced (via `extends`, `component`s, or relationships) to be part of the twin graph; otherwise, it's isolated and serves no purpose.\n\n**Fix:** Either reference this interface from another interface or remove it. To reference it, add it in an `extends` array or as a `component` schema. Example of extending it:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Level3;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:Level4;1\"],\n  \"contents\": []\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 74,
+    "source": "vineyard_deep_extends.json",
+    "type": "deep_extends_chain",
+    "atom": "__debug__(\"deep_extends_chain\",\"dtmi:agriculture:vineyard:Level4;1\",\"dtmi:agriculture:vineyard:Level4;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:Level4;1' is part of an extends chain deeper than 3 levels\nFlatten the hierarchy or extract shared members into a common base interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: deep_extends_chain\nInterface ID: dtmi:agriculture:vineyard:Level4;1\nProblem: the extends chain exceeds 3 levels of inheritance. Consider flattening the hierarchy.",
+    "response": "**Root cause:** DTDL v4 restricts the inheritance chain depth to 3 levels. The interface `dtmi:agriculture:vineyard:Level4;1` is the fourth level in a hierarchy (e.g., extending `Level3`, which extends `Level2`, etc.).\n\n**Fix:** Reorganize the model by flattening the hierarchy. Merge properties from higher-level interfaces into intermediate ones or create a new base interface. Example:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:Level3Extended;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    // Include all properties from Level1, Level2, Level3 here\n  ]\n}\n```\n\nThen have `Level4` extend this consolidated interface, ensuring the chain depth is ≤3.",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 75,
+    "source": "vineyard_duplicate_command.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"dtmi:agriculture:vineyard:IrrigationValve;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationValve;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:IrrigationValve;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:IrrigationValve;1` is defined but never used. In DTDL, an interface must be referenced (e.g., as a component, via `extends`, or as a schema for a relationship) to be part of a valid twin graph.\n\n**Fix:** Reference this interface from another interface. For example, add it as a component in a parent interface (like a vineyard model).\n\n**Corrected DTDL snippet (addition to a parent interface):**\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"valve\",\n      \"schema\": \"dtmi:agriculture:vineyard:IrrigationValve;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 76,
+    "source": "vineyard_duplicate_command.json",
+    "type": "ambiguous_name_cmd",
+    "atom": "__debug__(\"ambiguous_name_cmd\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"status\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationValve;1' uses 'status' as both a command and a property or telemetry\nRename the command or the property/telemetry to remove the ambiguity",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: ambiguous_name_cmd\nInterface ID: dtmi:agriculture:vineyard:IrrigationValve;1\nAmbiguous name: status\nProblem: the same name is used by a command and another contents element.",
+    "response": "The DTDL validator detected an ambiguous name within the Interface `dtmi:agriculture:vineyard:IrrigationValve;1`. The name `status` is used both for a **Command** and another element (likely a Property, Telemetry, or Relationship) in the interface's contents. DTDL requires all component names in an interface's contents to be unique.\n\nTo fix this, rename one of the elements. For instance, rename the command to `setStatus` or `statusCommand`. Here is a corrected DTDL snippet for the ambiguous command definition:\n\n```json\n{\n  \"@type\": \"Command\",\n  \"name\": \"setStatus\",\n  \"request\": {\n    \"name\": \"desiredStatus\",\n    \"schema\": \"string\"\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 77,
+    "source": "vineyard_duplicate_command.json",
+    "type": "duplicate_command_name",
+    "atom": "__debug__(\"duplicate_command_name\",\"dtmi:agriculture:vineyard:IrrigationValve;1\",\"activate\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationValve;1' has duplicate command name 'activate'\nRemove or rename one of the duplicate command definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_command_name\nInterface ID: dtmi:agriculture:vineyard:IrrigationValve;1\nDuplicate name: activate\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface contains multiple contents (likely commands) with the same name `activate`. In DTDL v4, all content names within an interface must be unique.\n\nTo fix, rename or remove duplicate commands. For example, if there are two `activate` commands for different purposes, rename one:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationValve;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Command\",\n      \"name\": \"activateValve\"\n    },\n    {\n      \"@type\": \"Command\",\n      \"name\": \"activateSchedule\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 78,
+    "source": "vineyard_duplicate_property.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is isolated because nothing references it. In DTDL v4, an interface must be referenced via `extends`, `contents` (as a component), or as a target in a relationship to be part of a valid model.\n\nTo fix, either:\n1. **Delete it** if it's unused.\n2. **Reference it** from another interface. For example, add it as a component:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"property\",\n      \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 79,
+    "source": "vineyard_duplicate_property.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilMoistureSensor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:SoilMoistureSensor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The DTDL interface `dtmi:agriculture:vineyard:SoilMoistureSensor;1` is defined but unused—no other interfaces reference it via `extends`, `component`, or `relationship`. In DTDL, such isolated interfaces are invalid.\n\n**Fix:** Integrate the interface into your twin model. For example, make it a `component` within a parent interface.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardTwin;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"soilSensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:SoilMoistureSensor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 80,
+    "source": "vineyard_duplicate_property.json",
+    "type": "duplicate_telemetry_name",
+    "atom": "__debug__(\"duplicate_telemetry_name\",\"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\"soilMoisture\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilMoistureSensor;1' has duplicate telemetry name 'soilMoisture'\nRemove or rename one of the duplicate telemetry definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_telemetry_name\nInterface ID: dtmi:agriculture:vineyard:SoilMoistureSensor;1\nDuplicate name: soilMoisture\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:agriculture:vineyard:SoilMoistureSensor;1` contains two or more telemetry items with the same name `soilMoisture`. DTDL v4 mandates unique names for all contents (properties, telemetry, commands, components, relationships) within a single interface.\n\nTo fix, rename the duplicate telemetry entries to be unique. For example:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SoilMoistureSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"soilMoistureLevel\",\n      \"schema\": \"double\"\n    },\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"soilMoistureRaw\",\n      \"schema\": \"integer\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 81,
+    "source": "vineyard_duplicate_property.json",
+    "type": "duplicate_property_name",
+    "atom": "__debug__(\"duplicate_property_name\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"owner\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' has duplicate property name 'owner'\nRemove or rename one of the duplicate property definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_property_name\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nDuplicate name: owner\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:agriculture:vineyard:VineyardProperty;1` contains multiple contents (e.g., properties, relationships, components) with the same name `owner`. DTDL v4 mandates unique names for all contents within a single interface.\n\nTo fix, rename or remove duplicate entries. For example, if you have two properties both named `owner`, rename one to something distinct like `ownerName` or `ownerId`.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"owner\",\n      \"schema\": \"string\"\n    },\n    {\n      \"@type\": \"Property\",\n      \"name\": \"ownerContact\",  // Renamed from duplicate \"owner\"\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 82,
+    "source": "vineyard_duplicate_relationship.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:IrrigationZone;1\",\"dtmi:agriculture:vineyard:IrrigationZone;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationZone;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:IrrigationZone;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is defined but never used, making it isolated. In DTDL, interfaces must be referenced to be part of a twin graph. To fix, reference it as a component in another interface or extend it.\n\nExample fix: add it as a component in a parent interface.\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"zone1\",\n      \"schema\": \"dtmi:agriculture:vineyard:IrrigationZone;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 83,
+    "source": "vineyard_duplicate_relationship.json",
+    "type": "duplicate_relationship_name",
+    "atom": "__debug__(\"duplicate_relationship_name\",\"dtmi:agriculture:vineyard:IrrigationZone;1\",\"suppliedBy\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationZone;1' has duplicate relationship name 'suppliedBy'\nRemove or rename one of the duplicate relationship definitions",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: duplicate_relationship_name\nInterface ID: dtmi:agriculture:vineyard:IrrigationZone;1\nDuplicate name: suppliedBy\nProblem: DTDL requires all contents names to be unique within an interface.",
+    "response": "The error occurs because the interface `dtmi:agriculture:vineyard:IrrigationZone;1` contains multiple contents (e.g., relationships, properties, components) with the same name `suppliedBy`. DTDL v4 mandates unique names for all contents within a single interface.\n\nTo fix, rename or remove duplicate entries. For example, if you have two relationships named `suppliedBy`, change one to a distinct name like `suppliedBySecondary`:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:IrrigationZone;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"suppliedBy\",\n      \"target\": \"dtmi:agriculture:water:WaterSource;1\"\n    },\n    {\n      \"@type\": \"Relationship\",\n      \"name\": \"suppliedBySecondary\",\n      \"target\": \"dtmi:agriculture:water:BackupSource;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 84,
+    "source": "vineyard_extends_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:VineyardProperty;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is isolated because nothing references it. In DTDL, an interface must be referenced via `extends`, `contents` (as a component), or as a target in a relationship to be part of a valid model.\n\nTo fix, either:\n1. **Reference it from another interface** (e.g., as a component).\n2. **Mark it as a top-level root interface** by adding `\"@type\": \"Interface\"` explicitly (though this is often implicit). However, a root interface should still be part of a model graph; isolation might indicate it's unused.\n\nExample fix by adding it as a component in another interface:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:Vineyard;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"property\",\n      \"schema\": \"dtmi:agriculture:vineyard:VineyardProperty;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 85,
+    "source": "vineyard_extends_undefined.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:PestTrap;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PestTrap;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:PestTrap;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates that the interface `dtmi:agriculture:vineyard:PestTrap;1` is defined but never used. In DTDL v4, all interfaces must be part of a model graph, meaning they must be referenced by another interface via `extends`, `contents` (as a component), or as a target in a relationship. This isolated interface is invalid because it's disconnected.\n\nTo fix, either:\n1. **Reference it** from another interface (e.g., as a component).\n2. **Remove it** if unintended.\n\nExample fix by adding it as a component in a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardManager;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"trap\",\n      \"schema\": \"dtmi:agriculture:vineyard:PestTrap;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 86,
+    "source": "vineyard_extends_undefined.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"dtmi:agriculture:vineyard:AgricultureBase;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' extends undefined interface 'dtmi:agriculture:vineyard:AgricultureBase;1'\nAdd missing interface definition or remove the extends declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: extends_undefined\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nMissing parent interface: dtmi:agriculture:vineyard:AgricultureBase;1\nProblem: the interface extends an interface not defined in this model.",
+    "response": "The error occurs because the parent interface `dtmi:agriculture:vineyard:AgricultureBase;1` is not defined in your model. In DTDL v4, an interface can only extend another interface that is present within the same model.\n\nTo fix this, you must ensure the parent interface is defined. Add the `AgricultureBase` interface to your model before referencing it in the `extends` property.\n\nHere is the corrected DTDL JSON-LD snippet:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:AgricultureBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": []\n}\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardProperty;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:agriculture:vineyard:AgricultureBase;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 87,
+    "source": "vineyard_extends_undefined.json",
+    "type": "extends_undefined",
+    "atom": "__debug__(\"extends_undefined\",\"dtmi:agriculture:vineyard:PestTrap;1\",\"dtmi:agriculture:vineyard:SensorBase;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:PestTrap;1' extends undefined interface 'dtmi:agriculture:vineyard:SensorBase;1'\nAdd missing interface definition or remove the extends declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: extends_undefined\nInterface ID: dtmi:agriculture:vineyard:PestTrap;1\nMissing parent interface: dtmi:agriculture:vineyard:SensorBase;1\nProblem: the interface extends an interface not defined in this model.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:PestTrap;1` uses `extends` to inherit from `dtmi:agriculture:vineyard:SensorBase;1`, but the parent interface is not present in the model, causing an undefined reference.\n\n**Fix:** Define the missing parent interface within the same model before referencing it. Here's the corrected snippet, assuming `SensorBase` defines a telemetry `temperature`:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SensorBase;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Telemetry\",\n      \"name\": \"temperature\",\n      \"schema\": \"double\"\n    }\n  ]\n},\n{\n  \"@id\": \"dtmi:agriculture:vineyard:PestTrap;1\",\n  \"@type\": \"Interface\",\n  \"extends\": [\"dtmi:agriculture:vineyard:SensorBase;1\"],\n  \"contents\": []\n}\n```\n\nBoth interfaces must be declared in the same DTDL model to satisfy the `extends` relationship.",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 88,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"dtmi:agriculture:vineyard:SmartSensor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SmartSensor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:SmartSensor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is isolated because nothing references it. In DTDL v4, an interface must be referenced via `extends`, `contents` (as a component), or as a target in a relationship to be part of a valid model.\n\nTo fix, either:\n1. **Extend it** from another interface.\n2. **Include it as a component** in a parent interface.\n3. **Reference it as a target** in a relationship.\n\nExample: Add it as a component in a parent interface:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"sensor\",\n      \"schema\": \"dtmi:agriculture:vineyard:SmartSensor;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 89,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"signalStrength\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SmartSensor;1' redefines inherited member 'signalStrength' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:agriculture:vineyard:SmartSensor;1\nConflicting name: signalStrength\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:SmartSensor;1` defines an element (likely a property, command, or relationship) named `signalStrength` that has the same name as an element in one of its parent interfaces. DTDL v4 prohibits name shadowing in inheritance.\n\n**Fix:** Rename the element in the child interface to a unique name, or remove it if redundant. Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartSensor;1\",\n  \"@type\": \"Interface\",\n  \"extends\": \"dtmi:agriculture:Sensor;1\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"signalStrengthRSSI\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 90,
+    "source": "vineyard_inherited_conflict.json",
+    "type": "inherited_name_conflict",
+    "atom": "__debug__(\"inherited_name_conflict\",\"dtmi:agriculture:vineyard:SmartSensor;1\",\"batteryLevel\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SmartSensor;1' redefines inherited member 'batteryLevel' already declared in a parent interface\nRemove the redefinition or rename the member to avoid shadowing the inherited declaration",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: inherited_name_conflict\nInterface ID: dtmi:agriculture:vineyard:SmartSensor;1\nConflicting name: batteryLevel\nProblem: an element name in this interface shadows an inherited element with the same name.",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:SmartSensor;1` defines an element (likely a property, command, or relationship) named `batteryLevel` that has the same name as an element already inherited from a parent interface. DTDL v4 prohibits name conflicts in inheritance.\n\n**Fix:** Rename the element in this interface to a unique name, or remove it if redundant. Example correction:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SmartSensor;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"sensorBatteryLevel\",\n      \"schema\": \"double\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 91,
+    "source": "vineyard_isolated.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:MainController;1\",\"dtmi:agriculture:vineyard:MainController;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:MainController;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:MainController;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "**Root cause:** The interface `dtmi:agriculture:vineyard:MainController;1` is defined but never used. In DTDL, an interface must be referenced (via `extends`, `component`s, or as a relationship target) to be part of a valid model graph.\n\n**Fix:** Reference this interface from another interface. For example, add it as a component in a parent interface:\n\n```json\n{\n  \"@context\": \"dtmi:dtdl:context;4\",\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"mainController\",\n      \"schema\": \"dtmi:agriculture:vineyard:MainController;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 92,
+    "source": "vineyard_isolated.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:OrphanDevice;1\",\"dtmi:agriculture:vineyard:OrphanDevice;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:OrphanDevice;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:OrphanDevice;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The interface is defined but never used, making it isolated. In DTDL v4, all interfaces must be part of a model hierarchy via `extends`, `contents` (as a component), or referenced as a schema. To fix, either integrate it into an existing interface or remove it if unintended.\n\nExample integration as a component:\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:MainDevice;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"device\",\n      \"schema\": \"dtmi:agriculture:vineyard:OrphanDevice;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 93,
+    "source": "vineyard_schema_errors.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilAnalyzer;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:SoilAnalyzer;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The error indicates `dtmi:agriculture:vineyard:SoilAnalyzer;1` is unused because no other interface references it via `extends`, `component` schema, or as a `target` for relationships. Isolated interfaces are invalid in DTDL v4.\n\n**Fix:** Add it as a `component` in a parent interface.\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:VineyardSystem;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Component\",\n      \"name\": \"soilAnalyzer\",\n      \"schema\": \"dtmi:agriculture:vineyard:SoilAnalyzer;1\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 94,
+    "source": "vineyard_schema_errors.json",
+    "type": "object_no_fields",
+    "atom": "__debug__(\"object_no_fields\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"emptyObject\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilAnalyzer;1' member 'emptyObject' declares an Object schema with no fields\nAdd at least one field to the Object definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: object_no_fields\nInterface ID: dtmi:agriculture:vineyard:SoilAnalyzer;1\nElement name: emptyObject\nProblem: the Object schema has no fields defined.",
+    "response": "The root cause is that the `emptyObject` schema uses type `Object` but lacks the required `fields` property. In DTDL v4, `Object` schemas must declare at least one field.\n\nFix: Add a `fields` array with at least one property. Example:\n\n```json\n{\n  \"@type\": \"Object\",\n  \"fields\": [\n    {\n      \"name\": \"exampleField\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 95,
+    "source": "vineyard_schema_errors.json",
+    "type": "enum_no_values",
+    "atom": "__debug__(\"enum_no_values\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"emptyEnum\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilAnalyzer;1' member 'emptyEnum' declares an Enum schema with no enumValues\nAdd at least one enumValue entry to the Enum definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: enum_no_values\nInterface ID: dtmi:agriculture:vineyard:SoilAnalyzer;1\nElement name: emptyEnum\nProblem: the Enum schema has no enumValues defined.",
+    "response": "The `emptyEnum` property uses an `Enum` schema but lacks required `enumValues`. In DTDL v4, an `Enum` must define at least one value.\n\n**Fix:** Add a non-empty `enumValues` array. For example:\n\n```json\n{\n  \"@type\": \"Property\",\n  \"name\": \"emptyEnum\",\n  \"schema\": {\n    \"@type\": \"Enum\",\n    \"valueSchema\": \"string\",\n    \"enumValues\": [\n      { \"name\": \"ExampleValue\", \"enumValue\": \"example\" }\n    ]\n  }\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 96,
+    "source": "vineyard_schema_errors.json",
+    "type": "property_schema_undefined",
+    "atom": "__debug__(\"property_schema_undefined\",\"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\"undefinedSchemaField\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:SoilAnalyzer;1' property 'undefinedSchemaField' references an undefined schema\nReplace the schema with a primitive type or add the missing interface/schema definition",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: property_schema_undefined\nInterface ID: dtmi:agriculture:vineyard:SoilAnalyzer;1\nProperty name: undefinedSchemaField\nProblem: the property schema is not a primitive type, enum, object, array, map, or known interface.",
+    "response": "**Root cause**: The property `undefinedSchemaField` lacks a valid `schema`. DTDL v4 requires each property's `schema` to be a primitive DTDL type, an `Enum`, an `Object`, an `Array`, a `Map`, or a referenced DTDL interface ID.\n\n**Fix**: Define the property's schema explicitly. Example using a string primitive type:\n\n```json\n{\n  \"@id\": \"dtmi:agriculture:vineyard:SoilAnalyzer;1\",\n  \"@type\": \"Interface\",\n  \"contents\": [\n    {\n      \"@type\": \"Property\",\n      \"name\": \"undefinedSchemaField\",\n      \"schema\": \"string\"\n    }\n  ]\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 97,
+    "source": "vineyard_self_reference.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:agriculture:vineyard:VineyardProperty;1\",\"hasSisterVineyard\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:VineyardProperty;1' has self-referencing relationship 'hasSisterVineyard'\nUpdate the relationship target to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: self_referencing_relationship\nInterface ID: dtmi:agriculture:vineyard:VineyardProperty;1\nRelationship name: hasSisterVineyard\nProblem: the relationship target points to the same interface that declares it.",
+    "response": "The error occurs because the `hasSisterVineyard` relationship's `target` property references the same interface (`dtmi:agriculture:vineyard:VineyardProperty;1`) that defines it, creating a self-referential loop. In DTDL v4, relationships must target a different interface to define a valid semantic link between distinct entities.\n\n**Fix:** Change the `target` to reference a different, appropriate interface. For example, if a sister vineyard is also a vineyard property, you might need a separate interface for sister relationships or restructure your model.\n\n**Corrected snippet:**\n```json\n\"hasSisterVineyard\": {\n  \"@type\": \"Relationship\",\n  \"name\": \"hasSisterVineyard\",\n  \"target\": \"dtmi:agriculture:vineyard:SisterVineyard;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 0,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 98,
+    "source": "vineyard_self_reference.json",
+    "type": "self_referencing_relationship",
+    "atom": "__debug__(\"self_referencing_relationship\",\"dtmi:agriculture:vineyard:IrrigationController;1\",\"backupController\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:IrrigationController;1' has self-referencing relationship 'backupController'\nUpdate the relationship target to a different interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: self_referencing_relationship\nInterface ID: dtmi:agriculture:vineyard:IrrigationController;1\nRelationship name: backupController\nProblem: the relationship target points to the same interface that declares it.",
+    "response": "The error occurs because the `backupController` relationship's `target` property references the same interface (`dtmi:agriculture:vineyard:IrrigationController;1`) that defines it, creating a self-referential loop. In DTDL v4, a relationship's target must be a different interface to establish a valid link between two distinct digital twins.\n\nTo fix this, change the `target` to reference a different, valid interface ID. For example, if the backup controller is a separate type, use its interface ID.\n\n**Corrected DTDL snippet:**\n```json\n{\n  \"@type\": \"Relationship\",\n  \"name\": \"backupController\",\n  \"target\": \"dtmi:agriculture:vineyard:BackupIrrigationController;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  },
+  {
+    "id": 99,
+    "source": "vineyard_unit_semantic.json",
+    "type": "isolated_interface",
+    "atom": "__debug__(\"isolated_interface\",\"dtmi:agriculture:vineyard:WeatherMonitor;1\",\"dtmi:agriculture:vineyard:WeatherMonitor;1\")",
+    "error_string": "ERROR: Interface 'dtmi:agriculture:vineyard:WeatherMonitor;1' is never referenced by any other interface (no relationship target, extends, or component schema)\nEither remove the interface or add a reference to it from another interface",
+    "system_prompt": "You are an expert in DTDL (Digital Twins Definition Language) v4. You receive structured diagnostic information from a symbolic ASP-based validator. Explain the root cause of the error and suggest a concrete, actionable fix including the corrected DTDL JSON-LD snippet. Do not invent properties or fields not defined in the DTDL v4 specification. Be concise: max 200 words.",
+    "user_prompt": "Diagnostic: isolated_interface\nInterface ID: dtmi:agriculture:vineyard:WeatherMonitor;1\nProblem: this interface is not referenced by any other interface (no target, extends, or component schema points to it).",
+    "response": "The **WeatherMonitor** interface is an **isolated interface**, meaning no other interface extends it, targets it as a component, or references it as a relationship target. DTDL models require interfaces to be connected to form a functional twin graph.\n\n**Solution**: Reference this interface within another interface. For example, add it as a component schema to your main vineyard interface.\n\n**Corrected DTDL snippet** (to add to your main model):\n```json\n{\n  \"@type\": \"Component\",\n  \"name\": \"weatherMonitor\",\n  \"schema\": \"dtmi:agriculture:vineyard:WeatherMonitor;1\"\n}\n```",
+    "ratings": {
+      "json_valid": 1,
+      "entity_recall": 1,
+      "action_correct": 1
+    }
+  }
+]

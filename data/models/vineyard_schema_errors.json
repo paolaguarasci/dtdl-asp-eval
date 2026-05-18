@@ -1,0 +1,32 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:SoilAnalyzer;1",
+    "@type": "Interface",
+    "displayName": "Soil Analyzer",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "undefinedSchemaField",
+        "schema": "dtmi:agriculture:vineyard:NonExistentSchema;1"
+      },
+      {
+        "@type": "Property",
+        "name": "emptyEnum",
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "string",
+          "enumValues": []
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "name": "emptyObject",
+        "schema": {
+          "@type": "Object",
+          "fields": []
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:BaseDevice;1",
+    "@type": "Interface",
+    "displayName": "Base Device",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "deviceId",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "batteryLevel",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "signalStrength",
+        "schema": "double"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:SmartSensor;1",
+    "@type": "Interface",
+    "displayName": "Smart Sensor",
+    "extends": "dtmi:agriculture:vineyard:BaseDevice;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "batteryLevel",
+        "schema": "integer"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "signalStrength",
+        "schema": "float"
+      }
+    ]
+  }
+]

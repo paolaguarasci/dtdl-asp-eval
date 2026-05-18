@@ -1,0 +1,51 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:IrrigationZone;1",
+    "@type": "Interface",
+    "displayName": "Irrigation Zone",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "zoneId",
+        "schema": "string"
+      },
+      {
+        "@type": "Relationship",
+        "name": "suppliedBy",
+        "target": "dtmi:agriculture:vineyard:WaterPump;1"
+      },
+      {
+        "@type": "Relationship",
+        "name": "suppliedBy",
+        "target": "dtmi:agriculture:vineyard:Reservoir;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:WaterPump;1",
+    "@type": "Interface",
+    "displayName": "Water Pump",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "pumpId",
+        "schema": "string"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:Reservoir;1",
+    "@type": "Interface",
+    "displayName": "Reservoir",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "capacity",
+        "schema": "double"
+      }
+    ]
+  }
+]

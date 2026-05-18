@@ -1,0 +1,175 @@
+{
+  "runs_per_measurement": 20,
+  "models": [
+    {
+      "model": "greenhouse",
+      "n_interfaces": 5,
+      "n_facts": 66,
+      "parse": {
+        "mean_ms": 0.007,
+        "median_ms": 0.006,
+        "min_ms": 0.006,
+        "max_ms": 0.021,
+        "stdev_ms": 0.003,
+        "runs": 20
+      },
+      "debug": {
+        "mean_ms": 0.514,
+        "median_ms": 0.331,
+        "min_ms": 0.319,
+        "max_ms": 3.838,
+        "stdev_ms": 0.783,
+        "runs": 20
+      },
+      "analysis": {
+        "mean_ms": 0.663,
+        "median_ms": 0.646,
+        "min_ms": 0.604,
+        "max_ms": 1.01,
+        "stdev_ms": 0.086,
+        "runs": 20
+      }
+    },
+    {
+      "model": "vineyard",
+      "n_interfaces": 5,
+      "n_facts": 91,
+      "parse": {
+        "mean_ms": 0.009,
+        "median_ms": 0.008,
+        "min_ms": 0.008,
+        "max_ms": 0.018,
+        "stdev_ms": 0.002,
+        "runs": 20
+      },
+      "debug": {
+        "mean_ms": 0.453,
+        "median_ms": 0.432,
+        "min_ms": 0.419,
+        "max_ms": 0.521,
+        "stdev_ms": 0.036,
+        "runs": 20
+      },
+      "analysis": {
+        "mean_ms": 0.707,
+        "median_ms": 0.678,
+        "min_ms": 0.658,
+        "max_ms": 0.867,
+        "stdev_ms": 0.061,
+        "runs": 20
+      }
+    }
+  ],
+  "scaling": [
+    {
+      "n_interfaces": 5,
+      "n_facts": 67,
+      "parse_ms": 0.006,
+      "debug_ms": 0.317,
+      "analysis_ms": 0.601
+    },
+    {
+      "n_interfaces": 10,
+      "n_facts": 137,
+      "parse_ms": 0.013,
+      "debug_ms": 0.527,
+      "analysis_ms": 0.832
+    },
+    {
+      "n_interfaces": 20,
+      "n_facts": 277,
+      "parse_ms": 0.027,
+      "debug_ms": 0.998,
+      "analysis_ms": 1.357
+    },
+    {
+      "n_interfaces": 50,
+      "n_facts": 697,
+      "parse_ms": 0.065,
+      "debug_ms": 2.387,
+      "analysis_ms": 3.236
+    }
+  ],
+  "llm": [
+    {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "label": "3B",
+      "type": "missing_required_property",
+      "mean_ms": 2142.2,
+      "median_ms": 2149.8,
+      "min_ms": 1810.0,
+      "max_ms": 2520.3,
+      "runs": 5
+    },
+    {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "label": "3B",
+      "type": "undefined_target",
+      "mean_ms": 2027.7,
+      "median_ms": 2150.1,
+      "min_ms": 1762.5,
+      "max_ms": 2151.3,
+      "runs": 5
+    },
+    {
+      "model": "qwen/qwen2.5-coder-7b-instruct",
+      "label": "7B",
+      "type": "missing_required_property",
+      "mean_ms": 8820.3,
+      "median_ms": 8768.8,
+      "min_ms": 8730.6,
+      "max_ms": 9081.4,
+      "runs": 5
+    },
+    {
+      "model": "qwen/qwen2.5-coder-7b-instruct",
+      "label": "7B",
+      "type": "undefined_target",
+      "mean_ms": 5003.6,
+      "median_ms": 2459.2,
+      "min_ms": 2458.0,
+      "max_ms": 8906.2,
+      "runs": 5
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "label": "70B",
+      "type": "missing_required_property",
+      "mean_ms": 4869.6,
+      "median_ms": 5222.7,
+      "min_ms": 2150.6,
+      "max_ms": 6085.4,
+      "runs": 5
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "label": "70B",
+      "type": "undefined_target",
+      "mean_ms": 5636.5,
+      "median_ms": 5895.7,
+      "min_ms": 3060.2,
+      "max_ms": 7366.2,
+      "runs": 5
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "label": "deepseek-v3.2",
+      "type": "missing_required_property",
+      "mean_ms": 9794.4,
+      "median_ms": 8981.2,
+      "min_ms": 6860.7,
+      "max_ms": 13516.9,
+      "runs": 5
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "label": "deepseek-v3.2",
+      "type": "undefined_target",
+      "mean_ms": 11817.0,
+      "median_ms": 8908.7,
+      "min_ms": 6247.3,
+      "max_ms": 26010.7,
+      "runs": 5
+    }
+  ]
+}

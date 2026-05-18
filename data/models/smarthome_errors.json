@@ -1,0 +1,109 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smarthome:Hub;1",
+    "@type": "Interface",
+    "displayName": "SmartHub",
+    "contents": [
+      { "@type": "Property", "name": "hubId", "schema": "string" },
+      { "@type": "Property", "name": "firmware", "schema": "string" },
+      {
+        "@type": "Command",
+        "name": "reboot",
+        "request": { "name": "delay", "schema": "UndefinedDelaySchema" },
+        "response": { "name": "status", "schema": "string" }
+      },
+      {
+        "@type": "Command",
+        "name": "updateFirmware",
+        "request": { "name": "payload", "schema": "string" },
+        "response": { "name": "result", "schema": "UndefinedResultSchema" }
+      },
+      {
+        "@type": "Relationship",
+        "name": "controls",
+        "target": "dtmi:smarthome:Device;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smarthome:Thermostat;1",
+    "@type": "Interface",
+    "displayName": "Thermostat",
+    "contents": [
+      {
+        "@type": ["Telemetry", "Temperature"],
+        "name": "currentTemp",
+        "schema": "double",
+        "unit": "degreeCelsius"
+      },
+      {
+        "@type": "Property",
+        "name": "currentTemp",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "setpoint",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "setpoint",
+        "schema": "double"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smarthome:MotionSensor;1",
+    "@type": "Interface",
+    "displayName": "MotionSensor",
+    "contents": [
+      { "@type": "Property", "name": "sensorId", "schema": "string" },
+      {
+        "@type": "Property",
+        "name": "sensitivityLevel",
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "string",
+          "enumValues": []
+        }
+      },
+      {
+        "@type": "Property",
+        "name": "zoneConfig",
+        "schema": {
+          "@type": "Object",
+          "fields": []
+        }
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:smarthome:LightSwitch;1",
+    "@type": "Interface",
+    "displayName": "LightSwitch",
+    "contents": [
+      { "@type": "Property", "name": "switchId", "schema": "string" },
+      {
+        "@type": "Telemetry",
+        "name": "powerUsage",
+        "schema": "double",
+        "unit": "watt"
+      },
+      {
+        "@type": "Property",
+        "name": "dimLevel",
+        "schema": "integer"
+      },
+      {
+        "@type": "Relationship",
+        "name": "linkedGroup",
+        "target": "dtmi:smarthome:LightGroup;1"
+      }
+    ]
+  }
+]

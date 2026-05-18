@@ -1,0 +1,31 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:VineyardProperty;1",
+    "@type": "Interface",
+    "displayName": "VineyardProperty",
+    "contents": [
+      { "@type": "Property", "name": "owner", "schema": "string" },
+      { "@type": "Property", "name": "totalArea", "schema": "double" },
+      {
+        "@type": "Relationship",
+        "name": "hasSisterVineyard",
+        "target": "dtmi:agriculture:vineyard:VineyardProperty;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:IrrigationController;1",
+    "@type": "Interface",
+    "displayName": "IrrigationController",
+    "contents": [
+      { "@type": "Property", "name": "controllerId", "schema": "string" },
+      {
+        "@type": "Relationship",
+        "name": "backupController",
+        "target": "dtmi:agriculture:vineyard:IrrigationController;1"
+      }
+    ]
+  }
+]

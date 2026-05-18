@@ -1,0 +1,27 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:PumpController;1",
+    "@type": "Interface",
+    "displayName": "Pump Controller",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "pumpId",
+        "schema": "string"
+      },
+      {
+        "@type": "Command",
+        "name": "startPump",
+        "request": {
+          "name": "config",
+          "schema": "dtmi:agriculture:vineyard:PumpConfig;1"
+        },
+        "response": {
+          "name": "result",
+          "schema": "dtmi:agriculture:vineyard:PumpResult;1"
+        }
+      }
+    ]
+  }
+]

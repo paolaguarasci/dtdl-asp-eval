@@ -1,0 +1,35 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:IrrigationValve;1",
+    "@type": "Interface",
+    "displayName": "Irrigation Valve",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "valveId",
+        "schema": "string"
+      },
+      {
+        "@type": "Command",
+        "name": "activate",
+        "request": { "name": "duration", "schema": "integer" }
+      },
+      {
+        "@type": "Command",
+        "name": "activate",
+        "request": { "name": "flowRate", "schema": "double" }
+      },
+      {
+        "@type": "Command",
+        "name": "status",
+        "request": { "name": "query", "schema": "string" }
+      },
+      {
+        "@type": "Property",
+        "name": "status",
+        "schema": "string"
+      }
+    ]
+  }
+]

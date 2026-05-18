@@ -1,0 +1,27 @@
+[
+  {
+    "@context": ["dtmi:dtdl:context;4", "dtmi:dtdl:extension:quantitativeTypes;1"],
+    "@id": "dtmi:agriculture:vineyard:WeatherMonitor;1",
+    "@type": "Interface",
+    "displayName": "Weather Monitor",
+    "contents": [
+      {
+        "@type": ["Telemetry", "Temperature"],
+        "name": "airTemp",
+        "schema": "double",
+        "unit": "degreeCelsius"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "windSpeed",
+        "schema": "double",
+        "unit": "metrePerSecond"
+      },
+      {
+        "@type": ["Telemetry", "Humidity"],
+        "name": "relativeHumidity",
+        "schema": "double"
+      }
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:FermentationTank;1",
+    "@type": "Interface",
+    "displayName": "Fermentation Tank",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "status",
+        "schema": "string"
+      },
+      {
+        "@type": "Relationship",
+        "name": "status",
+        "target": "dtmi:agriculture:vineyard:WinerySection;1"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "volume",
+        "schema": "double"
+      },
+      {
+        "@type": "Relationship",
+        "name": "volume",
+        "target": "dtmi:agriculture:vineyard:WinerySection;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:WinerySection;1",
+    "@type": "Interface",
+    "displayName": "Winery Section",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "sectionId",
+        "schema": "string"
+      }
+    ]
+  }
+]

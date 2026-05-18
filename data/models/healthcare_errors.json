@@ -1,0 +1,77 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:healthcare:MedicalDevice;1",
+    "@type": "Interface",
+    "displayName": "MedicalDevice",
+    "contents": [
+      { "@type": "Property", "name": "serialNumber", "schema": "string" },
+      { "@type": "Property", "name": "manufacturer", "schema": "string" },
+      { "@type": "Property", "name": "status", "schema": "string" }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:healthcare:PatientMonitor;1",
+    "@type": "Interface",
+    "displayName": "PatientMonitor",
+    "extends": "dtmi:healthcare:MedicalDevice;1",
+    "contents": [
+      { "@type": "Property", "name": "patientId", "schema": "string" },
+      { "@type": "Property", "name": "status", "schema": "string" },
+      {
+        "@type": ["Telemetry", "Humidity"],
+        "name": "spO2",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "heartRate",
+        "schema": "double",
+        "unit": "bpm"
+      },
+      {
+        "@type": "Relationship",
+        "name": "assignedBed",
+        "target": "dtmi:healthcare:HospitalBed;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:healthcare:InfusionPump;1",
+    "@type": "Interface",
+    "displayName": "InfusionPump",
+    "contents": [
+      { "@type": "Property", "name": "pumpId", "schema": "string" },
+      {
+        "@type": "Command",
+        "name": "setRate",
+        "request": { "name": "params", "schema": "string" },
+        "response": { "name": "ack", "schema": "string" }
+      },
+      {
+        "@type": "Relationship",
+        "name": "connectedTo",
+        "target": "dtmi:healthcare:PatientMonitor;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:healthcare:NurseStation;1",
+    "@type": "Interface",
+    "displayName": "NurseStation",
+    "contents": [
+      { "@type": "Property", "name": "stationId", "schema": "string" },
+      { "@type": "Property", "name": "status", "schema": "string" },
+      { "@type": "Telemetry", "name": "status", "schema": "string" },
+      { "@type": "Relationship", "name": "status", "target": "dtmi:healthcare:PatientMonitor;1" },
+      {
+        "@type": "Relationship",
+        "name": "monitors",
+        "target": "dtmi:healthcare:PatientMonitor;1"
+      }
+    ]
+  }
+]

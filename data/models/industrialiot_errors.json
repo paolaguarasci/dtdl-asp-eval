@@ -1,0 +1,91 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:industrialiot:ProductionLine;1",
+    "@type": "Interface",
+    "displayName": "Production Line",
+    "contents": [
+      { "@type": "Property", "name": "lineId", "schema": "string" },
+      {
+        "@type": "Relationship",
+        "name": "hasMachine",
+        "target": "dtmi:industrialiot:CNCMachine;1"
+      },
+      {
+        "@type": "Relationship",
+        "name": "hasMachine",
+        "target": "dtmi:industrialiot:WeldingRobot;1"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:industrialiot:CNCMachine;1",
+    "@type": "Interface",
+    "displayName": "CNC Machine",
+    "extends": "dtmi:industrialiot:BaseAsset;1",
+    "contents": [
+      { "@type": "Property", "name": "machineId", "schema": "string" },
+      { "@type": "Property", "name": "machineId", "schema": "string" },
+      {
+        "@type": "Command",
+        "name": "setProgram",
+        "request": {
+          "name": "config",
+          "schema": "dtmi:industrialiot:MachineProgram;1"
+        }
+      },
+      {
+        "@type": "Command",
+        "name": "setProgram",
+        "request": { "name": "programId", "schema": "string" }
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:industrialiot:WeldingRobot;1",
+    "@type": "Interface",
+    "displayName": "Welding Robot",
+    "extends": "dtmi:industrialiot:CNCMachine;1",
+    "contents": [
+      { "@type": "Property", "name": "machineId", "schema": "string" },
+      {
+        "@type": "Property",
+        "name": "jointType",
+        "schema": {
+          "@type": "Object",
+          "fields": []
+        }
+      },
+      {
+        "@type": "Component",
+        "name": "self",
+        "schema": "dtmi:industrialiot:WeldingRobot;1"
+      }
+    ]
+  },
+  {
+    "@context": [
+      "dtmi:dtdl:context;4",
+      "dtmi:dtdl:extension:quantitativeTypes;1"
+    ],
+    "@id": "dtmi:industrialiot:PressureSensor;1",
+    "@type": "Interface",
+    "displayName": "Pressure Sensor",
+    "contents": [
+      {
+        "@type": ["Telemetry", "Pressure"],
+        "name": "pressure",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "temperature",
+        "schema": "double",
+        "unit": "degreeCelsius"
+      },
+      { "@type": "Property", "name": "sensorId", "schema": "string" }
+    ]
+  }
+]

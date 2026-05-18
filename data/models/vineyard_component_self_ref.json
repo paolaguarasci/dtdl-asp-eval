@@ -1,0 +1,20 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:SensorHub;1",
+    "@type": "Interface",
+    "displayName": "Sensor Hub",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "hubId",
+        "schema": "string"
+      },
+      {
+        "@type": "Component",
+        "name": "primaryUnit",
+        "schema": "dtmi:agriculture:vineyard:SensorHub;1"
+      }
+    ]
+  }
+]

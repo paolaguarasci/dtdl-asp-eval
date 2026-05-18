@@ -1,0 +1,30 @@
+[
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:BaseDevice;1",
+    "@type": "Interface",
+    "displayName": "Base Device",
+    "extends": "dtmi:agriculture:vineyard:SmartDevice;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "deviceId",
+        "schema": "string"
+      }
+    ]
+  },
+  {
+    "@context": "dtmi:dtdl:context;4",
+    "@id": "dtmi:agriculture:vineyard:SmartDevice;1",
+    "@type": "Interface",
+    "displayName": "Smart Device",
+    "extends": "dtmi:agriculture:vineyard:BaseDevice;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "firmwareVersion",
+        "schema": "string"
+      }
+    ]
+  }
+]
