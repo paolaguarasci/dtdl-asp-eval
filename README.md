@@ -5,6 +5,8 @@ Evaluation dataset and replication scripts for the paper:
 > **Symbolic Analysis and LLM-Guided Debugging of Digital Twin Models with ASP Chef and DTDL**
 > Mario Alviano, Paola Guarasci — _Information_ (MDPI), 2026.
 
+**Paper summary:** <https://paolaguarasci.github.io/dtdl-asp-eval/>
+
 This repository contains the complete evaluation material referenced in Section 7
 of the paper: the DTDL test models, the LLM responses, the evaluation logs, and
 the scripts that compute the reported metrics. All results in Tables 5–7 are
